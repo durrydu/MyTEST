@@ -1,0 +1,213 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script>
+    ;
+    $(function () {
+        InitialPage();
+        GetGrid();
+        $('#txt_Keyword').autocomplete({
+            serviceUrl: "../../Demo/Demo/GetAutocomplete",
+            onSelect: function (suggestion) {
+                console.log(suggestion.data);
+                //alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+            }
+        });
+        //$('#txt_Keyword').autocomplete({
+        //    lookup: function (query, done) {
+        //        var result = {
+        //            suggestions: [
+        //                { "value": "United Arab Emirates", "data": "AE" },
+        //                { "value": "United Kingdom", "data": "UK" },
+        //                { "value": "United States", "data": "US" }
+        //            ]
+        //        };
+
+        //        done(result);
+        //    },
+        //    onSelect: function (suggestion) {
+        //        alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+        //    }
+        //});
+    });
+    //初始化页面
+    function InitialPage() {
+        //resize重设布局;
+        $(window).resize(function (e) {
+            window.setTimeout(function () {
+                $('#gridTable').setGridWidth($('.gridPanel').width());
+                $('#gridTable').setGridHeight($(window).height() - $('.titlePanel').height() - 100);
+            }, 200);
+            e.stopPropagation();
+        });
+
+        //部门机构
+        $("#DepartmentId").ComboBoxTree({
+            url: "../../Demo/Demo/GetDepartmentTreeJson",
+            description: "==请选择==",
+            height: "260px",
+            allowSearch: true
+        });
+        //角色
+        $("#RoleId").ComboBox({
+            url: "../../Demo/Demo/GetRoleJson",
+            id: "RoleId",
+            text: "RoleName",
+            description: "==请选择==",
+            height: "200px"
+        });
+    }
+    //加载表格
+    function GetGrid() {
+        var selectedRowIndex = 0;
+        var $gridTable = $('#gridTable');
+        $gridTable.jqGrid({
+            autowidth: true,
+            height: $(window).height() - $('.titlePanel').height() - 100,
+            url: "../../Demo/Demo/GetPageListJson",
+            datatype: "json",
+            colModel: [
+                { label: '主键', name: 'EmpId', hidden: true },
+                { label: '员工名称', name: 'EmpName', index: 'EmpName', width: 300, align: 'center', sortable: true },
+                { label: '员工年龄', name: 'EmpAge', index: 'EmpAge', width: 300, align: 'center', sortable: true },
+                { label: '地址', name: 'Address', index: 'Address', width: 300, align: 'center', sortable: true },
+                { label: '部门编号', name: 'DepartmentId', index: 'DepartmentId', width: 200, align: 'center', sortable: true },
+                {
+                    label: '角色编号', name: 'RoleId', index: 'RoleId', width: 200, align: 'center', sortable: true
+                },
+                {
+                    label: '操作', name: 'EmpId', index: 'EmpId', width: 200, align: 'center', sortable: true
+                    , formatter: function (cellvalue, options, rowObject) {
+                        if (rowObject.EmpAge == 0) {
+                            return '<a id="lr-replace" class="btn btn-default" onclick="reload();"><i class="fa fa-refresh"></i>调整收款账号</a>';
+                        } else {
+                            return "";
+                        }
+                    }
+                }
+            ],
+            viewrecords: false,
+            rowNum: 30,
+            rowList: [30, 50, 100],
+            pager: "#gridPager",
+            pagerpos: 'right',
+            sortname: 'CreateDate desc',
+            rownumbers: true,
+            shrinkToFit: false,
+            gridview: true,
+            onSelectRow: function () {
+                selectedRowIndex = $('#' + this.id).getGridParam('selrow');
+            },
+            gridComplete: function () {
+                $('#' + this.id).setSelection(selectedRowIndex, false);
+                //注意事项，这里必输是处理完状态后再调用
+                //$('.toolbar').authorizeButton();
+
+            }
+        });
+        //查询事件
+        $("#btn_Search").click(function () {
+            var queryJson = {
+                keyword: $("#txt_Keyword").val(),
+                departmentId: $("#DepartmentId").attr('data-text'),
+                roleId: $("#RoleId").val()
+            }
+            $gridTable.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) }, page: 1
+            }).trigger('reloadGrid');
+        });
+
+    }
+    //新增
+    function btn_add() {
+        location.href = '/Demo/Demo/Form';
+    }
+    //编辑
+    function btn_edit() {
+        var keyValue = $("#gridTable").jqGridRowValue("EmpId");
+        if (checkedRow(keyValue)) {
+            location.href = '/Demo/Demo/Form';
+        }
+
+    }
+    //删除
+    function btn_delete() {
+        var keyValue = $('#gridTable').jqGridRowValue('EmpId');
+        if (keyValue) {
+            $.RemoveForm({
+                url: '../../BaseManage/Issuers/RemoveForm',
+                param: { keyValue: keyValue },
+                success: function (data) {
+                    $('#gridTable').trigger('reloadGrid');
+                }
+            })
+        } else {
+            dialogMsg('请选择需要删除的项！', 0);
+        }
+    }
+    //详细
+    function btn_detail() {
+        var keyValue = $("#gridTable").jqGridRowValue("EmpId");
+        if (checkedRow(keyValue)) {
+            location.href = '/Demo/Demo/Detail';
+        }
+    }
+</script>
+<div class="titlePanel">
+    <div class="title-search">
+        <table class="searchTable">
+            <tr>
+                <th class="formTitle">姓名:</th>
+                <td>
+                    <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" />
+                </td>
+                <th class="formTitle">部门:</th>
+                <td class="formValue">
+                    <div id="DepartmentId" type="selectTree" class="ui-select">
+                    </div>
+                </td>
+                <th class="formTitle">角色:</th>
+                <td class="formValue">
+                    <div id="RoleId" type="select" class="ui-select">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">生效开始时间:</th>
+                <td class="formValue">
+                    <input id="StateTime" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+                    @*<input id="EndDate" maxlength="20" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '#F{$dp.$D(\'txtReportEndDate\')}' })">*@
+                </td>
+                <th class="formTitle">至:</th>
+                <td class="formValue">
+                    <input id="EndTime" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+
+                    @*<input id="StartDate" maxlength="20" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '#F{$dp.$D(\'txtReportEndDate\')}' })">*@
+
+                </td>
+                <th class="formTitle"></th>
+                <td class="formValue">
+                    <a id="btn_Search" class="btn btn-primary"><i class="fa fa-search"></i> 查询</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="toolbar">
+
+        <div class="btn-group">
+            <a id="lr-replace" class="btn btn-default" onclick="reload();"><i class="fa fa-refresh"></i>刷新</a>
+            <a id="lr-add" class="btn btn-default" onclick="btn_add()"><i class="fa fa-plus"></i>新增</a>
+            <a id="lr-edit" class="btn btn-default" onclick="btn_edit()"><i class="fa fa-pencil-square-o"></i>编辑</a>
+            <a id="lr-detail" class="btn btn-default" onclick="btn_detail()"><i class="fa fa-list-alt"></i>详细</a>
+            <a id="lr-delete" class="btn btn-default" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除</a>
+        </div>
+    </div>
+</div>
+<div class="gridOuter">
+    <div class="gridPanel">
+        <table id="gridTable"></table>
+        <div id="gridPager"></div>
+    </div>
+</div>
+

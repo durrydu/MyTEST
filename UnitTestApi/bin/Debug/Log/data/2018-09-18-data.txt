@@ -1,0 +1,432 @@
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0001","pay_info_id":"B11173CC-B574-49AD-9DE8-FE0D4905AD52","electricity_supplier_id":"d3974ee1-c04f-4bc5-a28d-dffd64045288","electricity_supplier_name":"福州市晋安区优逸房产代理有限公司","electricity_supplier_code":"33","electricity_supplier_ad":"优逸","electricity_supplier_ad_id":"5541592a-1e21-4a70-ae97-218c8a15a315","project_code":"FZ013","project_id":"7987139d-b8bf-4095-96be-967f75c1eaba","project_name":"利博顺泰","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"利博顺泰历史合同数据","contract_code":"HT-20180918-0001","pay_money":90000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0002","pay_info_id":"17E25F11-7B95-4F86-BFAE-D59B070678D1","electricity_supplier_id":"d3974ee1-c04f-4bc5-a28d-dffd64045288","electricity_supplier_name":"福州市晋安区优逸房产代理有限公司","electricity_supplier_code":"33","electricity_supplier_ad":"优逸","electricity_supplier_ad_id":"5541592a-1e21-4a70-ae97-218c8a15a315","project_code":"FZ013","project_id":"7987139d-b8bf-4095-96be-967f75c1eaba","project_name":"利博顺泰","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"利博顺泰历史合同数据","contract_code":"HT-20180918-0002","pay_money":156905.100000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0003","pay_info_id":"7FCA32BC-5420-48D0-9655-3B982F6030AF","electricity_supplier_id":"9e6a8d9d-4a2e-40b9-bafd-eef2ebfac774","electricity_supplier_name":"福州易居臣信房地产经纪有限公司","electricity_supplier_code":"DS-180824016","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"FZ009","project_id":"39be517d-0e4a-48d6-83ba-b32c338dda62","project_name":"福州阳光城翡丽湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"福州阳光城翡丽湾历史合同数据","contract_code":"HT-20180918-0003","pay_money":5555.560000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0004","pay_info_id":"69E8A061-D767-49F8-837F-249DF8B0183C","electricity_supplier_id":"9e6a8d9d-4a2e-40b9-bafd-eef2ebfac774","electricity_supplier_name":"福州易居臣信房地产经纪有限公司","electricity_supplier_code":"DS-180824016","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"FZ009","project_id":"39be517d-0e4a-48d6-83ba-b32c338dda62","project_name":"福州阳光城翡丽湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"福州阳光城翡丽湾历史合同数据","contract_code":"HT-20180918-0004","pay_money":16666.670000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0005","pay_info_id":"E5D2E918-D81F-4A79-B382-A30DE68F3EF2","electricity_supplier_id":"7a297529-4789-4041-a0b3-185ac528f1fe","electricity_supplier_name":"深圳先锋居善科技有限公司","electricity_supplier_code":"4","electricity_supplier_ad":"世联行","electricity_supplier_ad_id":"e19b7a12-108d-43db-9d35-64349e3c7f79","project_code":"FZ017","project_id":"e6e0bc56-0cae-4044-813e-d1ce1daa95c5","project_name":"福州阳光城大都会","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"福州阳光城大都会历史合同数据","contract_code":"HT-20180918-0005","pay_money":67346.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0006","pay_info_id":"554316CE-D4B1-4A4D-AB6C-36C5857C56CB","electricity_supplier_id":"7a297529-4789-4041-a0b3-185ac528f1fe","electricity_supplier_name":"深圳先锋居善科技有限公司","electricity_supplier_code":"4","electricity_supplier_ad":"世联行","electricity_supplier_ad_id":"e19b7a12-108d-43db-9d35-64349e3c7f79","project_code":"FZ017","project_id":"e6e0bc56-0cae-4044-813e-d1ce1daa95c5","project_name":"福州阳光城大都会","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"福州阳光城大都会历史合同数据","contract_code":"HT-20180918-0006","pay_money":54331.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0007","pay_info_id":"979A0F50-67FA-401C-942B-179A67812110","electricity_supplier_id":"7a297529-4789-4041-a0b3-185ac528f1fe","electricity_supplier_name":"深圳先锋居善科技有限公司","electricity_supplier_code":"4","electricity_supplier_ad":"世联行","electricity_supplier_ad_id":"e19b7a12-108d-43db-9d35-64349e3c7f79","project_code":"FZ017","project_id":"e6e0bc56-0cae-4044-813e-d1ce1daa95c5","project_name":"福州阳光城大都会","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"福州阳光城大都会历史合同数据","contract_code":"HT-20180918-0007","pay_money":29048.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0008","pay_info_id":"A9EE2639-43FA-4613-8013-6E7598976AA1","electricity_supplier_id":"7a297529-4789-4041-a0b3-185ac528f1fe","electricity_supplier_name":"深圳先锋居善科技有限公司","electricity_supplier_code":"4","electricity_supplier_ad":"世联行","electricity_supplier_ad_id":"e19b7a12-108d-43db-9d35-64349e3c7f79","project_code":"FZ017","project_id":"e6e0bc56-0cae-4044-813e-d1ce1daa95c5","project_name":"福州阳光城大都会","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"福州阳光城大都会历史合同数据","contract_code":"HT-20180918-0008","pay_money":20460.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0009","pay_info_id":"511D8C00-27EF-4A02-A16C-A1AD6E908C9E","electricity_supplier_id":"7a297529-4789-4041-a0b3-185ac528f1fe","electricity_supplier_name":"深圳先锋居善科技有限公司","electricity_supplier_code":"4","electricity_supplier_ad":"世联行","electricity_supplier_ad_id":"e19b7a12-108d-43db-9d35-64349e3c7f79","project_code":"FZ017","project_id":"e6e0bc56-0cae-4044-813e-d1ce1daa95c5","project_name":"福州阳光城大都会","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"福州阳光城大都会历史合同数据","contract_code":"HT-20180918-0009","pay_money":187151.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0010","pay_info_id":"BBD8511F-9DD9-407C-9971-BA231B8BD540","electricity_supplier_id":"7a297529-4789-4041-a0b3-185ac528f1fe","electricity_supplier_name":"深圳先锋居善科技有限公司","electricity_supplier_code":"4","electricity_supplier_ad":"世联行","electricity_supplier_ad_id":"e19b7a12-108d-43db-9d35-64349e3c7f79","project_code":"FZ017","project_id":"e6e0bc56-0cae-4044-813e-d1ce1daa95c5","project_name":"福州阳光城大都会","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"福州阳光城大都会历史合同数据","contract_code":"HT-20180918-0010","pay_money":28052.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0011","pay_info_id":"69071649-6458-44AD-9B65-1C29BD2C89BD","electricity_supplier_id":"7a297529-4789-4041-a0b3-185ac528f1fe","electricity_supplier_name":"深圳先锋居善科技有限公司","electricity_supplier_code":"4","electricity_supplier_ad":"世联行","electricity_supplier_ad_id":"e19b7a12-108d-43db-9d35-64349e3c7f79","project_code":"FZ017","project_id":"e6e0bc56-0cae-4044-813e-d1ce1daa95c5","project_name":"福州阳光城大都会","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"福州阳光城大都会历史合同数据","contract_code":"HT-20180918-0011","pay_money":8900.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0012","pay_info_id":"A7DD26D0-28B6-496E-9608-448C725A8E2A","electricity_supplier_id":"7a297529-4789-4041-a0b3-185ac528f1fe","electricity_supplier_name":"深圳先锋居善科技有限公司","electricity_supplier_code":"4","electricity_supplier_ad":"世联行","electricity_supplier_ad_id":"e19b7a12-108d-43db-9d35-64349e3c7f79","project_code":"FZ017","project_id":"e6e0bc56-0cae-4044-813e-d1ce1daa95c5","project_name":"福州阳光城大都会","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"福州阳光城大都会历史合同数据","contract_code":"HT-20180918-0012","pay_money":223639.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0013","pay_info_id":"5A87CF1E-F39F-46AB-AEB8-5DB5BFEA2A5E","electricity_supplier_id":"5dc470bf-0d86-45a0-b255-aaee9b956036","electricity_supplier_name":"杭州怡生乐居广告有限公司","electricity_supplier_code":"DS-180824014","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"HZ001","project_id":"39013a3c-bd17-479a-949b-31760926cf01","project_name":"杭州阳光城丽兹公馆","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"杭州阳光城丽兹公馆历史合同数据","contract_code":"HT-20180918-0013","pay_money":360000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:30
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0014","pay_info_id":"B4DECD66-7356-4F73-A100-BFE732BDBE7B","electricity_supplier_id":"164c5c05-7488-4c7a-af3f-814ee89548f4","electricity_supplier_name":"上海好屋网信息技术有限公司","electricity_supplier_code":"7","electricity_supplier_ad":"好屋中国","electricity_supplier_ad_id":"0c6afc4d-5c41-44cc-80bb-c99706550c29","project_code":"HZ015","project_id":"507d7389-3d17-40ee-a14b-5fe3d68fcad8","project_name":"杭州阳光城上林湖","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"杭州阳光城上林湖历史合同数据","contract_code":"HT-20180918-0014","pay_money":180000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0015","pay_info_id":"FD2B9340-B0EB-4EB5-8981-F04F163DB247","electricity_supplier_id":"5dc470bf-0d86-45a0-b255-aaee9b956036","electricity_supplier_name":"杭州怡生乐居广告有限公司","electricity_supplier_code":"DS-180824014","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"HZ008","project_id":"43bc5fc5-c7c1-4839-b99a-e08a6bdcb273","project_name":"杭州阳光城银泰城","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"杭州阳光城银泰城历史合同数据","contract_code":"HT-20180918-0015","pay_money":90000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0016","pay_info_id":"20AD40BE-B9AB-4D9F-9740-6B4E325A2E21","electricity_supplier_id":"164c5c05-7488-4c7a-af3f-814ee89548f4","electricity_supplier_name":"上海好屋网信息技术有限公司","electricity_supplier_code":"7","electricity_supplier_ad":"好屋中国","electricity_supplier_ad_id":"0c6afc4d-5c41-44cc-80bb-c99706550c29","project_code":"HZ012","project_id":"2c291ad8-b4fc-444d-945c-33d0a6b2f807","project_name":"杭州阳光城翡丽海岸","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"杭州阳光城翡丽海岸历史合同数据","contract_code":"HT-20180918-0016","pay_money":10000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0017","pay_info_id":"65683964-45B9-4E65-A0C9-6731E2652EF9","electricity_supplier_id":"164c5c05-7488-4c7a-af3f-814ee89548f4","electricity_supplier_name":"上海好屋网信息技术有限公司","electricity_supplier_code":"7","electricity_supplier_ad":"好屋中国","electricity_supplier_ad_id":"0c6afc4d-5c41-44cc-80bb-c99706550c29","project_code":"HZ012","project_id":"2c291ad8-b4fc-444d-945c-33d0a6b2f807","project_name":"杭州阳光城翡丽海岸","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"杭州阳光城翡丽海岸历史合同数据","contract_code":"HT-20180918-0017","pay_money":433045.040000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0018","pay_info_id":"C7B15F32-4CEE-41C0-A71F-C5D5EEF3C809","electricity_supplier_id":"0404c9ed-2b40-4432-abc9-8e415e91e0ad","electricity_supplier_name":"广州乐怡居信息科技有限公司","electricity_supplier_code":"DS-180824022","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"GZ002","project_id":"c7930a64-6851-4003-8e94-24545df8507f","project_name":"广州阳光城丽景湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"广州阳光城丽景湾历史合同数据","contract_code":"HT-20180918-0018","pay_money":25000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0019","pay_info_id":"53D68089-D681-41D4-8FE3-85A72DBB7370","electricity_supplier_id":"0404c9ed-2b40-4432-abc9-8e415e91e0ad","electricity_supplier_name":"广州乐怡居信息科技有限公司","electricity_supplier_code":"DS-180824022","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"GZ002","project_id":"c7930a64-6851-4003-8e94-24545df8507f","project_name":"广州阳光城丽景湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"广州阳光城丽景湾历史合同数据","contract_code":"HT-20180918-0019","pay_money":110000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0020","pay_info_id":"5CFEA8CF-DF4E-46D5-AD8C-D4E4F0490125","electricity_supplier_id":"0404c9ed-2b40-4432-abc9-8e415e91e0ad","electricity_supplier_name":"广州乐怡居信息科技有限公司","electricity_supplier_code":"DS-180824022","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"GZ002","project_id":"c7930a64-6851-4003-8e94-24545df8507f","project_name":"广州阳光城丽景湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"广州阳光城丽景湾历史合同数据","contract_code":"HT-20180918-0020","pay_money":118047.860000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0021","pay_info_id":"140AAEBC-9EA0-41DA-AF77-DF8D3430119B","electricity_supplier_id":"0404c9ed-2b40-4432-abc9-8e415e91e0ad","electricity_supplier_name":"广州乐怡居信息科技有限公司","electricity_supplier_code":"DS-180824022","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"GZ002","project_id":"c7930a64-6851-4003-8e94-24545df8507f","project_name":"广州阳光城丽景湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"广州阳光城丽景湾历史合同数据","contract_code":"HT-20180918-0021","pay_money":120000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0022","pay_info_id":"4BF73921-8DF2-4938-905C-934A4AD2EC15","electricity_supplier_id":"0404c9ed-2b40-4432-abc9-8e415e91e0ad","electricity_supplier_name":"广州乐怡居信息科技有限公司","electricity_supplier_code":"DS-180824022","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"GZ002","project_id":"c7930a64-6851-4003-8e94-24545df8507f","project_name":"广州阳光城丽景湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"广州阳光城丽景湾历史合同数据","contract_code":"HT-20180918-0022","pay_money":100000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0023","pay_info_id":"038DA337-D93F-4FB9-B24C-1E7D2DE3CAF1","electricity_supplier_id":"43b39a4f-de92-4017-b355-42367d9b1494","electricity_supplier_name":"兰州怡生乐居网络信息服务有限公司","electricity_supplier_code":"DS-180824025","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"LZ001","project_id":"fd6e3ff5-4873-4eeb-ae80-949acd681099","project_name":"兰州阳光城林隐天下","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"兰州阳光城林隐天下历史合同数据","contract_code":"HT-20180918-0023","pay_money":27485.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0024","pay_info_id":"9C4582C1-2AAA-4D9F-8A19-06C359707C02","electricity_supplier_id":"43b39a4f-de92-4017-b355-42367d9b1494","electricity_supplier_name":"兰州怡生乐居网络信息服务有限公司","electricity_supplier_code":"DS-180824025","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"LZ001","project_id":"fd6e3ff5-4873-4eeb-ae80-949acd681099","project_name":"兰州阳光城林隐天下","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"兰州阳光城林隐天下历史合同数据","contract_code":"HT-20180918-0024","pay_money":60000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0025","pay_info_id":"0EE617ED-8AB9-465F-BECB-74E874A21047","electricity_supplier_id":"43b39a4f-de92-4017-b355-42367d9b1494","electricity_supplier_name":"兰州怡生乐居网络信息服务有限公司","electricity_supplier_code":"DS-180824025","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"LZ001","project_id":"fd6e3ff5-4873-4eeb-ae80-949acd681099","project_name":"兰州阳光城林隐天下","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"兰州阳光城林隐天下历史合同数据","contract_code":"HT-20180918-0025","pay_money":80000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0026","pay_info_id":"2EF36ACE-FFCD-42CF-9AA3-939BF3C0F078","electricity_supplier_id":"df8e71e5-ad51-4b0a-b938-ec199b3b987f","electricity_supplier_name":"易居臣信房地产经纪（上海）有限公司","electricity_supplier_code":"DS-180824013","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"SH007","project_id":"90e85ec7-6f0b-4fbb-97c3-a1303deb41e3","project_name":"上海阳光城MODO","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"上海阳光城MODO历史合同数据","contract_code":"HT-20180918-0026","pay_money":95629.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0027","pay_info_id":"CB532C80-2035-436B-8A43-391631A44CA8","electricity_supplier_id":"df8e71e5-ad51-4b0a-b938-ec199b3b987f","electricity_supplier_name":"易居臣信房地产经纪（上海）有限公司","electricity_supplier_code":"DS-180824013","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"SH007","project_id":"90e85ec7-6f0b-4fbb-97c3-a1303deb41e3","project_name":"上海阳光城MODO","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"上海阳光城MODO历史合同数据","contract_code":"HT-20180918-0027","pay_money":578613.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0028","pay_info_id":"AF50BEE2-FE66-4028-B947-67C985A85ABC","electricity_supplier_id":"df8e71e5-ad51-4b0a-b938-ec199b3b987f","electricity_supplier_name":"易居臣信房地产经纪（上海）有限公司","electricity_supplier_code":"DS-180824013","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"SH007","project_id":"90e85ec7-6f0b-4fbb-97c3-a1303deb41e3","project_name":"上海阳光城MODO","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"上海阳光城MODO历史合同数据","contract_code":"HT-20180918-0028","pay_money":1985500.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0029","pay_info_id":"6D14F550-6F27-4702-8A07-E595EF48FF88","electricity_supplier_id":"df8e71e5-ad51-4b0a-b938-ec199b3b987f","electricity_supplier_name":"易居臣信房地产经纪（上海）有限公司","electricity_supplier_code":"DS-180824013","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"SH007","project_id":"90e85ec7-6f0b-4fbb-97c3-a1303deb41e3","project_name":"上海阳光城MODO","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"上海阳光城MODO历史合同数据","contract_code":"HT-20180918-0029","pay_money":95406.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0030","pay_info_id":"CD8D4252-77C9-415B-8730-77DFA430512D","electricity_supplier_id":"df8e71e5-ad51-4b0a-b938-ec199b3b987f","electricity_supplier_name":"易居臣信房地产经纪（上海）有限公司","electricity_supplier_code":"DS-180824013","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"SH007","project_id":"90e85ec7-6f0b-4fbb-97c3-a1303deb41e3","project_name":"上海阳光城MODO","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"上海阳光城MODO历史合同数据","contract_code":"HT-20180918-0030","pay_money":1537664.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:31
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0031","pay_info_id":"E66068EC-06AA-4123-A930-19A4C9D5308F","electricity_supplier_id":"471a9add-7773-4fd9-bf42-3d6caacb1b51","electricity_supplier_name":"上海房雀信息技术有限公司","electricity_supplier_code":"50","electricity_supplier_ad":"房雀电商","electricity_supplier_ad_id":"2b9a6ffb-f3b1-454e-b5d2-7f6a64cf045b","project_code":"SH025","project_id":"a02949fc-95a1-4a37-b885-36d109696d6d","project_name":"上海阳光城翡丽海岸","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"上海阳光城翡丽海岸历史合同数据","contract_code":"HT-20180918-0031","pay_money":1989000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0032","pay_info_id":"F7511838-7FF2-4AE7-A766-2A5444E1F326","electricity_supplier_id":"471a9add-7773-4fd9-bf42-3d6caacb1b51","electricity_supplier_name":"上海房雀信息技术有限公司","electricity_supplier_code":"50","electricity_supplier_ad":"房雀电商","electricity_supplier_ad_id":"2b9a6ffb-f3b1-454e-b5d2-7f6a64cf045b","project_code":"SH025","project_id":"a02949fc-95a1-4a37-b885-36d109696d6d","project_name":"上海阳光城翡丽海岸","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"上海阳光城翡丽海岸历史合同数据","contract_code":"HT-20180918-0032","pay_money":1961000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0033","pay_info_id":"CBCC3207-C130-471C-9F3B-44A6CDDF3666","electricity_supplier_id":"b45d33f3-5333-4ac8-9bdd-701cfbb8822e","electricity_supplier_name":"太原乐居广告有限公司","electricity_supplier_code":"DS-180824018","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"TY001","project_id":"ee3695f8-6abc-47da-8c11-11ea772ec215","project_name":"太原翡丽湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"太原翡丽湾历史合同数据","contract_code":"HT-20180918-0033","pay_money":350000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0034","pay_info_id":"4A4C2422-BCC0-4651-AD70-5881C90F98DF","electricity_supplier_id":"b45d33f3-5333-4ac8-9bdd-701cfbb8822e","electricity_supplier_name":"太原乐居广告有限公司","electricity_supplier_code":"DS-180824018","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"TY001","project_id":"ee3695f8-6abc-47da-8c11-11ea772ec215","project_name":"太原翡丽湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"太原翡丽湾历史合同数据","contract_code":"HT-20180918-0034","pay_money":428446.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0035","pay_info_id":"0084EDD6-B909-4EE8-8F42-259F9ADC66D7","electricity_supplier_id":"b45d33f3-5333-4ac8-9bdd-701cfbb8822e","electricity_supplier_name":"太原乐居广告有限公司","electricity_supplier_code":"DS-180824018","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"TY001","project_id":"ee3695f8-6abc-47da-8c11-11ea772ec215","project_name":"太原翡丽湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"太原翡丽湾历史合同数据","contract_code":"HT-20180918-0035","pay_money":257832.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0036","pay_info_id":"14C93E4B-8454-4805-8D09-D221DCC3D96A","electricity_supplier_id":"b45d33f3-5333-4ac8-9bdd-701cfbb8822e","electricity_supplier_name":"太原乐居广告有限公司","electricity_supplier_code":"DS-180824018","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"TY001","project_id":"ee3695f8-6abc-47da-8c11-11ea772ec215","project_name":"太原翡丽湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"太原翡丽湾历史合同数据","contract_code":"HT-20180918-0036","pay_money":70000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0037","pay_info_id":"E0E4B4BA-52AF-4042-ACEF-B1CDF2B24FC4","electricity_supplier_id":"c8dcecf6-87bb-4a0b-9fcc-e85cecab0e55","electricity_supplier_name":"厦门房网信息技术有限公司","electricity_supplier_code":"DS-180814002","electricity_supplier_ad":"房联网电商","electricity_supplier_ad_id":"7c09fb79-a8ee-485c-9fcf-0ee05f23f75f","project_code":"XM004","project_id":"3123f2e3-3e23-49e5-a438-3ea7561ae07f","project_name":"厦门阳光城翡丽海岸","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门阳光城翡丽海岸历史合同数据","contract_code":"HT-20180918-0037","pay_money":21380.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0038","pay_info_id":"42988D47-8AC2-4710-AB89-238F3D5875E3","electricity_supplier_id":"c8dcecf6-87bb-4a0b-9fcc-e85cecab0e55","electricity_supplier_name":"厦门房网信息技术有限公司","electricity_supplier_code":"DS-180814002","electricity_supplier_ad":"房联网电商","electricity_supplier_ad_id":"7c09fb79-a8ee-485c-9fcf-0ee05f23f75f","project_code":"XM004","project_id":"3123f2e3-3e23-49e5-a438-3ea7561ae07f","project_name":"厦门阳光城翡丽海岸","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门阳光城翡丽海岸历史合同数据","contract_code":"HT-20180918-0038","pay_money":1500.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0039","pay_info_id":"250EE982-5FC7-4E0F-B920-8507E403CE5C","electricity_supplier_id":"c8dcecf6-87bb-4a0b-9fcc-e85cecab0e55","electricity_supplier_name":"厦门房网信息技术有限公司","electricity_supplier_code":"DS-180814002","electricity_supplier_ad":"房联网电商","electricity_supplier_ad_id":"7c09fb79-a8ee-485c-9fcf-0ee05f23f75f","project_code":"XM004","project_id":"3123f2e3-3e23-49e5-a438-3ea7561ae07f","project_name":"厦门阳光城翡丽海岸","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门阳光城翡丽海岸历史合同数据","contract_code":"HT-20180918-0039","pay_money":271940.170000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0040","pay_info_id":"6F437301-BA6B-4EC0-BC59-5A7704CCB382","electricity_supplier_id":"c8dcecf6-87bb-4a0b-9fcc-e85cecab0e55","electricity_supplier_name":"厦门房网信息技术有限公司","electricity_supplier_code":"DS-180814002","electricity_supplier_ad":"房联网电商","electricity_supplier_ad_id":"7c09fb79-a8ee-485c-9fcf-0ee05f23f75f","project_code":"XM004","project_id":"3123f2e3-3e23-49e5-a438-3ea7561ae07f","project_name":"厦门阳光城翡丽海岸","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门阳光城翡丽海岸历史合同数据","contract_code":"HT-20180918-0040","pay_money":217276.530000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0041","pay_info_id":"D0A44E29-381A-432C-9472-D512D6EEBAFB","electricity_supplier_id":"c8dcecf6-87bb-4a0b-9fcc-e85cecab0e55","electricity_supplier_name":"厦门房网信息技术有限公司","electricity_supplier_code":"DS-180814002","electricity_supplier_ad":"房联网电商","electricity_supplier_ad_id":"7c09fb79-a8ee-485c-9fcf-0ee05f23f75f","project_code":"XM004","project_id":"3123f2e3-3e23-49e5-a438-3ea7561ae07f","project_name":"厦门阳光城翡丽海岸","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门阳光城翡丽海岸历史合同数据","contract_code":"HT-20180918-0041","pay_money":225403.120000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0042","pay_info_id":"0221AE93-DD00-417A-BFCE-0EA26E5D2039","electricity_supplier_id":"c8dcecf6-87bb-4a0b-9fcc-e85cecab0e55","electricity_supplier_name":"厦门房网信息技术有限公司","electricity_supplier_code":"DS-180814002","electricity_supplier_ad":"房联网电商","electricity_supplier_ad_id":"7c09fb79-a8ee-485c-9fcf-0ee05f23f75f","project_code":"XM004","project_id":"3123f2e3-3e23-49e5-a438-3ea7561ae07f","project_name":"厦门阳光城翡丽海岸","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门阳光城翡丽海岸历史合同数据","contract_code":"HT-20180918-0042","pay_money":100000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0043","pay_info_id":"38B5039D-C6B0-4B50-B87B-8759EFE4F32A","electricity_supplier_id":"c8dcecf6-87bb-4a0b-9fcc-e85cecab0e55","electricity_supplier_name":"厦门房网信息技术有限公司","electricity_supplier_code":"DS-180814002","electricity_supplier_ad":"房联网电商","electricity_supplier_ad_id":"7c09fb79-a8ee-485c-9fcf-0ee05f23f75f","project_code":"XM008","project_id":"1f2b673d-d539-47d5-8f95-9ec2c253998c","project_name":"厦门时代中心","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门时代中心历史合同数据","contract_code":"HT-20180918-0043","pay_money":30000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0044","pay_info_id":"EAF3E0E8-4F57-4E8D-A274-4F65F8150B50","electricity_supplier_id":"f44c2d0e-fd48-4948-abb5-77a63f984cfb","electricity_supplier_name":"厦门怡生乐居信息科技有限公司","electricity_supplier_code":"DS-180814003","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"XM008","project_id":"1f2b673d-d539-47d5-8f95-9ec2c253998c","project_name":"厦门时代中心","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门时代中心历史合同数据","contract_code":"HT-20180918-0044","pay_money":138243.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0045","pay_info_id":"46DF322B-E7AF-425B-80FF-7A0ADC02BEEE","electricity_supplier_id":"f44c2d0e-fd48-4948-abb5-77a63f984cfb","electricity_supplier_name":"厦门怡生乐居信息科技有限公司","electricity_supplier_code":"DS-180814003","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"XM008","project_id":"1f2b673d-d539-47d5-8f95-9ec2c253998c","project_name":"厦门时代中心","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门时代中心历史合同数据","contract_code":"HT-20180918-0045","pay_money":60000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0046","pay_info_id":"BB6CFBD6-CBCA-43C5-8F4D-CE4987B3BFEE","electricity_supplier_id":"f44c2d0e-fd48-4948-abb5-77a63f984cfb","electricity_supplier_name":"厦门怡生乐居信息科技有限公司","electricity_supplier_code":"DS-180814003","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"XM008","project_id":"1f2b673d-d539-47d5-8f95-9ec2c253998c","project_name":"厦门时代中心","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门时代中心历史合同数据","contract_code":"HT-20180918-0046","pay_money":44000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0047","pay_info_id":"DA51A95E-DA74-4E0C-8E0B-FD160FFA6B94","electricity_supplier_id":"f44c2d0e-fd48-4948-abb5-77a63f984cfb","electricity_supplier_name":"厦门怡生乐居信息科技有限公司","electricity_supplier_code":"DS-180814003","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"XM008","project_id":"1f2b673d-d539-47d5-8f95-9ec2c253998c","project_name":"厦门时代中心","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门时代中心历史合同数据","contract_code":"HT-20180918-0047","pay_money":28726.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0048","pay_info_id":"0681526A-893B-4316-B36E-72C46CAF06D5","electricity_supplier_id":"f44c2d0e-fd48-4948-abb5-77a63f984cfb","electricity_supplier_name":"厦门怡生乐居信息科技有限公司","electricity_supplier_code":"DS-180814003","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"XM007","project_id":"67c8607a-c66d-47f2-8466-68312b78e665","project_name":"厦门阳光城凡尔赛宫","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门阳光城凡尔赛宫历史合同数据","contract_code":"HT-20180918-0048","pay_money":3535.750000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:32
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0049","pay_info_id":"F67FF1AA-565B-4F28-80D6-FC022FD5F689","electricity_supplier_id":"f44c2d0e-fd48-4948-abb5-77a63f984cfb","electricity_supplier_name":"厦门怡生乐居信息科技有限公司","electricity_supplier_code":"DS-180814003","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"XM007","project_id":"67c8607a-c66d-47f2-8466-68312b78e665","project_name":"厦门阳光城凡尔赛宫","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门阳光城凡尔赛宫历史合同数据","contract_code":"HT-20180918-0049","pay_money":757777.770000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0050","pay_info_id":"C19BBF3D-BDA3-409C-A48C-920E14E613BB","electricity_supplier_id":"f44c2d0e-fd48-4948-abb5-77a63f984cfb","electricity_supplier_name":"厦门怡生乐居信息科技有限公司","electricity_supplier_code":"DS-180814003","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"XM007","project_id":"67c8607a-c66d-47f2-8466-68312b78e665","project_name":"厦门阳光城凡尔赛宫","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门阳光城凡尔赛宫历史合同数据","contract_code":"HT-20180918-0050","pay_money":32000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0051","pay_info_id":"DAF37CFA-F327-499E-8226-3917FAD29556","electricity_supplier_id":"cd81efc3-e1fb-4fe6-b2ff-e2fd2e046020","electricity_supplier_name":"盛世网联（厦门）科技有限公司","electricity_supplier_code":"DS-180814004","electricity_supplier_ad":"小鱼电商","electricity_supplier_ad_id":"31f7dca9-fbea-4bf4-8748-9bd07b8089c8","project_code":"XM007","project_id":"67c8607a-c66d-47f2-8466-68312b78e665","project_name":"厦门阳光城凡尔赛宫","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"厦门阳光城凡尔赛宫历史合同数据","contract_code":"HT-20180918-0051","pay_money":84858.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0052","pay_info_id":"8A0E89E4-8B4D-4530-B250-BC2DB3EB2AD9","electricity_supplier_id":"08c19628-26d0-433f-9bb0-30791fbd275d","electricity_supplier_name":"厦门九房网文化传播有限公司","electricity_supplier_code":"DS-180814005","electricity_supplier_ad":"九房网电商","electricity_supplier_ad_id":"ea7c9055-303c-4235-a89a-5e123620de12","project_code":"XM009","project_id":"f5fc89ac-a102-4b38-821d-63d0f4f2bf6e","project_name":"漳州港阳光城丽景湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"漳州港阳光城丽景湾历史合同数据","contract_code":"HT-20180918-0052","pay_money":34604.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0053","pay_info_id":"B7C1CDEC-15B1-4BA8-B7C0-FA01F1F46067","electricity_supplier_id":"08c19628-26d0-433f-9bb0-30791fbd275d","electricity_supplier_name":"厦门九房网文化传播有限公司","electricity_supplier_code":"DS-180814005","electricity_supplier_ad":"九房网电商","electricity_supplier_ad_id":"ea7c9055-303c-4235-a89a-5e123620de12","project_code":"XM009","project_id":"f5fc89ac-a102-4b38-821d-63d0f4f2bf6e","project_name":"漳州港阳光城丽景湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"漳州港阳光城丽景湾历史合同数据","contract_code":"HT-20180918-0053","pay_money":168888.720000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0054","pay_info_id":"7608FE5B-E861-4C71-9495-5C08F6DF97DF","electricity_supplier_id":"f44c2d0e-fd48-4948-abb5-77a63f984cfb","electricity_supplier_name":"厦门怡生乐居信息科技有限公司","electricity_supplier_code":"DS-180814003","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"XM001","project_id":"6b11fba1-1a72-4ae1-9e38-bfb58d3d468b","project_name":"晋江阳光城翡丽湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"晋江阳光城翡丽湾历史合同数据","contract_code":"HT-20180918-0054","pay_money":35000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0055","pay_info_id":"C83E5F19-7FF7-42F1-83B3-66BD92ECB67F","electricity_supplier_id":"f44c2d0e-fd48-4948-abb5-77a63f984cfb","electricity_supplier_name":"厦门怡生乐居信息科技有限公司","electricity_supplier_code":"DS-180814003","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"XM001","project_id":"6b11fba1-1a72-4ae1-9e38-bfb58d3d468b","project_name":"晋江阳光城翡丽湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"晋江阳光城翡丽湾历史合同数据","contract_code":"HT-20180918-0055","pay_money":11000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0056","pay_info_id":"A5CF1F39-DE84-4E1B-87D8-22F8FE2ABD34","electricity_supplier_id":"f44c2d0e-fd48-4948-abb5-77a63f984cfb","electricity_supplier_name":"厦门怡生乐居信息科技有限公司","electricity_supplier_code":"DS-180814003","electricity_supplier_ad":"新浪乐居","electricity_supplier_ad_id":"f8e10dd8-880b-4d13-a861-c08a93fc24cb","project_code":"XM001","project_id":"6b11fba1-1a72-4ae1-9e38-bfb58d3d468b","project_name":"晋江阳光城翡丽湾","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"晋江阳光城翡丽湾历史合同数据","contract_code":"HT-20180918-0056","pay_money":67777.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0057","pay_info_id":"D4AA6513-96D7-4D2E-BBDD-7B3214080043","electricity_supplier_id":"2e3530e6-7dbd-449e-9dbe-1caef456e24b","electricity_supplier_name":"福建省乐想家信息科技有限公司","electricity_supplier_code":"DS-180814007","electricity_supplier_ad":"乐想家电商","electricity_supplier_ad_id":"4a1b93af-bbaa-4b82-9322-ad1668513b66","project_code":"LY001","project_id":"97f65b9f-b642-4353-8fd4-aa9c9e91255e","project_name":"龙岩阳光城花漾江山","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"龙岩阳光城花漾江山历史合同数据","contract_code":"HT-20180918-0057","pay_money":92000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0058","pay_info_id":"E62FE611-733F-4B01-B8AC-2760FF6231EF","electricity_supplier_id":"2e3530e6-7dbd-449e-9dbe-1caef456e24b","electricity_supplier_name":"福建省乐想家信息科技有限公司","electricity_supplier_code":"DS-180814007","electricity_supplier_ad":"乐想家电商","electricity_supplier_ad_id":"4a1b93af-bbaa-4b82-9322-ad1668513b66","project_code":"LY001","project_id":"97f65b9f-b642-4353-8fd4-aa9c9e91255e","project_name":"龙岩阳光城花漾江山","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"龙岩阳光城花漾江山历史合同数据","contract_code":"HT-20180918-0058","pay_money":55000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0059","pay_info_id":"94B73E0A-AE47-45FC-93E8-5ED6B3413A4E","electricity_supplier_id":"2e3530e6-7dbd-449e-9dbe-1caef456e24b","electricity_supplier_name":"福建省乐想家信息科技有限公司","electricity_supplier_code":"DS-180814007","electricity_supplier_ad":"乐想家电商","electricity_supplier_ad_id":"4a1b93af-bbaa-4b82-9322-ad1668513b66","project_code":"LY001","project_id":"97f65b9f-b642-4353-8fd4-aa9c9e91255e","project_name":"龙岩阳光城花漾江山","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"龙岩阳光城花漾江山历史合同数据","contract_code":"HT-20180918-0059","pay_money":125000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0060","pay_info_id":"F65747B5-3C29-43BE-A12A-46A2A29C5E58","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0060","pay_money":44527.420000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0061","pay_info_id":"84F2EA42-65BF-4469-AB35-BCC29573AD70","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0061","pay_money":44571.940000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0062","pay_info_id":"6BCBE1BB-BCA0-4ABC-9DC1-EE2DB498707C","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0062","pay_money":805822.600000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0063","pay_info_id":"10C59DE6-2B9D-4649-831A-7E830FA34A29","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0063","pay_money":183882.500000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0064","pay_info_id":"0F2360E8-B888-4AB8-B331-1E93EB0F16B8","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0064","pay_money":120062.240000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0065","pay_info_id":"708899CF-EBC4-4BAB-926C-A010E208C54B","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0065","pay_money":52651.900000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0066","pay_info_id":"7E13A002-A58B-4E29-BA82-97845F4F10FE","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0066","pay_money":110000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:33
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0067","pay_info_id":"505802D2-ED27-4619-AA93-DBF5A8C1C864","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0067","pay_money":120000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:34
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0068","pay_info_id":"1AE69936-6444-42D0-A716-A379A605F562","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0068","pay_money":72000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:34
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0069","pay_info_id":"1176DB24-4AEC-4114-A6DD-BD9555609A10","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0069","pay_money":110000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:34
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0070","pay_info_id":"4BCCD79E-2A04-483A-BAB1-1A3D8975D7F0","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0070","pay_money":400000.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:34
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0071","pay_info_id":"AA5C81EB-F156-4CF0-8AFD-6EC7F8866579","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0071","pay_money":32406.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+
+记录时间：2018/9/18 16:24:34
+日志级别：  data 
+数据：{"pay_info_code":"History20180918A0072","pay_info_id":"A9653850-5D12-45C7-861F-F5F00133E5E4","electricity_supplier_id":"e4aa0c2c-51df-44d4-959f-bf01ee2113c8","electricity_supplier_name":"北京智享文化传媒有限公司","electricity_supplier_code":"1","electricity_supplier_ad":"今日头条电商","electricity_supplier_ad_id":"7e8fd9d1-b8b0-4bb1-9008-708bf24d54d7","project_code":"BJ005","project_id":"7b3c66db-1436-4094-ad9a-2ed372fbbd5e","project_name":"北京阳光城君山墅","pay_reason":"导入历史数据","pay_info_type":"EC","contract_name":"北京阳光城君山墅历史合同数据","contract_code":"HT-20180918-0072","pay_money":48765.000000,"pay_createtime":"2018-07-01 00:00:00","pay_completetime":"2018-07-31 00:00:00","url":"https://fssc.yango.com.cn/jiebao-plus/#/app/smart_expense/form/EC/306991952048422912/detail","login_name":"金涛","login_code":"金涛","approval_status":"AUDITED"}
+
+
+

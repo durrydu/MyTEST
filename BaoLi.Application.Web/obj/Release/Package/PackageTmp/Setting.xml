@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- 1 -->
+  <ConnectionString />
+  <!-- 2 -->
+  <!--活动目录连接设置-->
+  <ActiveDirectoryConfiguration  expirationTime="60" passwordWarnExpireDays="30" />
+  <!-- 3 -->
+  <!--当前站点的设置，包括：
+          systemCode：系统代码(代理中的唯一标识码)
+          key：加密密码(代理中配置)
+          expirationTime: 过期时间
+          useProxyUrl:true/false
+          proxyUrl:通常情况下，单点登录采用HttpModule/JavaServletFilter来实现，针对所有的请求，都实现用户的验证功能。
+              对于一般项目，我们要求被接入系统从单点登录提供的标准变量中获取用户名：
+              （.net）HttpContext.Current.User.Identity.Name（推荐）
+              （.net）HttpContext.Current.Item["YANGO_SSO_UserName"]
+              （java）request.getAttribute("loginid")
+              但一些项目从一些特殊的渠道获取用户名，如从Session["UserId"]获取用户名，那么在ProxyUrl所对应的页面中，就可以对该变量赋值，再实现重定向，可以进行跳转。
+              （另：可以通过重新包装单点登录dll来实现相同功能。）
+  -->
+  <CurrentSite systemCode="YGS1034" key="LMWB8U2ZQF2GTDHDGKKB" sessionIdName="ASP.NET_SessionId" dateTimeFormat="yyyy-MM-dd HH:mm:ss" useProxyUrl="false" proxyUrl="" IsForbidden="false" />
+  <!-- 4 -->
+  <!--Cookie的设置-->
+  <CookieDomains crossDomainRegex=".*(crossdomain.aspx)" P3P="CP=CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR">
+    <domain name=".yango.com.cn" regex=".*(.yango.com.cn)" myHost="sso-test.yango.com.cn" loginUrl="https://sso-test.yango.com.cn/LoginLight.aspx" crossdomainUrl="https://sso-test.yango.com.cn/Crossdomain.aspx" defaultSite="http://efundtest.yango.com.cn">
+    </domain>
+  </CookieDomains>
+  <!-- 5 -->
+  <!--
+      系统中的地址，包括：
+        loginUrl：登陆页面地址
+        errorUrl：错误页面地址
+        changePasswordUrl：修改密码地址
+  -->
+  <!--是否启用服务器验证-->
+  <UseServerLogin value="true" />
+  <!--日志模块-->
+  <!--
+      参数:
+        enable:是否使用输出日志功能  
+        type:日志输出的类型(FileLogger:输出文件  DBLogger:输出到数据库表)
+  -->
+  <Logging enable="false" type="FileLogger">
+    <FileLogger fileName="FileName" level="ALL" showDateTime="true" showLogName="true" dateTimeFormat="yyyy-MM-dd HH:mm:ss" />
+    <DBLogger level="Warn" dateTimeFormat="yyyy-MM-dd HH:mm:ss" connectionType="System.Data.SqlClient.SqlConnection, System.Data, Version=2.0.0.0, Culture=neutral,PublicKeyToken=b77a5c561934e089" connectionString="" commandText="INSERT INTO TA_ErrorInfo ([InfoID],[InfoType],[Date],[Level],[Logger],[UserID],[Message],[StackTrace])&#xD;&#xA;              VALUES (@id, @level, @datetime, @level, @logger, @UserId, @message, @exception)" parameters="@id,@level,@datetime,@logger,@UserId,@message,@exception" />
+  </Logging>
+  <!-- 6 -->
+  <!--定义接口配置,动态加载程序集(禁止修改该节)-->
+  <Assemblies>
+    <AssemblyDefinition InterfaceName="SecurityToken" AssemblyName="YANGO.SSO.Tokens" TypeName="YANGO.SSO.Tokens.UserNameSecurityToken" FileName="YANGO.SSO.Tokens.dll" />
+    <AssemblyDefinition InterfaceName="SecurityTokenHandler" AssemblyName="YANGO.SSO.Tokens" TypeName="YANGO.SSO.Tokens.UserNameSecurityTokenHandler" FileName="YANGO.SSO.Tokens.dll" />
+  </Assemblies>
+  <!-- 7 -->
+  <!--IHttpModule对哪些文件进行过滤-->
+  <AuthorizationManager>
+    <!--IHttpModule处理的文件扩展名-->
+    <IncludeFileExtension value=".*" />
+    <!--IHttpModule排除的路径及文件-->
+    <ExcludeFilePath>
+      <Files value=".*(GetUserName.aspx|Login.aspx|QRcode.aspx|wd_sso_getauthcontents|wd_sso_logout|updateIsForbidden|yango_sso_localmodel_login|
+             yango_sso_localmodel_exit|VerifyCodeAndRememberPwd|Login.html|.ico|.gif|.jpg|.png|.bmp|.css|.html|.axd|QRcode.aspx)" />
+      <Paths value=".*(Controls)" />
+    </ExcludeFilePath>
+  </AuthorizationManager>
+  <!-- 8 -->
+  <!--用户信息设置-->
+  <UserConfiguration>
+    <!-- 是否保存可逆的加密密码 -->
+    <IsSaveReversibleEncryptedPasswords value="false">
+    </IsSaveReversibleEncryptedPasswords>
+    <!-- 用户验证方式(活动目录还是数据库),值为 AD、DB、LDAP、ADorLDAP、LDAPtoAD -->
+    <UserSource value="AD">
+    </UserSource>
+  </UserConfiguration>
+  <!-- 9 -->
+  <!--LDAP地址-->
+  <LdapPath path="" />
+</SettingConfig>

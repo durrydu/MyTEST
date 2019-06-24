@@ -1,0 +1,27 @@
+﻿@model Movit.MvcCotrols.UploaderModel
+
+
+<div id="@Model.name" class="wu-example">
+    <!--用来存放文件信息-->
+    <ul id="thelist_@{@Model.name}" class="list-group">
+        @{
+            if (Model.attachments != null && Model.attachments.Count > 0)
+            {
+                foreach (var item in Model.attachments)
+                {
+                    <li id="WU_FILE_@{@item.AttachmentID}" class="list-group-item">
+                        <span class="fileName" datavalue="@{@item.AttachmentName}">@item.AttachmentName</span><span class="state" style=" margin-left: 10px;"></span>
+                        <span class="filepath" datavalue="1" style=" margin-left: 10px;display: none;">@item.Path</span>
+                        <span class="download" style="margin-left:20px;">
+                            <a href="../../PublicInfoManage/Upload/DownFile?filePath=@{@item.Path}&amp;fileName=@{@item.AttachmentName}">下载</a>
+                        </span>
+
+                    </li>
+
+                }
+            }
+
+        }
+    </ul>
+
+</div>

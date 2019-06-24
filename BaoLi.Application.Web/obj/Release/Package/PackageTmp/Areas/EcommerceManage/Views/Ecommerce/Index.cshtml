@@ -1,0 +1,41 @@
+﻿@{;
+ViewBag.Title = "电商页面";
+Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script src="~/Areas/EcommerceManage/Content/scripts/Ecommerce_Index.js"></script>
+<div class="titlePanel">
+    <div class="title-search">
+        <table class="searchTable">
+            <tr>
+                <th class="formTitle">电商简称:</th>
+                <td class="formValue">
+                    <div id="EcommerceGroupID" type="select" class="ui-select"></div>
+                </td>
+                <th class="formTitle">电商公司:</th>
+                <td class="formValue">
+                    <input id="EcommerceName" type="text" class="form-control" placeholder="请输入要查询关键字" />
+                </td>
+                <th class="formTitle"></th>
+                <td class="formValue">
+                    <a id="btn_Search" class="btn btn-primary"><i class="fa fa-search"></i> 查询</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="toolbar">
+        <div class="btn-group">
+            <a id="lr-replace" class="btn btn-default" onclick="reload()"><i class="fa fa-refresh"></i>刷新</a>
+            <a id="lr-add" class="btn btn-default" onclick="btn_add()"><i class="fa fa-plus"></i>新增</a>
+            <a id="lr-edit" class="btn btn-default" onclick="btn_edit()"><i class="fa fa-pencil-square-o"></i>编辑</a>
+            <a id="lr-detail" class="btn btn-default" onclick="btn_detail()"><i class="fa fa-list-alt"></i>详细</a>
+            <a id="lr-view" class="btn btn-default" onclick="btn_view()"><i class="fa fa-table"></i>资金明细</a>
+        </div>
+        <script>$('.toolbar').authorizeButton()</script>
+    </div>
+</div>
+<div class="gridOuter">
+    <div class="gridPanel">
+        <table id="gridTable"></table>
+        <div id="gridPager"></div>
+    </div>
+</div>

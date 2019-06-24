@@ -1,0 +1,217 @@
+﻿@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+@using Movit.MvcCotrols
+<link rel="stylesheet" type="text/css" href="~/Content/scripts/plugins/webuploader/webuploader.css">
+<script type="text/javascript" src="~/Content/scripts/plugins/webuploader/webuploader.js"></script>
+<!--jqgrid表格组件start-->
+<link href="~/Content/scripts/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+<script src="~/Content/scripts/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="~/Content/scripts/plugins/jqgrid/jqgrid.min.js"></script>
+
+<div class="step-pane" id="step-2">
+    <div id="baseinfo">
+        <div class="panel panel-default" style="margin-bottom: 10px;">
+            <div class="panel-body" style="width: 99%;">
+                <div class="detail-title">基本信息</div>
+                <div class="formTableOuter">
+                    <table class="formTable">
+                        <tr>
+                            <th>项目名称</th>
+                            <td id="ProjecName"></td>
+                            <th>项目属性</th>
+                            <td id="ProjectType"></td>
+                        </tr>
+                        <tr>
+                            <th>所属区域</th>
+                            <td id="CompanyName"></td>
+                            <th>合同名称</th>
+                            <td id="ContractName"></td>
+                        </tr>
+                        <tr>
+                            <th>合同性质</th>
+                            <td id="ContractNature"></td>
+                            <th>合同类型</th>
+                            <td id="ContractTypeName"></td>
+                        </tr>
+                        <tr>
+                            <th>是否标准合同</th>
+                            <td id="IsStandard"></td>
+                            <th>甲方单位</th>
+                            <td id="PartyA"></td>
+                        </tr>
+                        <tr>
+                            <th>乙方单位</th>
+                            <td id="PartyB"></td>
+                            <th>招标方式</th>
+                            <td id="BiddingMethod"></td>
+                        </tr>
+                        <tr>
+                            <th>是否用印</th>
+                            <td id="IsStamp"></td>
+                            <th>经办人</th>
+                            <td id="Agent"></td>
+                        </tr>
+                        <tr>
+                            <th>电商公司</th>
+                            <td id="EcommerceName"></td>
+                            <th>电商简称</th>
+                            <td id="EcommerceGroupName"></td>
+                        </tr>
+                        <tr>
+                            <th>电商性质</th>
+                            <td id="EcommerceTypeName"></td>
+                            <th>预估金额(元)</th>
+                            <td id="ForceContractAmount" ></td>
+                        </tr>
+                        <tr>
+                            <th>平台费率(%)</th>
+                            <td id="PlatformRate"></td>
+                            <th>合作开始时间</th>
+                            <td id="CooperateStartTime"></td>
+                        </tr>
+                        <tr>
+                            <th>合作截止时间</th>
+                            <td colspan="3" id="CooperateEndTime"></td>
+                        </tr>
+                        <tr>
+                            <th>备注</th>
+                            <td colspan="3" id="Remark"></td>
+                        </tr>
+                        @*<tr>
+                                <th>合同信息</th>
+                                <td colspan="3">
+                                    @Html.MovitUploader(name: "uploadFiles", objectType: "default", readOnly: true, allowedFileExtensions: "doc,docx", keyValue: (string)this.ViewBag.keyValue)
+
+                                </td>
+                            </tr>*@
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        @*<div class="panel-heading">
+                <h3 class="panel-title">优惠方案</h3>
+            </div>*@
+        <div class="panel-body" style="width: 99%;">
+            <div class="detail-title">优惠方案</div>
+            <div class="formTableOuter">
+                <div class="gridPanel">
+
+                    <table id="gridLeader"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+
+        <div class="panel-body" style="width: 99%;">
+            <div class="detail-title">合作合同</div>
+            <div class="formTableOuter">
+                <table class="form">
+                    <tr>
+                        <td>
+                            @Html.MovitUploader(name: "uploadFiles", objectType: "default", readOnly: true, allowedFileExtensions: "doc,docx", keyValue: (string)this.ViewBag.keyValue)
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="btnRow">
+        <a class="btn btn-default" onclick="Reload()">返回</a>
+    </div>
+</div>
+<script>
+    var keyValue = request('keyValue');
+    var $gridLeader = $("#gridLeader");
+    var formkey = request("formkey");
+    $(function () {
+        initControl();
+        initLeaderGrid();
+    });
+    //初始化控件
+    function initControl() {
+     
+        //获取表单
+        if (!!keyValue) {
+            $.SetForm({
+                url: "../../EcommerceContractManage/EcommerceProjectRelation/GetFormJson",
+                param: { keyValue: keyValue },
+                success: function (data) {
+                    data.CooperateStartTime = formatDate(data.CooperateStartTime, 'yyyy-MM-dd');
+                    data.CooperateEndTime = formatDate(data.CooperateEndTime, 'yyyy-MM-dd');
+                    data.IsStamp=data.IsStamp == 0 ? "否" : "是";
+                    data.IsStandard = data.IsStandard == 0 ? "否" : "是";
+                    if (data.ContractNature == 0)
+                    {
+                        data.ContractNature = "直接合同";
+                    }
+                    if (data.ContractNature == 1) {
+                        data.ContractNature = "三方合同";
+                    }
+                    if (data.ForceContractAmount == null)
+                    {
+                        data.ForceContractAmount = 0;
+                    }
+                    data.BiddingMethod = GetEnumDescription(data.BiddingMethod, top.enumData.BiddingMethodEnumArray);
+                    data.ProjectType = GetEnumDescription(data.ProjectType, top.enumData.ProjectTypeEnumArray);
+                    $(".step-pane").SetWebControls(data);
+                }
+            })
+        }
+    }
+ 
+    //优惠方案列表列表
+    function initLeaderGrid() {
+        var queryJson = {
+            EcommerceProjectRelationID: keyValue
+        }
+        $gridLeader.jqGrid({
+            unwritten: false,
+            url: "../../EcommerceContractManage/EcommerceDiscountProgram/GetListJson",
+            datatype: "json",
+            postData: { queryJson: JSON.stringify(queryJson) },
+            height: 'auto',
+            width: "100%",
+            autowidth: true,
+            colModel: [
+                { label: 'DiscountProgramID', name: 'DiscountProgramID', index: 'DiscountProgramID', width: 100, align: 'center', sortable: true, hidden: true },
+                { label: '业态', name: 'Format', index: 'Format', width: 200, align: 'center', sortable: false },
+
+                { label: '付款金额(元)', name: 'Amount', index: 'Amount', width: 200, align: 'right', sortable: false },
+                { label: '抵扣金额(元)', name: 'Discount', index: 'Discount', width: 200, align: 'right', sortable: false }
+
+            ],
+            viewrecords: true,
+            rownumbers: true,
+            shrinkToFit: true,
+            gridview: true,
+            onSelectRow: function () {
+                //selectedRowIndex = $('#' + this.id).getGridParam('selrow');
+            },
+            gridComplete: function () {
+                //$('#' + this.id).setSelection(selectedRowIndex, false);
+            }
+        });
+    }
+    function customselectEnvet(files) {
+        //alert("这是我自定义的方法");
+        return false;
+    }
+    function Reload()
+    {
+        if (!!formkey) {
+            location.href = "../../BaseManage/Base_ProjectInfo/Detail?keyValue=" + formkey;
+        }
+        else
+        {
+            location.href = "../../EcommerceContractManage/EcommerceProjectRelation/Index";
+        }
+    }
+</script>
+

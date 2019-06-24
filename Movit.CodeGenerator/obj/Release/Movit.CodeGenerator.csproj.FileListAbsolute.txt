@@ -1,0 +1,13 @@
+F:\Ecommerce\Movit.CodeGenerator\bin\Release\Movit.CodeGenerator.dll
+F:\Ecommerce\Movit.CodeGenerator\bin\Release\Movit.CodeGenerator.pdb
+F:\Ecommerce\Movit.CodeGenerator\bin\Release\Movit.Util.dll
+F:\Ecommerce\Movit.CodeGenerator\bin\Release\Movit.Util.Extension.dll
+F:\Ecommerce\Movit.CodeGenerator\bin\Release\Newtonsoft.Json.dll
+F:\Ecommerce\Movit.CodeGenerator\bin\Release\ICSharpCode.SharpZipLib.dll
+F:\Ecommerce\Movit.CodeGenerator\bin\Release\Ionic.Zip.dll
+F:\Ecommerce\Movit.CodeGenerator\bin\Release\Movit.Util.Extension.pdb
+F:\Ecommerce\Movit.CodeGenerator\bin\Release\Movit.Util.pdb
+F:\Ecommerce\Movit.CodeGenerator\bin\Release\Newtonsoft.Json.xml
+F:\Ecommerce\Movit.CodeGenerator\obj\Release\Movit.CodeGenerator.csprojResolveAssemblyReference.cache
+F:\Ecommerce\Movit.CodeGenerator\obj\Release\Movit.CodeGenerator.dll
+F:\Ecommerce\Movit.CodeGenerator\obj\Release\Movit.CodeGenerator.pdb

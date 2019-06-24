@@ -1,0 +1,657 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@using Movit.MvcCotrols
+<link rel="stylesheet" type="text/css" href="~/Content/scripts/plugins/webuploader/webuploader.css">
+<script type="text/javascript" src="~/Content/scripts/plugins/webuploader/webuploader.js"></script>
+<!--jqgrid表格组件start-->
+<link href="~/Content/scripts/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+<script src="~/Content/scripts/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="~/Content/scripts/plugins/jqgrid/jqgrid.min.js"></script>
+
+<div class="step-pane" id="step-2">
+    <div id="baseinfo">
+        <div class="panel panel-default" style="margin-bottom: 10px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">项目基础信息</h3>
+            </div>
+            <div class="panel-body" style="width: 99%;">
+                <table class="form">
+                    <tr>
+                        <td class="formTitle">项目名称<font face="宋体">*</font></td>
+                        <td class="formValue" group="Group">
+                            @*<input id="ProjecName" type="text" class="form-control" />*@
+                            <div id="ProjectID" isvalid="yes" checkexpession="NotNull" type="select" class="ui-select"></div>
+                        </td>
+                        <td class="formTitle">项目属性<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <div id="ProjectType" isvalid="yes" checkexpession="NotNull" type="select" class="ui-select"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="formTitle">所属区域<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <input id="CompanyName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" readonly="readonly" />
+                            <input id="CompanyCode" type="hidden" />
+                        </td>
+                        <td class="formTitle">合同名称<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <input id="ContractName" autocomplete="off" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="formTitle">合同性质<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <div id="ContractNature" class="ui-select" type="select" isvalid="yes" checkexpession="NotNull"></div>
+                        </td>
+                        <td class="formTitle">合同类型<font face="宋体">*</font></td>
+                        <td>
+                            <input id="ContractTypeName" type="text" class="form-control" readonly="readonly" value="主合同" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="formTitle">是否标准合同<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <div id="IsStandard" class="ui-select" type="select" isvalid="yes" checkexpession="NotNull">
+                                <ul>
+                                    <li data-value="0">否</li>
+                                    <li data-value="1">是</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="formTitle">甲方单位<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <input id="PartyA" type="text" autocomplete="off" class="form-control" isvalid="yes" checkexpession="NotNull" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="formTitle">乙方单位<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <input id="PartyB" type="text" autocomplete="off" class="form-control" isvalid="yes" checkexpession="NotNull" />
+                        </td>
+                        <td class="formTitle">招标方式<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <div id="BiddingMethod" class="ui-select" type="select" isvalid="yes" checkexpession="NotNull"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="formTitle">是否用印<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <div id="IsStamp" class="ui-select" type="select" isvalid="yes" checkexpession="NotNull">
+                                <ul>
+                                    <li data-value="0">否</li>
+                                    <li data-value="1">是</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="formTitle">经办人<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <input id="Agent" type="text" autocomplete="off" class="form-control" isvalid="yes" checkexpession="NotNull" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">选择电商</h3>
+            </div>
+            <div class="panel-body" style="width: 99%;">
+                <table class="form">
+                    <tr>
+                        <td class="formTitle">电商公司<font face="宋体">*</font></td>
+                        <td class="formValue" group="Group">
+                            @*<input id="EcommerceName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />*@
+                            <div id="EcommerceID" isvalid="yes" checkexpession="NotNull" type="select" class="ui-select"></div>
+                        </td>
+                        <td class="formTitle">电商简称<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <input id="EcommerceGroupName" autocomplete="off" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+                            <input id="EcommerceGroupID" type="hidden">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="formTitle">电商性质<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            @*<input id="EcommerceType" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />*@
+                            <div id="EcommerceType" isvalid="yes" checkexpession="NotNull" type="select" class="ui-select"></div>
+                        <td class="formTitle">预估金额(元)<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <input id="ForceContractAmount"  autocomplete="off" type="number" class="form-control" isvalid="yes" checkexpession="NotNull" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="formTitle">平台费率(%)<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <input id="PlatformRate" type="number" autocomplete="off" class="form-control" isvalid="yes" checkexpession="NotNull" />
+                        <td class="formTitle">合作开始时间<font face="宋体">*</font></td>
+                        <td class="formValue">
+                            <input id="CooperateStartTime" type="text" autocomplete="off" class="form-control input-wdatepicker" onfocus="WdatePicker()" isvalid="yes" checkexpession="NotNull" />
+                    </tr>
+                    <tr>
+
+                        <td class="formTitle">合作截止时间</td>
+                        <td class="formValue">
+                            <input id="CooperateEndTime" type="text" autocomplete="off" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="formTitle">备注</td>
+                        <td class="formValue" colspan="3">
+                            <textarea id="Remark"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">优惠方案</h3>
+        </div>
+        <div class="panel-body" style="width: 99%;">
+            <div class="gridPanel">
+                <div style="text-align: right;">
+                    <a id="lr-addLeader" class="btn btn-success btn-xs" onclick="addRow($gridLeader, leaderRowData)"><i class="fa fa-plus"></i>&nbsp;添加</a>
+                </div>
+                <table id="gridLeader"></table>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">合作合同<font face="宋体" color="red">*</font></h3>
+        </div>
+        <div class="panel-body" style="width: 99%;">
+            <table class="form">
+                <tr>
+                    <td>
+                        @Html.MovitUploader(name: "uploadFiles", objectType: "default", keyValue: (string)this.ViewBag.keyValue)
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="btnRow">
+        <a class="btn btn-default btn-primary" onclick="Submit();">提交</a><a class="btn btn-default btn-info" onclick="AcceptClick('Group');">保存</a><a class="btn btn-default" onclick="    javascript: history.go(-1);">返回</a>
+    </div>
+</div>
+
+<script>
+    var keyValue = request('keyValue');
+    var $gridLeader = $("#gridLeader");
+    $(function () {
+        initControl();
+        initLeaderGrid();
+    });
+    //初始化控件
+    function initControl() {
+        $.GetAjax({
+            url: "../../BaseManage/User/GetCurrentJson",
+            datatype: "json",
+            success: function (data) {
+                if (data) {
+                    $("#Agent").val(data);
+                }
+            }
+        })
+        //是否标准合同
+        $("#IsStandard").ComboBox({
+            description: "==请选择==",
+        });
+        $("#IsStandard").ComboBoxSetValue(1);
+        //是否用印
+        $("#IsStamp").ComboBox({
+            description: "==请选择==",
+        });
+        $("#IsStamp").ComboBoxSetValue(1);
+        //电商性质下拉
+        $("#EcommerceType").ComboBox({
+            url: "../../EcommerceManage/Ecommerce/GetEcommerceTypeEnum",
+            id: "Value",
+            text: "Description",
+            height: "200px",
+            description: "=请选择=",
+        })
+        //项目属性
+        $("#ProjectType").ComboBox({
+            url: "../../EcommerceContractManage/EcommerceProjectRelation/GetProjectTypeEnum",
+            id: "Value",
+            text: "Description",
+            height: "200px",
+            description: "=请选择=",
+        })
+        //合同性质
+        $("#ContractNature").ComboBox({
+            url: "../../EcommerceContractManage/EcommerceProjectRelation/GetContractTypeEnum",
+            id: "Value",
+            text: "Description",
+            height: "200px",
+            description: "=请选择=",
+        })
+        // 招标方式
+        $("#BiddingMethod").ComboBox({
+            url: "../../EcommerceContractManage/EcommerceProjectRelation/GetBiddingMethodeEnum",
+            id: "Value",
+            text: "Description",
+            height: "200px",
+            description: "=请选择=",
+        })
+        //加载电商信息
+        $("#EcommerceID").ComboBox({
+            url: "../../EcommerceManage/Ecommerce/GetListJson",
+            id: "EcommerceID",
+            text: "EcommerceName",
+            description: "==请选择==",
+            height: "200px",
+            allowSearch: true,
+        }).bind("change", function () {
+            var value = $(this).attr('data-value');
+            $("#PartyB").val($(this).attr('data-text'));
+            //获取电商的相关信息
+            $.GetAjax({
+                url: "../../EcommerceManage/Ecommerce/GetFormJson",
+                datatype: "json",
+                param: { keyvalue: value },
+                success: function (data) {
+                    if (data) {
+                        $("#EcommerceGroupID").val(data.EcommerceGroupID);
+                        $("#EcommerceGroupName").val(data.EcommerceGroupName);
+                        $("#EcommerceType").ComboBoxSetValue(data.EcommerceType);
+                        $("#PlatformRate").val(data.PlatformRate);
+                        $("#CooperateStartTime").val(formatDate(data.CooperateStartTime, 'yyyy-MM-dd'));
+                        $("#CooperateEndTime").val(formatDate(data.CooperateEndTime, 'yyyy-MM-dd'));
+                    }
+                }
+            });
+        });
+        //加载项目信息
+        $("#ProjectID").ComboBox({
+            url: "../../BaseManage/Base_ProjectInfo/GetProjectListByRole",
+            description: "==请选择==",
+            id: "ProjectID",
+            text: "ProjecName",
+            height: "180px",
+            allowSearch: true,
+        }).bind("change", function () {
+            var value = $(this).attr("data-value");
+            $.GetAjax({
+                url: "../../BaseManage/Base_ProjectInfo/GetAreaName",
+                dataType: "json",
+                param: { keyValue: value },
+                success: function (data) {
+                    if (data) {
+                        $("#CompanyName").val(data.CompanyName);
+                        $("#CompanyCode").val(data.CompanyCode);
+                    }
+                }
+            });
+        });
+
+        //获取表单
+        if (!!keyValue) {
+            $.SetForm({
+                url: "../../EcommerceContractManage/EcommerceProjectRelation/GetFormJson",
+                param: { keyValue: keyValue },
+                success: function (data) {
+                    data.CooperateStartTime = formatDate(data.CooperateStartTime, 'yyyy-MM-dd');
+                    data.CooperateEndTime = formatDate(data.CooperateEndTime, 'yyyy-MM-dd')
+                    //data.ForceContractAmount = money_format(data.ForceContractAmount, "Y->M", 6)
+                    $(".step-pane").SetWebControls(data, false);
+                    //$("#EcommerceID").ComboBoxSetValue(data.EcommerceID);
+                    $("#PlatformRate").val(data.PlatformRate);
+                    //$("#ForceContractAmount").val(data.ForceContractAmount);
+                }
+            })
+        }
+    }
+    //提交表单
+    function Submit() {
+        if (!$('#baseinfo').Validform()) {
+            return false;
+        }
+        var projectid = $("#ProjectID").attr("data-value");
+        var ecommerceid = $("#EcommerceID").attr("data-value");
+        var msg = "";
+        $.GetAjax(
+            {
+                loading: "正在加载查询条件...",
+                url: "/EcommerceContractManage/EcommerceProjectRelation/GetExistedContract?projectid=" + projectid + "&ecommerceid=" + ecommerceid+"&keyValue="+keyValue,
+                success: function (data) {
+                    if(data==false)
+                    {
+                        msg = "注：您确定要提交表单吗？";
+                    }
+                    else
+                    {
+                        msg = "注：已经存在相同表单，是否提交表单？"
+                    }
+        dialogConfirm(msg, function (r) {
+            if (r) {
+
+                //校验合同是否上传
+                if (IsEmptyuploadFiles()) {
+                    dialogMsg('请上传合同附件！', 0);
+                    return;
+                }
+                //校验优惠信息是否保存
+                if (isExistUnSavedRow($gridLeader)) {
+                    dialogAlert("优惠方案列表存在未保存的数据!", 5);
+                    return false;
+                }
+                var PlatformRate = parseFloat($("#PlatformRate").val());
+                if (PlatformRate < 0 || PlatformRate > 100) {
+                    dialogAlert("平台费率必须为0-100的数字！", 5);
+                    return false;
+                }
+                var CooperateStartTime = new Date($("#CooperateStartTime").val());
+                var CooperateEndTime = new Date($("#CooperateEndTime").val());
+                if (CooperateEndTime <= CooperateStartTime) {
+                    dialogAlert("合作截止时间必须大于开始时间！", 5);
+                    return false;
+                }
+                var baseinfo = $("#baseinfo").GetWebControls(keyValue);
+                //console.log(JSON.stringify(baseinfo));
+                //return;
+                baseinfo["ProjectID"] = $("#ProjectID").attr("data-value");
+                baseinfo["ProjecName"] = $("#ProjectID").attr("data-text");
+                baseinfo["EcommerceID"] = $("#EcommerceID").attr("data-value");
+                baseinfo["EcommerceName"] = $("#EcommerceID").attr("data-text");
+                baseinfo["EcommerceType"] = $("#EcommerceType").attr("data-value");
+                baseinfo["EcommerceTypeName"] = $("#EcommerceType").attr("data-text");
+                baseinfo["CompanyId"] = $("#CompanyCode").val();
+                baseinfo["EcommerceGroupID"] = $("#EcommerceGroupID").val();
+                var postData = {
+                    entity: baseinfo,//基本信息
+                    discountList: getGridAllData($gridLeader),//优惠列表列表
+                    uploadFiles: files_uploadFiles
+                };
+                $.SaveForm({
+                    url: "../../EcommerceContractManage/EcommerceProjectRelation/SubmitForm?keyValue=" + keyValue,
+                    param: postData,
+                    loading: "正在保存数据...",
+                    success: function (data) {
+                        if (data.type == "3") {
+                            if (!!data.message) {
+                                dialogalert(data.message, -1);
+                            }
+                            return false;
+                        }
+                        var url = data.resultdata[0].url;
+
+                        sysf_openFullScreen(url);
+                        $.currentIframe().$("#gridTable").trigger("reloadGrid");
+                        location.href = "../../EcommerceContractManage/EcommerceProjectRelation/Index";
+                    }
+                })
+            }
+        });
+                }
+            });
+    }
+    //保存表单;
+    function AcceptClick(group) {
+        if (!$('[group="' + group + '"]').Validform()) {
+            return false;
+        }
+        var projectid = $("#ProjectID").attr("data-value");
+        var ecommerceid = $("#EcommerceID").attr("data-value");
+        var msg = "";
+        $.GetAjax(
+            {
+                loading: "正在加载查询条件...",
+                url: "/EcommerceContractManage/EcommerceProjectRelation/GetExistedContract?projectid=" + projectid + "&ecommerceid=" + ecommerceid + "&keyValue=" + keyValue,
+                success: function (data) {
+                    if(data==false)
+                    {
+                         msg = "注：您确定要保存表单吗？";
+                    }
+                    else
+                    {
+                        msg = "注：已经存在相同表单，是否保存表单？"
+                    }
+                    dialogConfirm(msg, function (r) {
+                        if (r) {
+
+                            ////校验合同是否上传
+                            if (IsEmptyuploadFiles()) {
+                                dialogMsg('请上传合同附件！', 0);
+                                return;
+                            }
+                            //校验优惠信息是否保存
+                            if (isExistUnSavedRow($gridLeader)) {
+                                dialogAlert("优惠方案列表存在未保存的数据!", 5);
+                                return false;
+                            }
+                            //var PlatformRate = parseFloat($("#PlatformRate").val());
+                            //if (PlatformRate < 0 || PlatformRate > 100) {
+                            //    dialogAlert("平台费率必须为0-100的数字！", 5);
+                            //    return false;
+                            //}
+                            //var CooperateStartTime = new Date($("#CooperateStartTime").val());
+                            //var CooperateEndTime = new Date($("#CooperateEndTime").val());
+                            //if (CooperateEndTime <= CooperateStartTime) {
+                            //    dialogAlert("合作截止时间必须大于开始时间！", 5);
+                            //    return false;
+                            //}
+                            var baseinfo = $("#baseinfo").GetWebControls(keyValue);
+                            baseinfo["ProjectID"] = $("#ProjectID").attr("data-value");
+                            baseinfo["ProjecName"] = $("#ProjectID").attr("data-text");
+                            baseinfo["EcommerceID"] = $("#EcommerceID").attr("data-value");
+                            baseinfo["EcommerceName"] = $("#EcommerceID").attr("data-text");
+                            baseinfo["EcommerceType"] = $("#EcommerceType").attr("data-value");
+                            baseinfo["EcommerceTypeName"] = $("#EcommerceType").attr("data-text");
+                            baseinfo["CompanyId"] = $("#CompanyCode").val();
+                            baseinfo["EcommerceGroupID"] = $("#EcommerceGroupID").val();
+                            var postData = {
+                                entity: baseinfo,//基本信息
+                                discountList: getGridAllData($gridLeader),//优惠列表列表
+                                uploadFiles: files_uploadFiles
+                            };
+
+                            $.SaveForm({
+                                url: "../../EcommerceContractManage/EcommerceProjectRelation/SaveForm?keyValue=" + keyValue,
+                                param: postData,
+                                loading: "正在保存数据...",
+                                success: function () {
+                                    $.currentIframe().$("#gridTable").trigger("reloadGrid");
+                                    location.href = "../../EcommerceContractManage/EcommerceProjectRelation/Index";
+                                }
+                            })
+                        }
+                    });
+                }
+            });
+    
+    }
+    //优惠方案列表列表
+    function initLeaderGrid() {
+        var queryJson = {
+            EcommerceProjectRelationID: keyValue
+        }
+        $gridLeader.jqGrid({
+            unwritten: false,
+            url: "../../EcommerceContractManage/EcommerceDiscountProgram/GetListJson",
+            datatype: "json",
+            postData: { queryJson: JSON.stringify(queryJson) },
+            height: 'auto',
+            width: "100%",
+            autowidth: true,
+            colModel: [
+                { label: 'DiscountProgramID', name: 'DiscountProgramID', index: 'DiscountProgramID', width: 100, align: 'center', sortable: false, hidden: true },
+                { label: '业态', name: 'Format', index: 'Format', width: 200, align: 'center', sortable: false },
+
+                {
+                    label: '付款金额(元)', name: 'Amount', index: 'Amount', width: 200, align: 'center', sortable: false,
+                }
+                ,
+                { label: '抵扣金额(元)', name: 'Discount', index: 'Discount', width: 200, align: 'center', sortable: false },
+                {
+                    label: '操作',
+                    name: 'DiscountProgramID',
+                    align: 'center',
+                    width: 260,
+                    sortable: false,
+                    formatter: function (cellvalue, options, row) {
+                        return showButtons(row, options.rowId);
+                    }
+                }
+            ],
+            viewrecords: true,
+            rownumbers: true,
+            shrinkToFit: true,
+            gridview: true,
+            onSelectRow: function () {
+                //selectedRowIndex = $('#' + this.id).getGridParam('selrow');
+            },
+            gridComplete: function () {
+                //$('#' + this.id).setSelection(selectedRowIndex, false);
+            }
+        });
+    }
+    //根据状态显示按钮
+    var showButtons = function (rowData, rowid) {
+        var btnSave = "";
+        var btnModify = "";
+        var btnDelete = "";
+        if (rowData.DiscountProgramID != null
+            && rowData.DiscountProgramID != undefined
+            && rowData.DiscountProgramID.length > 0
+            ) {
+            //编辑
+            btnModify = '<a  id="btnModify_' + rowid + '" class="btn btn-warning btn-xs" onclick="modifyRow(' + rowid + ',this,$gridLeader,modifyLeaderRowData)" style="color:white" ><i class="fa fa-edit"></i>&nbsp;编辑</a>&nbsp;';
+            var btnSave = '<a id="btnSave_' + rowid + '" class="btn btn-success btn-xs" onclick="saveRow(' + rowid + ',this,$gridLeader,saveLeaderRowData)" style="color:white; display:none"><i class="fa fa-save"></i>保存</a>';
+        }
+        else {
+            //保存
+            var btnSave = '<a id="btnSave_' + rowid + '" class="btn btn-success btn-xs" onclick="saveRow(' + rowid + ',this,$gridLeader,saveLeaderRowData)" style="color:white;"><i class="fa fa-save"></i>保存</a>';
+            btnModify = '<a  id="btnModify_' + rowid + '" class="btn btn-warning btn-xs" onclick="modifyRow(' + rowid + ',this,$gridLeader,modifyLeaderRowData)" style="color:white;display:none" ><i class="fa fa-edit"></i>&nbsp;编辑</a>&nbsp;';
+        }
+        //删除
+        btnDelete = '<a  id="btnDel_' + rowid + '" class="btn btn-danger btn-xs" onclick="delRow(' + rowid + ',$gridLeader)" style="color:white"><i class="fa fa-trash-o"></i>&nbsp;删除</a>&nbsp;';
+        return btnSave + btnModify + btnDelete;
+    }
+    //==新增行===================//
+    function addRow($grid, rowData) {
+        if (isExistUnSavedRow($grid)) {
+            dialogAlert("请先保存上一条数据再添加!", 5);
+            return false;
+        }
+        var ids = $grid.jqGrid('getDataIDs');
+        if (ids.length === 0) {
+            ids[0] = 0;
+        }
+        //获得当前最大行号（数据编号）
+        var rowid = Math.max.apply(Math, ids);
+        //获得新添加行的行号（数据编号）
+        var newrowid = rowid + 1;
+        $grid.jqGrid('addRowData', newrowid, rowData(newrowid), "last");
+        ////绑定下拉框
+        //if ($grid == $gridLeader) {
+        //    bindLeaderSelects(newrowid);
+        //    bindLeaderBusinessCategorySelects(newrowid, categoryData);
+        //} else {
+        //    bindBusinessCategorySelects(newrowid);
+        //}
+        //设置按钮
+        //$grid.find("#btnSave_" + newrowid).show();
+        //$grid.find("#btnModify_" + newrowid).hide();
+    }
+
+    //==编辑行===================//
+    function modifyRow(rowid, ele, $grid, modifyRowData) {
+        if (isExistUnSavedRow($grid)) {
+            dialogAlert("存在正在编辑的数据!", 5);
+            return false;
+        }
+        modifyRowData(rowid);
+        //设置按钮
+        $(ele).hide();
+        $("#btnSave_" + rowid).removeAttr("display", "none");
+        $(ele).prev().show();
+    }
+    //==编辑行==>负责人数据行
+    var modifyLeaderRowData = function (rowid) {
+        var rowData = $gridLeader.jqGrid("getRowData", rowid);
+        //重绘单元格
+        var Format = '<input type="text" id="Format_' + rowid + '" class="form-control grid-input" autocomplete="off" isvalid="no" checkexpession="NotNull" value="' + rowData.Format + '" />';
+        var Amount = '<input type="number" id="Amount_' + rowid + '" class="form-control grid-input"  autocomplete="off"  isvalid="yes"  value="' + rowData.Amount + '" />';
+        var Discount = '<input type="number" id="Discount_' + rowid + '" class="form-control grid-input" autocomplete="off" isvalid="yes"  value="' + rowData.Discount + '" />';
+        $gridLeader.jqGrid("setCell", rowid, "Format", Format);
+        $gridLeader.jqGrid("setCell", rowid, "Amount", Amount);
+        $gridLeader.jqGrid("setCell", rowid, "Discount", Discount);
+    }
+    //==新增行==>负责人行数据对象
+    var leaderRowData = function (rowid) {
+        var rowData = {
+            DiscountProgramID: "",
+            Format: '<input id="Format_' + rowid + '" type="text" class="form-control grid-input" autocomplete="off" isvalid="yes" checkexpession="NotNull" />',
+            Amount: '<input id="Amount_' + rowid + '" type="number" class="form-control grid-input" autocomplete="off" isvalid="yes" checkexpession="NotNull" />',
+            Discount: '<input id="Discount_' + rowid + '" type="number" class="form-control grid-input" autocomplete="off" isvalid="yes" checkexpession="NotNull"/>'
+        };
+        return rowData;
+    }
+    //==检查是否存在未保存的行======//
+    function isExistUnSavedRow($grid) {
+        var datastring = JSON.stringify(getGridAllData($grid));
+        return datastring.indexOf("<") > 0;
+    }
+    //==获取表格所有数据===========//
+    function getGridAllData($grid) {
+        //获取grid里所有数据
+        var gridData = $grid.jqGrid('getRowData');
+        $.each(gridData, function (index, item) {
+            //删除不用的属性
+            delete item.DiscountProgramID;
+        });
+        return gridData;
+    }
+
+    //==保存行==================//
+    function saveRow(rowid, ele, $grid, saveRowData) {
+        if (!$grid.find("#" + rowid).Validform()) {
+            return false;
+        }
+        saveRowData(rowid);
+        //设置按钮
+        $(ele).hide();
+        $(ele).next().show();
+        //销毁下拉框
+    }
+    //==保存行==>负责人数据行
+    var saveLeaderRowData = function (rowid) {
+        var Format = $("#Format_" + rowid).val();
+        var Amount = $("#Amount_" + rowid).val();
+        var Discount = $("#Discount_" + rowid).val();
+        //var status = $("#status_" + rowid).attr("data-value");
+        //var statusBusiness = $("#statusBusiness_" + rowid).attr("data-value");
+        //保存单元格的值
+        //if (name) {
+        //    $gridLeader.jqGrid("setCell", rowid, "Name", name);
+        //}
+        //if (businessCategoryName) {
+        //    $gridLeader.jqGrid("setCell", rowid, "BusinessCategoryName", businessCategoryName);
+        //}
+        $gridLeader.jqGrid("setCell", rowid, "Format", Format ? Format : null);
+        $gridLeader.jqGrid("setCell", rowid, "Amount", Amount ? Amount : null);
+        $gridLeader.jqGrid("setCell", rowid, "Discount", Discount ? Discount : null);
+        //销毁下拉框
+    }
+
+    //==删除行==================//
+    function delRow(rowid, $grid) {
+        dialogConfirm("确认删除此行？", function (r) {
+            if (r) {
+                $grid.jqGrid('delRowData', rowid);
+
+                //if ($grid == $gridBusinessCategory && isExistUnSavedRow($gridLeader)) {
+                //    var leaderRowid = getEditingRowId($gridLeader);
+                //    bindLeaderBusinessCategorySelects(leaderRowid);
+                //}
+                dialogMsg("删除成功。", 1);
+            }
+        });
+    }
+</script>

@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "机构管理";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+    var keyValue = request('keyValue');
+    var parentId = request('parentId');
+    $(function () {
+        initControl();
+        $(".btn").click(function () {
+            history.go(-1);
+        });
+    })
+    //初始化控件
+    function initControl() {
+        //部门机构
+        $("#DepartmentId").ComboBoxTree({
+            url: "../../Demo/Demo/GetDepartmentTreeJson",
+            description: "==请选择==",
+            height: "260px",
+            allowSearch: true
+        });
+        //角色
+        $("#RoleId").ComboBox({
+            url: "../../Demo/Demo/GetRoleJson",
+            id: "RoleId",
+            text: "RoleName",
+            description: "==请选择==",
+            height: "200px"
+        });
+        //部门机构
+        $("#DepartmentId2").ComboBoxTree({
+            url: "../../Demo/Demo/GetDepartmentTreeJson",
+            description: "==请选择==",
+            height: "260px",
+            allowSearch: true
+        });
+        //角色
+        $("#RoleId2").ComboBox({
+            url: "../../Demo/Demo/GetRoleJson",
+            id: "RoleId",
+            text: "RoleName",
+            description: "==请选择==",
+            height: "200px"
+        });
+        //部门机构
+        $("#DepartmentId3").ComboBoxTree({
+            url: "../../Demo/Demo/GetDepartmentTreeJson",
+            description: "==请选择==",
+            height: "260px",
+            allowSearch: true
+        });
+        //角色
+        $("#RoleId3").ComboBox({
+            url: "../../Demo/Demo/GetRoleJson",
+            id: "RoleId",
+            text: "RoleName",
+            description: "==请选择==",
+            height: "200px"
+        });
+    }
+    //保存表单
+    function AcceptClick() {
+        if (!$('#form1').Validform()) {
+            return false;
+        }
+        var postData = $("#form1").GetWebControls(keyValue);
+        postData["Manager"] = $("#ManagerId").attr('data-text');
+        if (postData["ParentId"] == "") {
+            postData["ParentId"] = 0;
+        }
+        $.SaveForm({
+            url: "../../BaseManage/Organize/SaveForm?keyValue=" + keyValue,
+            param: postData,  
+            loading: "正在保存数据...",
+            success: function () {
+                $.currentIframe().$("#gridTable").resetSelection();
+                $.currentIframe().$("#gridTable").trigger("reloadGrid");
+            }
+        })
+    }
+</script>
+<div class="step-pane">
+    <div class="panel-body">
+        <div class="detail-title">基本信息</div>
+        <div class="formTableOuter">
+            <table class="formTable">
+                <tr>
+                    <th>所属组织：</th>
+                    <td colspan="3">阳光城集团股份有限公司／集团总部／集团信息部</td>
+                </tr>
+                <tr>
+                    <th>发起人：</th>
+                    <td>张帆</td>
+                    <th>发起时间：</th>
+                    <td>2017-11-12</td>
+                </tr>
+                <tr>
+                    <th>申请主题：</th>
+                    <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <th>请假开始时间：</th>
+                    <td>2017-11-16</td>
+                    <th>请假结束：</th>
+                    <td>2017-11-19</td>
+                </tr>
+                <tr>
+                    <th>请假天数：</th>
+                    <td colspan="3">3天</td>
+                </tr>
+                <tr>
+                    <th>请假类型：</th>
+                    <td colspan="3">考试请假</td>
+                </tr>
+                <tr>
+                    <th colspan="4">年假信息参考</th>
+                </tr>
+                <tr>
+                    <th>可用年假天数：</th>
+                    <td colspan="3">10天</td>
+                </tr>
+                <tr>
+                    <th>上传附件：</th>
+                    <td colspan="3"><a href="#">点击下载</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="btnRow">
+            <a class="btn btn-default">返回</a>
+        </div>
+    </div>
+</div>
+

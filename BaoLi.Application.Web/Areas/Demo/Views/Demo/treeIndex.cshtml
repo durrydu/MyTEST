@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "部门管理";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script>
+    $(function () {
+        InitialPage();
+        GetGrid();
+    });
+    //初始化页面
+    function InitialPage() {
+        //resize重设(表格、树形)宽高
+        $(window).resize(function (e) {
+            window.setTimeout(function () {
+                $('#gridTable').setGridWidth(($('.gridPanel').width()));
+                $("#gridTable").setGridHeight($(window).height() - 108.5);
+            }, 200);
+            e.stopPropagation();
+        });
+    }
+    //加载表格
+    function GetGrid() {
+        var selectedRowIndex = 0;
+        var $gridTable = $('#gridTable');
+        $gridTable.jqGrid({
+            url: "../../Demo/Demo/GetTreeListJson",
+            datatype: "json",
+            height: $(window).height() - 108.5,
+            autowidth: true,
+            colModel: [
+                { label: '主键', name: 'id', hidden: true },
+                { label: "所属区域", name: "ssqy", width: 200, align: "left", sortable: false },
+                { label: "项目名称", name: "xmmc", width: 100, align: "left", sortable: false },
+                { label: "电商(简称)", name: "dsjc", width: 100, align: "left", sortable: false },
+                { label: "我司可支配金额", name: "wskzpje", width: 100, align: "left", sortable: false },
+
+            ],
+            treeGrid: true,
+            treeGridModel: "nested",
+            ExpandColumn: "dsjc",
+            rowNum: "all",
+            rownumbers: true,
+            onSelectRow: function (rowid) {
+                selectedRowIndex = $("#" + this.id).getGridParam('selrow');
+            },
+            gridComplete: function () {
+                $("#" + this.id).setSelection(selectedRowIndex, false);
+            }
+        });
+
+
+    }
+
+</script>
+
+<div class="gridPanel">
+    <table id="gridTable"></table>
+</div>

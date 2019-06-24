@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "用户管理";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<script src="~/Content/scripts/plugins/lodash.min.js"></script>
+<script>
+    var keyValue = request('keyValue');
+    $(function () {
+        InitialPage();
+        GetGrid();
+    });
+    //初始化页面
+    function InitialPage() {
+        //resize重设(表格、树形)宽高
+        $(window).resize(function (e) {
+            window.setTimeout(function () {
+                $('#gridTable').setGridWidth(($('.gridPanel').width()));
+                $('#gridTable').setGridHeight($(window).height() - 220.5);
+            }, 200);
+            e.stopPropagation();
+        });
+    }
+    var deleteUserIds = [];
+    //加载表格
+    function GetGrid() {
+        var selectedRowIndex = 0;
+        var $gridTable = $('#gridTable');
+        var queryJson = {
+            ObjectId: keyValue,
+        }
+        $gridTable.jqGrid({
+            url: "../../AuthorizeManage/PermissionRole/GetPageList?ObjectId=" + keyValue,
+            postData: { queryJson: JSON.stringify(queryJson) },
+            datatype: "json",
+            height: $(window).height() - 220.5,
+            autowidth: 300,
+            colModel: [
+                { label: '主键', name: 'UserId', hidden: true, key: true },
+                { label: '账户', name: 'Account', index: 'Account', width: 50, align: 'left' },
+                { label: '姓名', name: 'NickName', index: 'NickName', width: 50, align: 'left' },
+                { label: '部门', name: 'DepartmentName', index: 'DepartmentName', width: 150, align: 'center' },
+                { label: '手机', name: 'Mobile', index: 'Mobile', width: 150, align: 'center' },
+                 { label: '授权时间', name: 'CreateDate', index: 'CreateDate', width: 150, align: 'center' }
+            ],
+            viewrecords: true,
+            rowNum: 30,
+            rowList: [30, 50, 100],
+            pager: "#gridPager",
+            sortname: 'RealName asc',
+            rownumbers: true,
+            shrinkToFit: false,
+            gridview: true,
+            multiselect: true,
+            //jqGrid中触发选中功能，将数据缓存在数组中
+            onSelectAll: function (aRowids, status) {
+                var _this = this;
+                if (status) {
+                    deleteUserIds = _.union(deleteUserIds, aRowids);
+                } else {
+                    deleteUserIds = _.difference(deleteUserIds, aRowids);
+                }
+            },
+            beforeSelectRow: function (rowid, e) {
+                var isPush = true;
+                if (e.type == 'click') {
+                    i = $.jgrid.getCellIndex($(e.target).closest('td')[0]),
+                    cm = $gridTable.jqGrid('getGridParam', 'colModel');
+                    var inputCk = $(e.target).closest('td').eq(0).find("input");
+                    if (inputCk.length == 0) {
+
+                        return;
+                    }
+                    isPush = inputCk.is(":checked")
+
+                }
+                var _this = this;
+                var index = _.indexOf(deleteUserIds, rowid);
+                if (isPush) {
+                    if (index == -1) {
+
+                        deleteUserIds.push(rowid);
+                    }
+                }
+                else {
+                    deleteUserIds = _.pull(deleteUserIds, rowid);
+
+                }
+
+            },
+        });
+
+        //查询条件
+        $("#queryCondition .dropdown-menu li").click(function () {
+            var text = $(this).find('a').html();
+            var value = $(this).find('a').attr('data-value');
+            $("#queryCondition .dropdown-text").html(text).attr('data-value', value)
+        });
+        //查询事件
+        $("#btn_Search").click(function () {
+            var queryJson = {
+                ObjectId: keyValue,
+                queryJson: $("#queryCondition").val(),
+            }
+            $gridTable.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) }, page: 1
+            }).trigger('reloadGrid');
+        });
+        //查询回车
+        $('#txt_Keyword').bind('keypress', function (event) {
+            if (event.keyCode == "13") {
+                $('#btn_Search').trigger("click");
+            }
+        });
+    }
+
+    //删除
+    function btn_delete() {
+        var userIds = [];
+        var postData = {};
+        postData["postId"] = keyValue;
+        postData["userIds"] = String(userIds);
+        postData["deleteUserIds"] = String(deleteUserIds);
+        if (String(deleteUserIds)) {
+
+            $.ConfirmAjax({
+                msg: "请问您确认要移除选中的用户吗？",
+                url: "../../AuthorizeManage/PermissionPost/SaveMember",
+                param: postData,
+                loading: "正在移除用户...",
+                success: function () {
+                    $("#gridTable").trigger("reloadGrid");
+                }
+            })
+
+        } else {
+            dialogMsg('请选择需要移除的用户！', 0);
+        }
+
+
+
+    }
+
+
+
+
+</script>
+<div class="titlePanel">
+    <div class="title-search">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" style="width: 200px;">
+                    </td>
+                    <td style="padding-left: 5px;">
+                        <a id="btn_Search" class="btn btn-primary"><i class="fa fa-search"></i>&nbsp;查询</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="toolbar">
+        <div class="btn-group">
+            <a id="lr-replace" class="btn btn-default" onclick="reload();"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+
+            <a id="lr-delete" class="btn btn-default" onclick="btn_delete()"><i class="fa fa-trash-o"></i>&nbsp;移除用户</a>
+
+        </div>
+    </div>
+</div>
+<div class="gridOuter">
+    <div class="gridPanel">
+        <table id="gridTable"></table>
+        <div id="gridPager"></div>
+    </div>
+</div>

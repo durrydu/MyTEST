@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6B8ABEA-C923-4605-99A9-B7ACA5DE4D8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Movit.Application.Service</RootNamespace>
+    <AssemblyName>Movit.Application.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\Movit.Application.Service.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=5.7.0.54040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlSugar, Version=4.6.4.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\sqlSugar.4.6.4.9\lib\SqlSugar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizeManage\AccountService.cs" />
+    <Compile Include="AuthorizeManage\AuthorizeService.T.cs" />
+    <Compile Include="AuthorizeManage\AuthorizeService.cs" />
+    <Compile Include="AuthorizeManage\ModuleFormInstanceService.cs" />
+    <Compile Include="AuthorizeManage\ModuleFormService.cs" />
+    <Compile Include="BaseManage\Base_ProjecInfoService.cs" />
+    <Compile Include="BaseManage\OP_ParcelService .cs" />
+    <Compile Include="BaseManage\T_AttachmentService.cs" />
+    <Compile Include="CapitalFlowManage\T_CapitalFlowService.cs" />
+    <Compile Include="CapitalFlowManage\T_CapitalFlow_NodeService.cs" />
+    <Compile Include="CapitalFlowManage\T_Funds_DetailsService.cs" />
+    <Compile Include="EcommerceManage\EcommerceGroupService.cs" />
+    <Compile Include="EcommerceManage\EcommerceService.cs" />
+    <Compile Include="EcommerceContractManage\EcommerceDiscountProgramService.cs" />
+    <Compile Include="EcommerceContractManage\EcommerceProjectRelationService.cs" />
+    <Compile Include="EcommercePayManage\Pay_InfoService.cs" />
+    <Compile Include="EcommercePayQueryManage\EcomPayEcommerceService.cs" />
+    <Compile Include="EcommercePayQueryManage\EcomPayProjectService.cs" />
+    <Compile Include="EcommercePayQueryManage\EcomPayTotalService.cs" />
+    <Compile Include="EcommerceTransferManage\Transfer_InfoService.cs" />
+    <Compile Include="EcommercePayManage\T_Pay_Info_DetailsService.cs" />
+    <Compile Include="EcomPartnerCapitalPoolManage\T_PartnerCapitalPoolService.cs" />
+    <Compile Include="MoneyManager\PayConsumptionHelp.cs" />
+    <Compile Include="MoneyManager\PayLockHelp.cs" />
+    <Compile Include="MoneyManager\PayToolsBase.cs" />
+    <Compile Include="MoneyManager\PayUnLockHelp.cs" />
+    <Compile Include="SystemManage\LogService.cs" />
+    <Compile Include="SystemManage\CodeRuleService.cs" />
+    <Compile Include="SystemManage\DataBaseBackupService.cs" />
+    <Compile Include="SystemManage\DataBaseLinkService.cs" />
+    <Compile Include="SystemManage\DataBaseTableService.cs" />
+    <Compile Include="SystemManage\AreaService.cs" />
+    <Compile Include="AuthorizeManage\ModuleButtonService.cs" />
+    <Compile Include="AuthorizeManage\ModuleColumnService.cs" />
+    <Compile Include="AuthorizeManage\ModuleService.cs" />
+    <Compile Include="AuthorizeManage\PermissionService.cs" />
+    <Compile Include="BaseManage\DepartmentService.cs" />
+    <Compile Include="BaseManage\OrganizeService.cs" />
+    <Compile Include="BaseManage\RoleService.cs" />
+    <Compile Include="BaseManage\UserService.cs" />
+    <Compile Include="BaseManage\PostService.cs" />
+    <Compile Include="BaseManage\UserGroupService.cs" />
+    <Compile Include="SystemManage\DataItemDetailService.cs" />
+    <Compile Include="SystemManage\DataItemService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Movit.Application.Interface\Movit.Application.Interface.csproj">
+      <Project>{4a6ed2b3-436a-4a5a-a4da-627fd0c6a67b}</Project>
+      <Name>Movit.Application.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Data.Repository\Movit.Data.Repository.csproj">
+      <Project>{1751a2dd-0f00-4c76-b180-97e8f72fe078}</Project>
+      <Name>Movit.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Data.SQLSugar\Movit.Data.SQLSugar.csproj">
+      <Project>{3fdec770-1392-45df-a2b5-7df6bdf0b6fd}</Project>
+      <Name>Movit.Data.SQLSugar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Data\Movit.Data.csproj">
+      <Project>{528f308b-d2cd-4bd1-a94f-bf94abef08d7}</Project>
+      <Name>Movit.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Sys.Api.Code\Movit.Sys.Api.Code.csproj">
+      <Project>{ed3cdbf0-72d8-4444-a8f9-b3d1594eb84c}</Project>
+      <Name>Movit.Sys.Api.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Util.Extension\Movit.Util.Extension.csproj">
+      <Project>{1be62e4c-35c1-4115-b003-be9c98f8436e}</Project>
+      <Name>Movit.Util.Extension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Util.WebControl\Movit.Util.WebControl.csproj">
+      <Project>{93f81df7-5a0b-4a13-a90e-8cf7c41955c3}</Project>
+      <Name>Movit.Util.WebControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Util\Movit.Util.csproj">
+      <Project>{cf1c8d13-7702-4a3e-969f-9518cde2d7a6}</Project>
+      <Name>Movit.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movit.Application.Code\Movit.Application.Code.csproj">
+      <Project>{9b10db87-130c-41d3-8687-1fac877db74a}</Project>
+      <Name>Movit.Application.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movit.Application.Entity\Movit.Application.Entity.csproj">
+      <Project>{c10920fe-8c74-4993-a7f4-1da189da842c}</Project>
+      <Name>Movit.Application.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movit.Application.IService\Movit.Application.IService.csproj">
+      <Project>{8bf8dab3-da0c-42d9-ac05-10b843b781a5}</Project>
+      <Name>Movit.Application.IService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

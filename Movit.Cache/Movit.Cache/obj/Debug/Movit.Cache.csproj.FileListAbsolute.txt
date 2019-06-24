@@ -1,0 +1,10 @@
+F:\Ecommerce\Movit.Cache\Movit.Cache\bin\Debug\Movit.Cache.dll
+F:\Ecommerce\Movit.Cache\Movit.Cache\bin\Debug\Movit.Cache.pdb
+F:\Ecommerce\Movit.Cache\Movit.Cache\obj\Debug\Movit.Cache.dll
+F:\Ecommerce\Movit.Cache\Movit.Cache\obj\Debug\Movit.Cache.pdb
+F:\代码Code\Ecommerce\Movit.Cache\Movit.Cache\bin\Debug\Movit.Cache.dll
+F:\代码Code\Ecommerce\Movit.Cache\Movit.Cache\bin\Debug\Movit.Cache.pdb
+F:\代码Code\Ecommerce\Movit.Cache\Movit.Cache\obj\Debug\Movit.Cache.dll
+F:\代码Code\Ecommerce\Movit.Cache\Movit.Cache\obj\Debug\Movit.Cache.pdb
+F:\代码Code\Ecommerce\Movit.Cache\Movit.Cache\obj\Debug\Movit.Cache.csprojAssemblyReference.cache
+F:\代码Code\Ecommerce\Movit.Cache\Movit.Cache\obj\Debug\Movit.Cache.csproj.CoreCompileInputs.cache

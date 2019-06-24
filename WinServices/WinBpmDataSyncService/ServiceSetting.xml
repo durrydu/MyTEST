@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+   <!--允许时间间隔 单位分钟 ivan.yao 20180304-->
+  <Interval>1</Interval>
+  <ServiceName></ServiceName>
+  <DisplayName></DisplayName>
+  <Description></Description>
+</Settings>

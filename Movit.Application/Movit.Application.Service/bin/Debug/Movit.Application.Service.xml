@@ -1,0 +1,2377 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Movit.Application.Service</name>
+    </assembly>
+    <members>
+        <member name="T:Movit.Application.Service.AccountService">
+            <summary>
+            版 本
+            Copyright (c) 2013-2016  
+            创建人：姚栋
+            日 期：2016.05.11 16:23
+            描 述：注册账户
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.AccountService.CheckLogin(System.String,System.String)">
+            <summary>
+            登录验证
+            </summary>
+            <param name="mobileCode">用户名</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AccountService.GetSecurityCode(System.String)">
+            <summary>
+            获取验证码
+            </summary>
+            <param name="mobileCode">手机号码</param>
+            <returns>返回6位数验证码</returns>
+        </member>
+        <member name="M:Movit.Application.Service.AccountService.Register(Movit.Application.Entity.AccountEntity)">
+            <summary>
+            注册账户
+            </summary>
+            <param name="accountEntity">实体对象</param>
+        </member>
+        <member name="M:Movit.Application.Service.AccountService.LoginLimit(System.String,System.String,System.String,System.String)">
+            <summary>
+            登录限制
+            </summary>
+            <param name="platform">平台（苹果、安卓、PC浏览器）</param>
+            <param name="account">账户</param>
+            <param name="IPAddress">IP地址</param>
+            <param name="iPAddressName">IP所在城市</param>
+        </member>
+        <member name="T:Movit.Application.Service.AuthorizeManage.AuthorizeService`1">
+            <summary>
+            版 本
+            Copyright (c) 2018-2016  
+            创建人：ivan.yao
+            日 期：2016.03.29 22:35
+            描 述：授权认证
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService`1.LookAll">
+            <summary>
+            检查是否有全部权限 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService`1.FindList(System.String,System.Data.Common.DbParameter[],Movit.Application.Code.AuthorizeUserTypeEnum,Movit.Application.Code.SystemTypeEnum,System.String,Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strSql"></param>
+            <param name="dbParameter"></param>
+            <param name="authorizeUserType">授权验证的方式</param>
+            <param name="systemType">请求系统类型</param>
+            <param name="loginKey">用户ID 或者 登录名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService`1.LookAll(Movit.Application.Code.AuthorizeUserTypeEnum,Movit.Application.Code.SystemTypeEnum,System.String)">
+            <summary>
+            检查是否有全部权限 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.AuthorizeManage.AuthorizeService">
+            <summary>
+            版 本
+            Copyright (c) 2018-2016 
+            创建人： 姚栋
+            日 期：2015.12.5 22:35
+            描 述：授权认证
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.BatchRemoveForm(System.String[])">
+            <summary>
+            批量删除岗位项目授权数据
+            </summary>
+            <param name="authorizeIds">授权ID主键集合</param>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.BatchRemoveFormAll(System.String)">
+            <summary>
+            移除对应岗位项目授权数据
+            </summary>
+            <param name="postId">岗位ID</param>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.GetProjectListByPostId(System.String,System.String,Movit.Util.WebControl.Pagination)">
+            <summary>
+            描述:根据岗位ID获取已经授权过的项目信息
+            作者:姚栋
+            日期:2018-05-30
+            </summary>
+            <param name="keyValue">岗位ID</param>
+            <param name="condition">项目名称D</param>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.GetProjectExcept(System.String,Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            描述:根据岗位ID获取未授权过的项目信息
+            作者:姚栋
+            日期:2018-05-30
+            </summary>
+            <param name="keyValue">角色ID</param>
+            <param name="pagination">分页对象</param>
+             <param name="queryJson">查询条件</param>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.GetModuleList(System.String)">
+            <summary>
+            获取授权功能
+            </summary>
+            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.GetModuleButtonList(System.String)">
+            <summary>
+            获取授权功能按钮
+            </summary>
+            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.GetModuleColumnList(System.String)">
+            <summary>
+            获取授权功能视图
+            </summary>
+            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.GetUrlList(System.String)">
+            <summary>
+            获取授权功能Url、操作Url
+            </summary>
+            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.GetUserRelationList(System.String)">
+            <summary>
+            获取关联用户关系
+            </summary>
+            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.GetDataAuthorUserId(Movit.Application.Code.Operator,System.Boolean)">
+            <summary>
+            获得权限范围用户ID
+            </summary>
+            <param name="operators">当前登陆用户信息</param>
+            <param name="isWrite">可写入</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.GetReadProjectId(Movit.Application.Code.Operator,System.Boolean)">
+            <summary>
+            获得权限范围项目ID
+            </summary>
+            <param name="operators">当前登陆用户信息</param>
+            <param name="isWrite">可写入</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.AuthorizeService.GetDataAuthor(Movit.Application.Code.Operator,System.Boolean)">
+            <summary>
+            获得可读数据权限范围SQL
+            </summary>
+            <param name="operators">当前登陆用户信息</param>
+            <param name="isWrite">可写入</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.AuthorizeManage.ModuleFormInstanceService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2016.04.14 09:16
+            描 述：系统表单实例
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.ModuleFormInstanceService.GetEntityByObjectId(System.String)">
+            <summary>
+            获取一个实体类
+            </summary>
+            <param name="keyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.ModuleFormInstanceService.SaveEntity(System.String,Movit.Application.Entity.AuthorizeManage.ModuleFormInstanceEntity)">
+            <summary>
+            保存一个实体
+            </summary>
+            <param name="keyValue"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.AuthorizeManage.ModuleFormService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2016.04.14 09:16
+            描 述：系统表单
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.ModuleFormService.GetPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            获取分页数据(管理页面调用)
+            </summary>
+            <param name="pagination"></param>
+            <param name="queryJson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.ModuleFormService.GetEntity(System.String)">
+            <summary>
+            获取一个实体类
+            </summary>
+            <param name="keyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.ModuleFormService.GetEntityByModuleId(System.String)">
+            <summary>
+            通过模块Id获取系统表单
+            </summary>
+            <param name="moduleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.ModuleFormService.IsExistModuleId(System.String,System.String)">
+            <summary>
+            判断模块是否已经有系统表单
+            </summary>
+            <param name="keyValue"></param>
+            <param name="moduleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.ModuleFormService.SaveEntity(System.String,Movit.Application.Entity.AuthorizeManage.ModuleFormEntity)">
+            <summary>
+            保存一个实体
+            </summary>
+            <param name="keyValue"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.AuthorizeManage.ModuleFormService.VirtualDelete(System.String)">
+            <summary>
+            虚拟删除一个实体
+            </summary>
+            <param name="keyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.Base_ProjectInfoService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：姚栋
+            日 期：2018-05-30 13:49
+            描 述：Base_ProjectInfo
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.GetCompanyName(System.String)">
+            <summary>
+            作者：durry
+            time：2018-06-22 11:20
+            获取区域公司下拉
+             </summary>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.GetListByCompanyid(System.String)">
+            <summary>
+            获取当前用户可以看到的项目列表
+            作者：姚栋
+            日期：20180717
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.GetListByAuthorize(System.String)">
+            <summary>
+            获取当前用户可以看到的项目列表
+            作者：姚栋
+            日期：20180717
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.GetEcomGroupNameJson(System.String)">
+            <summary>
+            作者：clare
+            time：2018-06-22 11:20
+            获取电商名称
+             </summary>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.GetEcomGroupNameByEconmJson(System.String)">
+            <summary>
+            作者：clare
+            time：2018-06-22 11:20
+            获取集团名称
+             </summary>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.GetMoneyByEconmProjectJson(System.String,System.String)">
+            <summary>
+            作者：clare
+            time：2018-06-22 11:20
+            获取资金
+             </summary>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.GetPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <param name="pagintion">分页</param>>
+            <returns>返回列表Json</returns>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="CompanyName">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.GetProjectListJsonByPostId(System.String)">
+            <summary>
+            描述:根据岗位ID获取已经授权过的项目信息
+            作者:姚栋
+            日期:2018-05-30
+            </summary>
+            <param name="keyValue">角色ID</param>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.GetEntity(System.String)">
+            <summary>
+            获取Sum实际可支配总金额
+            作者：durry
+            time：2018-06-21 19：30
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:Movit.Application.Service.Base_ProjectInfoService.GetEntityBase(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.SaveForm(System.String,Movit.Application.Entity.Base_ProjectInfoEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.SyncNewProject">
+            <summary>
+            描述:项目新增
+            作者:姚栋
+            日期:2018.06.04
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.Base_ProjectInfoService.SyncUpdateProject">
+            <summary>
+            描述:项目更新
+            作者:姚栋
+            日期:2018.06.04
+            </summary>
+        </member>
+        <member name="T:Movit.Application.Service.OP_ParcelService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：超级管理员
+            日 期：2018-07-23 20:23
+            描 述：OP_Parcel
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.OP_ParcelService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.OP_ParcelService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.OP_ParcelService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.OP_ParcelService.SaveForm(System.String,Movit.Application.Entity.OP_ParcelEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.OP_ParcelService.BatchInsert(System.Collections.Generic.List{Movit.Application.Entity.OP_ParcelEntity})">
+            <summary>
+            批量插入
+            </summary>
+            <param name="entityList">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.OP_ParcelService.BatchUpdate(System.Collections.Generic.List{Movit.Application.Entity.OP_ParcelEntity})">
+            <summary>
+            批量更新
+            </summary>
+            <param name="entityList">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.BaseManage.T_AttachmentService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：姚栋
+            日 期：2018-06-03 18:38
+            描 述：T_Attachment
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.T_AttachmentService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.T_AttachmentService.GetFormList(System.String,System.String)">
+            <summary>
+            作者:姚栋
+            日期:2018.06.03
+            描述:根据主键以及附件表单类型获取数据
+            </summary>
+            <param name="KeyValue">表单主键</param>
+            <param name="ObjectType">表单分组类型</param>
+            <returns>附件列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.T_AttachmentService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.T_AttachmentService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.T_AttachmentService.SaveForm(System.String,Movit.Application.Entity.BaseManage.T_AttachmentEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.T_AttachmentService.MapingFiles(System.String,System.Collections.Generic.List{Movit.Application.Entity.BaseManage.FileModel},Movit.Data.Repository.IRepository)">
+            <summary>
+            作者:姚栋
+            日期:2018.06.03
+            描述：建立表单与附件的关系
+            </summary>
+            <param name="formKey">表单主键</param>
+            <param name="fileLists">建立关系附件列表</param>
+        </member>
+        <member name="T:Movit.Application.Service.BaseManage.ModuleButtonService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.08.01 14:00
+            描 述：系统按钮
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleButtonService.GetList">
+            <summary>
+            按钮列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleButtonService.GetList(System.String)">
+            <summary>
+            按钮列表
+            </summary>
+            <param name="moduleId">功能Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleButtonService.GetEntity(System.String)">
+            <summary>
+            按钮实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleButtonService.AddEntity(Movit.Application.Entity.AuthorizeManage.ModuleButtonEntity)">
+            <summary>
+            添加按钮
+            </summary>
+            <param name="moduleButtonEntity">按钮实体</param>
+        </member>
+        <member name="T:Movit.Application.Service.BaseManage.ModuleColumnService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.10.29 15:13
+            描 述：系统视图
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleColumnService.GetList">
+            <summary>
+            视图列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleColumnService.GetList(System.String)">
+            <summary>
+            视图列表
+            </summary>
+            <param name="moduleId">功能Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleColumnService.GetEntity(System.String)">
+            <summary>
+            视图实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleColumnService.AddEntity(Movit.Application.Entity.AuthorizeManage.ModuleColumnEntity)">
+            <summary>
+            添加视图
+            </summary>
+            <param name="moduleButtonEntity">视图实体</param>
+        </member>
+        <member name="T:Movit.Application.Service.BaseManage.ModuleService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.10.27 09:16
+            描 述：系统功能
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleService.GetSortCode">
+            <summary>
+            获取最大编号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleService.GetList">
+            <summary>
+            功能列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleService.GetEntity(System.String)">
+            <summary>
+            功能实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleService.ExistEnCode(System.String,System.String)">
+            <summary>
+            功能编号不能重复
+            </summary>
+            <param name="enCode">编号</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleService.ExistFullName(System.String,System.String)">
+            <summary>
+            功能名称不能重复
+            </summary>
+            <param name="fullName">名称</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleService.RemoveForm(System.String)">
+            <summary>
+            删除功能
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.ModuleService.SaveForm(System.String,Movit.Application.Entity.AuthorizeManage.ModuleEntity,System.Collections.Generic.List{Movit.Application.Entity.AuthorizeManage.ModuleButtonEntity},System.Collections.Generic.List{Movit.Application.Entity.AuthorizeManage.ModuleColumnEntity})">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="moduleEntity">功能实体</param>
+            <param name="moduleButtonList">按钮实体列表</param>
+            <param name="moduleColumnList">视图实体列表</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.BaseManage.PermissionService">
+            <summary>
+            版 本
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.5 22:35
+            描 述：权限配置管理（角色、岗位、职位、用户组、用户）
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PermissionService.GetMemberList(System.String)">
+            <summary>
+            获取成员列表
+            </summary>
+            <param name="objectId">对象Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PermissionService.GetObjectList(System.String)">
+            <summary>
+            获取对象列表
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PermissionService.GetModuleList(System.String)">
+            <summary>
+            获取功能列表
+            </summary>
+            <param name="objectId">对象Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PermissionService.GetModuleButtonList(System.String)">
+            <summary>
+            获取按钮列表
+            </summary>
+            <param name="objectId">对象Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PermissionService.GetModuleColumnList(System.String)">
+            <summary>
+            获取视图列表
+            </summary>
+            <param name="objectId">对象Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PermissionService.GetAuthorizeDataList(System.String)">
+            <summary>
+            获取数据权限列表
+            </summary>
+            <param name="objectId">对象Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PermissionService.SaveMember(Movit.Application.Code.AuthorizeTypeEnum,System.String,System.String[],System.String[])">
+            <summary>
+            添加成员
+            </summary>
+            <param name="authorizeType">权限分类</param>
+            <param name="objectId">对象Id</param>
+            <param name="userIds">成员Id</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PermissionService.SaveAuthorizeAndPost(Movit.Application.Code.AuthorizeTypeEnum,System.String,System.String[],System.String[])">
+            <summary>
+            作者:姚栋
+            日期:2018-05-30
+            描述:给某个岗位进行项目授权
+            </summary>
+             <param name="authorizeType">授权类型</param>
+            <param name="postId">岗位Id</param>
+            <param name="moduleIds">项目Id集合</param>·
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PermissionService.SaveAuthorizeAndPostAll(System.String)">
+            <summary>
+            作者:姚栋
+            日期:2018-05-31
+            描述:给某个岗位进行全有项目授权
+            </summary>
+            <param name="keyValue">岗位Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PermissionService.SaveAuthorize(Movit.Application.Code.AuthorizeTypeEnum,System.String,System.String[],System.String[],System.String[],System.Collections.Generic.IEnumerable{Movit.Application.Entity.AuthorizeManage.AuthorizeDataEntity})">
+            <summary>
+            添加授权
+            </summary>
+            <param name="authorizeType">权限分类</param>
+            <param name="objectId">对象Id</param>
+            <param name="moduleIds">功能Id</param>
+            <param name="moduleButtonIds">按钮Id</param>
+            <param name="moduleColumnIds">视图Id</param>
+            <param name="authorizeDataList">数据权限</param>
+        </member>
+        <member name="T:Movit.Application.Service.BaseManage.DepartmentService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.02 14:27
+            描 述：部门管理
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.DepartmentService.GetList">
+            <summary>
+            部门列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.DepartmentService.GetListByAuthorize">
+            <summary>
+            获取当前用户可以看到的区域公司列表
+            作者：姚栋
+            日期：20180717
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.DepartmentService.GetListHasUser">
+            <summary>
+            部门列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.DepartmentService.GetEntity(System.String)">
+            <summary>
+            部门实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.DepartmentService.ExistEnCode(System.String,System.String)">
+            <summary>
+            部门编号不能重复
+            </summary>
+            <param name="enCode">编号</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.DepartmentService.ExistFullName(System.String,System.String)">
+            <summary>
+            部门名称不能重复
+            </summary>
+            <param name="fullName">名称</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.DepartmentService.RemoveForm(System.String)">
+            <summary>
+            删除部门
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.DepartmentService.SaveForm(System.String,Movit.Application.Entity.BaseManage.DepartmentEntity)">
+            <summary>
+            保存部门表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="departmentEntity">机构实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.DepartmentService.SyncNewDep">
+            <summary>
+            描述:部门新增
+            作者:姚栋
+            日期:2018.06.05
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.DepartmentService.SyncUpdateDep">
+            <summary>
+            描述:部门更新
+            作者:姚栋
+            日期:2018.06.05
+            </summary>
+        </member>
+        <member name="T:Movit.Application.Service.BaseManage.OrganizeService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.02 14:27
+            描 述：机构管理
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.OrganizeService.GetList">
+            <summary>
+            机构列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.OrganizeService.GetEntity(System.String)">
+            <summary>
+            机构实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.OrganizeService.ExistFullName(System.String,System.String)">
+            <summary>
+            公司名称不能重复
+            </summary>
+            <param name="organizeName">公司名称</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.OrganizeService.ExistEnCode(System.String,System.String)">
+            <summary>
+            外文名称不能重复
+            </summary>
+            <param name="enCode">外文名称</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.OrganizeService.ExistShortName(System.String,System.String)">
+            <summary>
+            中文名称不能重复
+            </summary>
+            <param name="shortName">中文名称</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.OrganizeService.RemoveForm(System.String)">
+            <summary>
+            删除机构
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.OrganizeService.SaveForm(System.String,Movit.Application.Entity.BaseManage.OrganizeEntity)">
+            <summary>
+            保存机构表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="organizeEntity">机构实体</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.BaseManage.RoleService">
+            <summary>
+            版 本
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.4 14:31
+            描 述：角色管理
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.RoleService.GetList">
+            <summary>
+            角色列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.RoleService.GetPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            角色列表
+            </summary>
+            <param name="pagination">分页</param>
+            <param name="queryJson">查询参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.RoleService.GetAllList">
+            <summary>
+            角色列表all
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.RoleService.GetEntity(System.String)">
+            <summary>
+            角色实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.RoleService.ExistEnCode(System.String,System.String)">
+            <summary>
+            角色编号不能重复
+            </summary>
+            <param name="enCode">编号</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.RoleService.ExistFullName(System.String,System.String)">
+            <summary>
+            角色名称不能重复
+            </summary>
+            <param name="fullName">名称</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.RoleService.RemoveForm(System.String)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.RoleService.SaveForm(System.String,Movit.Application.Entity.BaseManage.RoleEntity)">
+            <summary>
+            保存角色表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="roleEntity">角色实体</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.BaseManage.UserService">
+            <summary>
+            版 本
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.03 10:58
+            描 述：用户管理
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.GetTable(Movit.Util.WebControl.Pagination,System.String,System.String)">
+            <summary>
+            用户列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.GetList">
+            <summary>
+            用户列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.GetPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            用户列表
+            </summary>
+            <param name="pagination">分页</param>
+            <param name="queryJson">查询参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.GetUserModelPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            用户列表（包括用户的岗位及角色）
+            </summary>
+            <param name="pagination"></param>
+            <param name="queryJson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.GetAllTable">
+            <summary>
+            用户列表（ALL）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.GetExportList">
+            <summary>
+            用户列表（导出Excel）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.GetEntity(System.String)">
+            <summary>
+            用户实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.CheckLogin(System.String)">
+            <summary>
+            登录验证
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.GetUserViewEntity(System.String)">
+            <summary>
+            登录验证
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.ExistAccount(System.String,System.String)">
+            <summary>
+            账户不能重复
+            </summary>
+            <param name="account">账户值</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.RemoveForm(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.SaveForm(System.String,Movit.Application.Entity.BaseManage.UserEntity)">
+            <summary>
+            保存用户表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="userEntity">用户实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.RevisePassword(System.String,System.String)">
+            <summary>
+            修改用户登录密码
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="Password">新密码（MD5 小写）</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.UpdateState(System.String,System.Int32)">
+            <summary>
+            修改用户状态
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="State">状态：1-启动；0-禁用</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.UpdateEntity(Movit.Application.Entity.BaseManage.UserEntity)">
+            <summary>
+            修改用户信息
+            </summary>
+            <param name="userEntity">实体对象</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.SyncNewUser">
+            <summary>
+            描述:用户新增
+            作者:姚栋
+            日期:2018.06.04
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserService.SyncUpdateUser">
+            <summary>
+            描述:用户更新
+            作者:姚栋
+            日期:2018.06.04
+            </summary>
+        </member>
+        <member name="T:Movit.Application.Service.BaseManage.PostService">
+            <summary>
+            版 本
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.4 14:31
+            描 述：岗位管理
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PostService.GetList">
+            <summary>
+            岗位列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PostService.GetPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            岗位列表
+            </summary>
+            <param name="pagination">分页</param>
+            <param name="queryJson">查询参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PostService.GetAllList">
+            <summary>
+            岗位列表(ALL)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PostService.GetEntity(System.String)">
+            <summary>
+            岗位实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PostService.ExistEnCode(System.String,System.String)">
+            <summary>
+            岗位编号不能重复
+            </summary>
+            <param name="enCode">编号</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PostService.ExistFullName(System.String,System.String)">
+            <summary>
+            岗位名称不能重复
+            </summary>
+            <param name="fullName">名称</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PostService.SetAuthorizationMethod(System.String)">
+            <summary>
+            授权全部项目
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PostService.RemoveForm(System.String)">
+            <summary>
+            删除岗位
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.PostService.SaveForm(System.String,Movit.Application.Entity.BaseManage.RoleEntity,System.Collections.Generic.List{Movit.Application.Entity.BaseManage.FileModel},System.Collections.Generic.List{Movit.Application.Entity.BaseManage.FileModel})">
+            <summary>
+            保存岗位表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="postEntity">岗位实体</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.BaseManage.UserGroupService">
+            <summary>
+            版 本
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.4 14:31
+            描 述：用户组管理
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserGroupService.GetList">
+            <summary>
+            用户组列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserGroupService.GetPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            用户组列表
+            </summary>
+            <param name="pagination">分页</param>
+            <param name="queryJson">查询参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserGroupService.GetAllList">
+            <summary>
+            用户组列表(ALL)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserGroupService.GetEntity(System.String)">
+            <summary>
+            用户组实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserGroupService.ExistEnCode(System.String,System.String)">
+            <summary>
+            组编号不能重复
+            </summary>
+            <param name="enCode">编号</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserGroupService.ExistFullName(System.String,System.String)">
+            <summary>
+            组名称不能重复
+            </summary>
+            <param name="fullName">名称</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserGroupService.RemoveForm(System.String)">
+            <summary>
+            删除用户组
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.BaseManage.UserGroupService.SaveForm(System.String,Movit.Application.Entity.BaseManage.RoleEntity)">
+            <summary>
+            保存用户组表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="userGroupEntity">用户组实体</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.CapitalFlow.T_CapitalFlowService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：超级管理员
+            日 期：2018-07-02 10:55
+            描 述：T_CapitalFlow
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlowService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlowService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlowService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlowService.SaveForm(System.String,Movit.Application.Entity.CapitalFlow.T_CapitalFlowEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlowService.FindPostByUser(System.String)">
+            <summary>
+            获取权限
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlowService.FindProjectByUser(System.String)">
+            <summary>
+            获取项目列表
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.CapitalFlow.T_CapitalFlow_NodeService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：超级管理员
+            日 期：2018-07-02 10:58
+            描 述：T_CapitalFlow_Node
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlow_NodeService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlow_NodeService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlow_NodeService.GetCapitalFlowView(System.String)">
+            <summary>
+            描述：获取电商收入信息
+            作者：姚栋
+            日期:20180719
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlow_NodeService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlow_NodeService.SaveForm(System.String,Movit.Application.Entity.CapitalFlow.T_CapitalFlow_NodeEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlow.T_CapitalFlow_NodeService.DeleteForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue"></param>
+        </member>
+        <member name="T:Movit.Application.Service.CapitalFlowManage.T_Funds_DetailsService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：超级管理员
+            日 期：2018-07-02 13:40
+            描 述：T_Funds_Details
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlowManage.T_Funds_DetailsService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlowManage.T_Funds_DetailsService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlowManage.T_Funds_DetailsService.GetFundStaticJson(System.String)">
+            <summary>
+            获取资金池数据
+            </summary>
+            <param name="queryJson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlowManage.T_Funds_DetailsService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlowManage.T_Funds_DetailsService.SaveForm(System.String,Movit.Application.Entity.T_Funds_DetailsEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlowManage.T_Funds_DetailsService.BacthInsert(System.Collections.Generic.List{Movit.Application.Entity.T_Funds_DetailsEntity})">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.CapitalFlowManage.T_Funds_DetailsService.DeleteByData(System.DateTime)">
+            <summary>
+            按照统计日期删除数据
+            作者：姚栋
+            </summary>
+            <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.EcommerceGroupService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：超级管理员
+            日 期：2018-06-19 14:34
+            描 述：EcommerceGroup
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceGroupService.GetPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            电商公司列表
+            </summary>
+            <param name="pagination">分页参数</param>
+            <param name="queryJson">查询参数</param>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceGroupService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceGroupService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceGroupService.GetEcommerceGroupName(System.String)">
+            <summary>
+            获取电商集团公司列表
+            </summary>>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceGroupService.ExistEcommerceGroupName(System.String,System.String)">
+            <summary>
+            电商列表不能重复
+            </summary>
+            <param name="EcommerceGroupName">编号</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceGroupService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceGroupService.SaveForm(System.String,Movit.Application.Entity.EcommerceGroupEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.EcommerceService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：超级管理员
+            日 期：2018-06-19 10:50
+            描 述：Ecommerce
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceService.GetPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            电商公司列表
+            </summary>
+            <param name="pagination">分页参数</param>
+            <param name="queryJson">查询参数</param>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceService.SaveForm(System.String,Movit.Application.Entity.EcommerceEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.EcommerceContractManage.EcommerceDiscountProgramService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：Emily
+            日 期：2018-06-19 14:43
+            描 述：T_EcommerceDiscountProgram
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceDiscountProgramService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceDiscountProgramService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceDiscountProgramService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceDiscountProgramService.SaveForm(System.String,Movit.Application.Entity.EcommerceContractManage.EcommerceDiscountProgramEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：emily
+            日 期：2018-06-19 11:08
+            描 述：T_EcommerceProjectRelation
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetIsTrunkCount(System.String,System.String,System.Int32)">
+            <summary>
+            查询是否存在电商和项目是否存在istrunk=1
+            </summary>
+            <param name="projectid"></param>
+            <param name="ecommerceid"></param>
+            <param name="istrunk"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetListByAuthorize">
+            <summary>
+            获取当前用户可以看到的合同信息列表
+            作者：姚栋
+            日期：20180717
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetPageList(Movit.Util.WebControl.Pagination,System.String,System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="pagination">分页</param>
+            <param name="queryJson">查询参数</param>
+            <returns>返回分页列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="keyValue">查询参数</param>
+            <param name="state">审批状态</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetList">
+            <summary>
+            获取列表
+            </summary> 
+            <returns>返回列表</returns>
+        </member>
+        <!-- 对于成员“M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetAllListByEcomNameList(System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetList(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetStartUrl(System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetTrunkEntity(System.String,System.String)">
+            <summary>
+            获取主干实体
+            </summary>
+            <param name="ProjectId">项目ID</param>
+            <param name="EcommerceId">电商ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetOnLineMallList(System.String,Movit.Util.WebControl.Pagination,System.String,System.String,System.String,System.String,System.Nullable{System.Decimal},System.Nullable{System.Decimal},System.String,System.String)">
+            <summary>
+            电商平台选择
+            作者:姚栋
+            日期:20180625
+            </summary>
+            <param name="login_name">当前用户登录名</param>
+            <param name="currency_code">币种编码</param>
+            <param name="electricity_supplier_name">电商名称</param>
+            <param name="electricity_supplier_ad">电商简称</param>
+            <param name="electricity_supplier_code">电商编码</param>
+            <param name="available_balance_begin">可用余额(范围-开始)</param>
+            <param name="available_balance_end">可用余额(范围-结束)</param>
+            <param name="project_code">项目编码</param>
+            <param name="project_name">项目名称</param>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.BalanceCheck(System.String,System.String,System.Decimal,System.String,System.String,System.String)">
+            <summary>
+            资金余额检查
+            作者:姚栋
+            日期:20180625
+            </summary>
+            <param name="electricity_supplier_id">电商ID</param>
+            <param name="electricity_supplier_code">电商编码</param>
+            <param name="locked_amount">占用金额</param>
+            <param name="project_id">项目ID</param>
+            <param name="project_code">项目编码</param>
+            <param name="currency_code">币种编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.GetKeyValue(System.String,Movit.Application.Entity.EcommerceContractManage.EcommerceProjectRelationEntity,System.Collections.Generic.List{Movit.Application.Entity.EcommerceContractManage.EcommerceDiscountProgramEntity},System.Collections.Generic.List{Movit.Application.Entity.BaseManage.FileModel})">
+            <summary>
+            提交表单
+            </summary>
+            <param name="keyValue"></param>
+            <param name="entity"></param>
+            <param name="discountList"></param>
+            <param name="uploadFiles"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.SaveForm(System.String,Movit.Application.Entity.EcommerceContractManage.EcommerceProjectRelationEntity,System.Collections.Generic.List{Movit.Application.Entity.EcommerceContractManage.EcommerceDiscountProgramEntity},System.Collections.Generic.List{Movit.Application.Entity.BaseManage.FileModel})">
+            <summary>
+            保存表单（新增、修改）
+            增加编辑保存功能 作者：durry, time:2018-06-22 17:15
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.UpdateActAmount(System.String,System.String,System.Decimal,System.Decimal)">
+            <summary>
+            资金划拨后修改实际可支配金额和支配金额
+            作者 clare, time:2018-06-22 17:15
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceContractManage.EcommerceProjectRelationService.ApprovalUpdateState(System.String,Movit.Application.Entity.EcommerceContractManage.EcommerceProjectRelationEntity)">
+            <summary>
+            审核
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.Pay_InfoService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：超级管理员
+            日 期：2018-06-22 09:54
+            描 述：Pay_Info
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.Pay_InfoService.GetPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            作者：杜强
+            Time:2018-06-22 13:40
+            获取分页列表
+            </summary>>
+        </member>
+        <member name="M:Movit.Application.Service.Pay_InfoService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.Pay_InfoService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.Pay_InfoService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.Pay_InfoService.SaveForm(System.String,Movit.Application.Entity.Pay_InfoEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.Pay_InfoService.Paymentuse(System.String,Movit.Application.Entity.Pay_InfoEntity)">
+            <summary>
+            共享平台推送付款单
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.Pay_InfoService.AdjustmentAmountByApprovalStatus(Movit.Application.Entity.Pay_InfoEntity)">
+            <summary>
+            根据审批状态进行金额变更
+            AUDITED 已审批 消费金额
+            DRAFT 草稿 释放
+            SUBMITED 待审批 占用（注意金额的变化，变化是需要修改）
+            DISABLED 已作废 释放   
+            </summary>
+            <param name="ApprovalStatus"></param>
+        </member>
+        <member name="T:Movit.Application.Service.EcommercePayQueryManage.EcomPayProjectService">
+            <summary>
+            Copyright (c) 2013-201盟拓软件(苏州)
+            创 建：durry
+            日 期：2018-07-02 09:54
+            描 述：EcomPayProject
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.EcommercePayQueryManage.EcomPayProjectService.GetAllProject(System.String)">
+            <summary>
+            获取所有项目的信息
+            </summary>
+            <param name="queryJson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommercePayQueryManage.EcomPayProjectService.GetAllList(System.String)">
+            <summary>
+            获取所有的信息
+            </summary>
+            <param name="queryJson"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.EcommercePayQueryManage.EcomPayTotalService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：durry
+            日 期：2018-06-25 14:48
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.EcommercePayQueryManage.EcomPayTotalService.GetAllList(System.String)">
+            <summary>
+            获取项目的所有信息
+            </summary>
+            <param name="queryJson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommercePayQueryManage.EcomPayTotalService.GetListJson(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            获取关于区域公司的所有信息
+            </summary>
+            <param name="queryJson"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.EcommerceTransferManage.Transfer_InfoService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：超级管理员
+            日 期：2018-06-25 14:48
+            描 述：T_Transfer_Info
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceTransferManage.Transfer_InfoService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceTransferManage.Transfer_InfoService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceTransferManage.Transfer_InfoService.GetProEcomJson(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceTransferManage.Transfer_InfoService.GetPageListJson(System.String,Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            获取页面分页信息
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceTransferManage.Transfer_InfoService.DeleteRemark(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.EcommerceTransferManage.Transfer_InfoService.RemoveForm(System.String)">
+            <summary>
+            删除表单
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="F:Movit.Application.Service.EcommerceTransferManage.Transfer_InfoService.coderuleService">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+            
+        </member>
+        <member name="T:Movit.Application.Service.T_Pay_Info_DetailsService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：姚栋
+            日 期：2018-06-25 19:32
+            描 述：T_Pay_Info_Details
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.T_Pay_Info_DetailsService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.T_Pay_Info_DetailsService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.T_Pay_Info_DetailsService.GetEntityByCode(System.String)">
+            <summary>
+            根据流水编号获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.T_Pay_Info_DetailsService.GetBillingDetails(System.String)">
+            <summary>
+            描述：通过付款单编号获取信息
+            作者:姚栋
+            日期:20180625
+            </summary>
+            <param name="pay_info_code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.T_Pay_Info_DetailsService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.T_Pay_Info_DetailsService.SaveForm(System.String,Movit.Application.Entity.T_Pay_Info_DetailsEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.EcomPartnerCapitalPoolManage.T_PartnerCapitalPoolService">
+            <summary>
+             
+            Copyright (c) 2015-201盟拓软件(苏州)
+            创 建：超级管理员
+            日 期：2018-07-19 15:10
+            描 述：T_PartnerCapitalPool
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.EcomPartnerCapitalPoolManage.T_PartnerCapitalPoolService.GetList(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="queryJson">查询参数</param>
+            <returns>返回列表</returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcomPartnerCapitalPoolManage.T_PartnerCapitalPoolService.GetEntity(System.String)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.EcomPartnerCapitalPoolManage.T_PartnerCapitalPoolService.RemoveForm(System.String)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.EcomPartnerCapitalPoolManage.T_PartnerCapitalPoolService.SaveForm(System.String,Movit.Application.Entity.EcomPartnerCapitalPoolManage.T_PartnerCapitalPoolEntity)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“T:Movit.Application.Service.MoneyManager.PayConsumptionHelp”忽略有格式错误的 XML 注释 -->
+        <member name="M:Movit.Application.Service.MoneyManager.PayConsumptionHelp.NoteFlowInformation">
+            <summary>
+            生成记账流水信息
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.MoneyManager.PayConsumptionHelp.AdjustTheFundsPool">
+            <summary>
+            调整资金池
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.MoneyManager.PayConsumptionHelp.GenerateFlowOrders">
+            <summary>
+            生成流水信息,并更新付款单的最新流水信息号
+            </summary>
+        </member>
+        <!-- 对于成员“T:Movit.Application.Service.MoneyManager.PayLockHelp”忽略有格式错误的 XML 注释 -->
+        <member name="M:Movit.Application.Service.MoneyManager.PayLockHelp.AdjustTheFundsPool">
+            <summary>
+            调整资金池
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.MoneyManager.PayLockHelp.GenerateFlowOrders">
+            <summary>
+            生成流水信息
+            </summary>
+        </member>
+        <member name="T:Movit.Application.Service.MoneyManager.PayToolsBase">
+            <summary>
+            付款单基础类
+            作者:姚栋
+            日期:20180627
+            </summary>
+        </member>
+        <member name="P:Movit.Application.Service.MoneyManager.PayToolsBase.inputPayEntity">
+            <summary>
+            付款单实体
+            </summary>
+        </member>
+        <member name="P:Movit.Application.Service.MoneyManager.PayToolsBase.existingPayEntity">
+            <summary>
+            现有付款单实体
+            </summary>
+        </member>
+        <member name="P:Movit.Application.Service.MoneyManager.PayToolsBase.lastPayInfoDetailsEntity">
+            <summary>
+            最新一条流水记录
+            </summary>
+        </member>
+        <member name="P:Movit.Application.Service.MoneyManager.PayToolsBase.EcommerceProjectMoneyCapacity">
+            <summary>
+            电商与项目的资金池信息
+            </summary>
+        </member>
+        <member name="P:Movit.Application.Service.MoneyManager.PayToolsBase.operationAmount">
+            <summary>
+            需要处理的金额
+            </summary>
+        </member>
+        <member name="P:Movit.Application.Service.MoneyManager.PayToolsBase.CodeNumber">
+            <summary>
+            电商与项目的资金池信息
+            </summary>
+        </member>
+        <member name="P:Movit.Application.Service.MoneyManager.PayToolsBase.projectInfoEntity">
+            <summary>
+            最新一条流水记录
+            </summary>
+        </member>
+        <member name="F:Movit.Application.Service.MoneyManager.PayToolsBase.Transdb">
+            <summary>
+            数据库上下文 保证 操作要么一起成功要么一起失败,保证资金不混乱
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.MoneyManager.PayToolsBase.#ctor(Movit.Application.Entity.Pay_InfoEntity)">
+            <summary>
+            
+            </summary>
+            <param name="inputPayEntity"></param>
+            <param name="existingPayEntity"></param>
+            <param name="lastPayInfoDetailsEntity"></param>
+            <param name="db"></param>
+        </member>
+        <!-- 对于成员“T:Movit.Application.Service.MoneyManager.PayUnLockHelp”忽略有格式错误的 XML 注释 -->
+        <member name="M:Movit.Application.Service.MoneyManager.PayUnLockHelp.AdjustTheFundsPool">
+            <summary>
+            调整资金池
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.MoneyManager.PayUnLockHelp.GenerateFlowOrders">
+            <summary>
+            生成流水信息,并更新付款单的最新流水信息号
+            </summary>
+        </member>
+        <member name="T:Movit.Application.Service.SystemManage.LogService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2016.1.8 9:56
+            描 述：系统日志
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.LogService.GetPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            日志列表
+            </summary>
+            <param name="pagination">分页</param>
+            <param name="queryJson">查询参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.LogService.GetEntity(System.String)">
+            <summary>
+            日志实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.LogService.RemoveLog(System.Int32,System.String)">
+            <summary>
+            清空日志
+            </summary>
+            <param name="categoryId">日志分类Id</param>
+            <param name="keepTime">保留时间段内</param>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.LogService.WriteLogInterface(Movit.Application.Entity.SystemManage.LogEntity)">
+            <summary>
+            写日志
+            </summary>
+            <param name="logEntity">对象</param>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.LogService.WriteLog(Movit.Application.Entity.SystemManage.LogEntity)">
+            <summary>
+            写日志
+            </summary>
+            <param name="logEntity">对象</param>
+        </member>
+        <member name="T:Movit.Application.Service.SystemManage.CodeRuleService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.12.21 16:19
+            描 述：编号规则
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.CodeRuleService.GetPageList(Movit.Util.WebControl.Pagination,System.String)">
+            <summary>
+            规则列表
+            </summary>
+            <param name="pagination">分页</param>
+            <param name="queryJson">查询参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.CodeRuleService.GetEntity(System.String)">
+            <summary>
+            规则实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.CodeRuleService.RemoveForm(System.String)">
+            <summary>
+            删除规则
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.CodeRuleService.SaveForm(System.String,Movit.Application.Entity.SystemManage.CodeRuleEntity)">
+            <summary>
+            保存规则表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="codeRuleEntity">规则实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.CodeRuleService.ExistEnCode(System.String,System.String)">
+            <summary>
+            规则编号不能重复
+            </summary>
+            <param name="enCode">编号</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.CodeRuleService.ExistFullName(System.String,System.String)">
+            <summary>
+            规则名称不能重复
+            </summary>
+            <param name="fullName">名称</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.CodeRuleService.GetBillCode(System.String,System.String,System.String)">
+            <summary>
+            获得指定模块或者编号的单据号
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="moduleId">模块ID</param>
+            <param name="enCode">模板编码</param>
+            <returns>单据号</returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.CodeRuleService.SetBillCode(System.String,System.String,System.String,Movit.Data.Repository.IRepository)">
+            <summary>
+            获得指定模块或者编号的单据号（直接使用）
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="moduleId">模块ID</param>
+            <param name="enCode">模板编码</param>
+            <returns>单据号</returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.CodeRuleService.UseRuleSeed(System.String,System.String,System.String,Movit.Data.Repository.IRepository)">
+            <summary>
+            占用单据号
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="moduleId">模块ID</param>
+            <param name="enCode">模板编码</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.CodeRuleService.SetBillCodeByCode(System.String,System.String,Movit.Data.Repository.IRepository)">
+            <summary>
+            获得指定模块或者编号的单据号（直接使用）
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="moduleId">模块ID</param>
+            <param name="enCode">模板编码</param>
+            <returns>单据号</returns>
+        </member>
+        <member name="T:Movit.Application.Service.SystemManage.DataBaseBackupService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.25 11:02
+            描 述：数据库备份
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseBackupService.GetList(System.String,System.String)">
+            <summary>
+            库备份列表
+            </summary>
+            <param name="dataBaseLinkId">连接库Id</param>
+            <param name="queryJson">查询参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseBackupService.GetPathList(System.String)">
+            <summary>
+            库备份文件路径列表
+            </summary>
+            <param name="databaseBackupId">计划Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseBackupService.GetEntity(System.String)">
+            <summary>
+            库备份实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseBackupService.RemoveForm(System.String)">
+            <summary>
+            删除库备份
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseBackupService.SaveForm(System.String,Movit.Application.Entity.SystemManage.DataBaseBackupEntity)">
+            <summary>
+            保存库备份表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="dataBaseBackupEntity">库备份实体</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.SystemManage.DataBaseLinkService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.18 11:02
+            描 述：数据库连接管理
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseLinkService.GetList">
+            <summary>
+            库连接列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseLinkService.GetEntity(System.String)">
+            <summary>
+            库连接实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseLinkService.RemoveForm(System.String)">
+            <summary>
+            删除库连接
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseLinkService.SaveForm(System.String,Movit.Application.Entity.SystemManage.DataBaseLinkEntity)">
+            <summary>
+            保存库连接表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="databaseLinkEntity">库连接实体</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.SystemManage.DataBaseTableService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.18 11:02
+            描 述：数据库管理（支持：SqlServer）
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseTableService.GetTableList(System.String,System.String)">
+            <summary>
+            数据表列表
+            </summary>
+            <param name="dataBaseLinkId">库连接Id</param>
+            <param name="tableName">表明</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseTableService.GetTableFiledList(System.String,System.String)">
+            <summary>
+            数据表字段列表
+            </summary>
+            <param name="dataBaseLinkId">库连接Id</param>
+            <param name="tableName">表明</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseTableService.GetTableDataList(System.String,System.String,System.String,System.String,System.String,Movit.Util.WebControl.Pagination)">
+            <summary>
+            数据库表数据列表
+            </summary>
+            <param name="dataBaseLinkId">库连接</param>
+            <param name="tableName">表明</param>
+            <param name="switchWhere">条件</param>
+            <param name="logic">逻辑</param>
+            <param name="keyword">关键字</param>
+            <param name="pagination">分页参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataBaseTableService.SaveForm(System.String,System.String,System.String,System.Collections.Generic.IEnumerable{Movit.Application.Entity.SystemManage.DataBaseTableFieldEntity})">
+            <summary>
+            保存数据库表表单（新增、修改）
+            </summary>
+            <param name="dataBaseLinkId">库连接Id</param>
+            <param name="tableName">表名称</param>
+            <param name="tableDescription">表说明</param>
+            <param name="fieldList">字段列表</param>
+        </member>
+        <member name="T:Movit.Application.Service.SystemManage.AreaService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.12 16:40
+            描 述：区域管理
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.AreaService.GetList">
+            <summary>
+            区域列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.AreaService.GetList(System.String,System.String)">
+            <summary>
+            区域列表
+            </summary>
+            <param name="parentId">节点Id</param>
+            <param name="keyword">关键字查询</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.AreaService.GetEntity(System.String)">
+            <summary>
+            区域实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.AreaService.RemoveForm(System.String)">
+            <summary>
+            删除区域
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.AreaService.SaveForm(System.String,Movit.Application.Entity.SystemManage.AreaEntity)">
+            <summary>
+            保存区域表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="{{">区域实体</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.SystemManage.DataItemDetailService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.17 9:56
+            描 述：数据字典明细
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemDetailService.GetList(System.String)">
+            <summary>
+            明细列表
+            </summary>
+            <param name="itemId">分类Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemDetailService.GetEntity(System.String)">
+            <summary>
+            明细实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemDetailService.GetDataItemList">
+            <summary>
+            获取数据字典列表（给绑定下拉框提供的）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemDetailService.ExistItemValue(System.String,System.String,System.String)">
+            <summary>
+            项目值不能重复
+            </summary>
+            <param name="itemValue">项目值</param>
+            <param name="keyValue">主键</param>
+            <param name="itemId">分类Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemDetailService.ExistItemName(System.String,System.String,System.String)">
+            <summary>
+            项目名不能重复
+            </summary>
+            <param name="itemName">项目名</param>
+            <param name="keyValue">主键</param>
+            <param name="itemId">分类Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemDetailService.RemoveForm(System.String)">
+            <summary>
+            删除明细
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemDetailService.SaveForm(System.String,Movit.Application.Entity.SystemManage.DataItemDetailEntity)">
+            <summary>
+            保存明细表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="dataItemDetailEntity">明细实体</param>
+            <returns></returns>
+        </member>
+        <member name="T:Movit.Application.Service.SystemManage.DataItemService">
+            <summary>
+             
+            Copyright (c) 2018-2016  
+            创建人： 
+            日 期：2015.11.17 9:56
+            描 述：数据字典分类
+            </summary>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemService.GetList">
+            <summary>
+            分类列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemService.GetEntity(System.String)">
+            <summary>
+            分类实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemService.GetEntityByCode(System.String)">
+            <summary>
+            根据分类编号获取实体对象
+            </summary>
+            <param name="ItemCode">编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemService.ExistItemCode(System.String,System.String)">
+            <summary>
+            分类编号不能重复
+            </summary>
+            <param name="itemCode">编号</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemService.ExistItemName(System.String,System.String)">
+            <summary>
+            分类名称不能重复
+            </summary>
+            <param name="itemName">名称</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemService.RemoveForm(System.String)">
+            <summary>
+            删除分类
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:Movit.Application.Service.SystemManage.DataItemService.SaveForm(System.String,Movit.Application.Entity.SystemManage.DataItemEntity)">
+            <summary>
+            保存分类表单（新增、修改）
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="dataItemEntity">分类实体</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

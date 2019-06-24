@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21566527-8F54-4A8D-AA68-7662C2C31FB9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Movit.Application.Busines</RootNamespace>
+    <AssemblyName>Movit.Application.Busines</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizeManage\AuthorizeBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuthorizeManage\ModuleBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuthorizeManage\ModuleButtonBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuthorizeManage\ModuleColumnBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuthorizeManage\ModuleFormBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuthorizeManage\ModuleFormInstanceBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuthorizeManage\PermissionBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseManage\AccountBLL.cs" />
+    <Compile Include="BaseManage\Base_ProjectInfoBLL.cs" />
+    <Compile Include="BaseManage\DepartmentBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseManage\OP_ParcelBLL.cs" />
+    <Compile Include="BaseManage\OrganizeBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseManage\PostBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseManage\RoleBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseManage\T_AttachmentBLL.cs" />
+    <Compile Include="BaseManage\UserBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseManage\UserGroupBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CapitalFlowManage\T_CapitalFlowBLL.cs" />
+    <Compile Include="CapitalFlowManage\T_CapitalFlow_NodeBLL.cs" />
+    <Compile Include="CapitalFlowManage\T_Funds_DetailsBLL.cs" />
+    <Compile Include="EcommerceManage\EcommerceBLL.cs" />
+    <Compile Include="EcommerceManage\EcommerceGroupBLL.cs" />
+    <Compile Include="EcommerceContractManage\EcommerceDiscountProgramBLL.cs" />
+    <Compile Include="EcommerceContractManage\EcommerceProjectRelationBLL.cs" />
+    <Compile Include="EcommercePayManage\Pay_InfoBLL.cs" />
+    <Compile Include="EcommercePayQueryManage\EcomPayEcommerceBLL.cs" />
+    <Compile Include="EcommercePayQueryManage\EcomPayProjectBLL.cs" />
+    <Compile Include="EcommercePayQueryManage\EcomPayTotalBLL.cs" />
+    <Compile Include="EcommerceTransferManage\Transfer_InfoBLL.cs" />
+    <Compile Include="EcommercePayManage\T_Pay_Info_DetailsBLL.cs" />
+    <Compile Include="EcomPartnerCapitalPoolManage\T_PartnerCapitalPoolBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemManage\AreaBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemManage\CodeRuleBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemManage\DataBaseBackupBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemManage\DataBaseLinkBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemManage\DataBaseTableBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemManage\DataItemBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemManage\DataItemDetailBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemManage\LogBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Movit.Cache\Movit.Cache.Factory\Movit.Cache.Factory.csproj">
+      <Project>{a68cdd21-2e12-4b11-95db-d0a0fced48b1}</Project>
+      <Name>Movit.Cache.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Cache\Movit.Cache\Movit.Cache.csproj">
+      <Project>{5af4997c-4395-48af-990c-932259111dff}</Project>
+      <Name>Movit.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Data.Repository\Movit.Data.Repository.csproj">
+      <Project>{1751a2dd-0f00-4c76-b180-97e8f72fe078}</Project>
+      <Name>Movit.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Sys.Api.Code\Movit.Sys.Api.Code.csproj">
+      <Project>{ed3cdbf0-72d8-4444-a8f9-b3d1594eb84c}</Project>
+      <Name>Movit.Sys.Api.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Util.Extension\Movit.Util.Extension.csproj">
+      <Project>{1be62e4c-35c1-4115-b003-be9c98f8436e}</Project>
+      <Name>Movit.Util.Extension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Util.Log\Movit.Util.Log.csproj">
+      <Project>{2ef55895-d7dd-42d6-8741-f8100e5c210f}</Project>
+      <Name>Movit.Util.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Util.Offices\Movit.Util.Offices.csproj">
+      <Project>{4f8b359e-b664-48c0-88d0-31c140602654}</Project>
+      <Name>Movit.Util.Offices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Util.WebControl\Movit.Util.WebControl.csproj">
+      <Project>{93f81df7-5a0b-4a13-a90e-8cf7c41955c3}</Project>
+      <Name>Movit.Util.WebControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Util\Movit.Util.csproj">
+      <Project>{cf1c8d13-7702-4a3e-969f-9518cde2d7a6}</Project>
+      <Name>Movit.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movit.Application.Code\Movit.Application.Code.csproj">
+      <Project>{9b10db87-130c-41d3-8687-1fac877db74a}</Project>
+      <Name>Movit.Application.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movit.Application.Entity\Movit.Application.Entity.csproj">
+      <Project>{c10920fe-8c74-4993-a7f4-1da189da842c}</Project>
+      <Name>Movit.Application.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movit.Application.IService\Movit.Application.IService.csproj">
+      <Project>{8bf8dab3-da0c-42d9-ac05-10b843b781a5}</Project>
+      <Name>Movit.Application.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movit.Application.Service\Movit.Application.Service.csproj">
+      <Project>{d6b8abea-c923-4605-99a9-b7aca5de4d8a}</Project>
+      <Name>Movit.Application.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

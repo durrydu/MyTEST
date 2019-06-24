@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "日志详情";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+    var keyValue = request('keyValue');
+    var type = request('type');
+    $(function () {
+        initControl();
+        $(".btn").click(function () {
+            history.go(-1);
+        });
+    })
+
+    //保存表单
+    function initControl() {
+        var app = angular.module('msgApp', []);
+        app.controller('msgCtrl', ['$scope', '$http', function ($scope, $http) {
+            $http.get('../../SystemManage/Log/GetFormJson?keyValue=' + keyValue).success(function (result) {
+
+                $scope.result = result;
+
+                if (type != "interface" || result.ExecuteResult == 1 || result.IPAddress == "" || result.ExecuteResultJson == "" ) {
+                    $('#btn_retry').css('display', 'none');
+                }
+            });
+
+
+        }]);
+    }
+
+    //重试
+    function btn_retry() {
+        $.SaveForm({
+            url: "../../SystemManage/Log/Retry?keyValue=" + keyValue,
+            loading: "正在操作数据...",
+            success: function () {
+                location.href = "../../SystemManage/Log/InterfaceIndex";
+            }
+        })
+    }
+</script>
+<div class="step-pane">
+    <div class="panel-body">
+        <div class="detail-title">日志详情</div>
+        <div class="formTableOuter" ng-app="msgApp" ng-controller="msgCtrl">
+            <table class="formTable">
+                <tr>
+                    <th>请求系统：</th>
+                    <td id="SourceObjectId">{{result.SourceObjectId}}</td>
+                    <th>目标系统：</th>
+                    <td id="SourceContentJson">{{result.SourceContentJson}}</td>
+                </tr>
+            
+                <tr>
+                    <th>创建时间：</th>
+                    <td id="OperateTime">{{result.OperateTime}}</td>
+                    <th>操作类型：</th>
+                    <td id="OperateType">{{result.OperateType}}</td>
+                </tr>
+                <tr>
+                    <th>功能：</th>
+                    <td id="Module">{{result.Module}}</td>
+                    <th>请求方式：</th>
+                    <td id="Host">{{result.Host}}</td>
+                </tr>
+                <tr>
+                    <th>请求地址：</th>
+                    <td colspan="3" id="IPAddress">{{result.IPAddress}}</td>
+                </tr>
+                <tr>
+                    <th>浏览器信息：</th>
+                    <td id="Browser" colspan="3">{{result.Browser}}</td>
+                </tr>
+                <tr>
+                    <th>执行状态：</th>
+                    @*<td colspan="3" id="ExecuteResult" ng-if="result.ExecuteResult==''"><span class="label label-danger"></span></td>*@
+                    <td colspan="3" id="ExecuteResult" ng-if="result.ExecuteResult==0"><span class="label label-danger">失败</span></td>
+                    <td colspan="3" id="ExecuteResult" ng-if="result.ExecuteResult==1"><span class="label label-success">成功</span></td>
+                </tr>
+                <tr>
+                    <th>执行描述：</th>
+                    <td colspan="3" id="ExecuteResultJson">{{result.ExecuteResultJson}}</td>
+                </tr>
+                <tr>
+                    <th>返回结果：</th>
+                    <td colspan="3" id="IPAddressName">{{result.IPAddressName}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="btnRow">
+            <a class="btn btn-default btn-primary" id="btn_retry" onclick="btn_retry();">重试</a>
+            <a class="btn btn-default">返回</a>
+        </div>
+    </div>
+</div>
+<script src="~/Content/adminPretty/angular.min.js"></script>

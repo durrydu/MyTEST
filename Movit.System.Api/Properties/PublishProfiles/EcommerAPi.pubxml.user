@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>F:\YGECApi</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/Ionic.Zip.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/MessageFactory.dll">
+      <publishTime>09/20/2018 15:07:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ServiceLocation.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Configuration.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/Movit.Application.Busines.dll">
+      <publishTime>09/20/2018 15:07:49</publishTime>
+    </File>
+    <File Include="bin/Movit.Application.Cache.dll">
+      <publishTime>09/20/2018 15:07:51</publishTime>
+    </File>
+    <File Include="bin/Movit.Application.Code.dll">
+      <publishTime>09/20/2018 15:07:39</publishTime>
+    </File>
+    <File Include="bin/Movit.Application.Entity.dll">
+      <publishTime>09/20/2018 15:07:42</publishTime>
+    </File>
+    <File Include="bin/Movit.Application.Interface.dll">
+      <publishTime>09/20/2018 15:07:46</publishTime>
+    </File>
+    <File Include="bin/Movit.Application.IService.dll">
+      <publishTime>09/20/2018 15:07:46</publishTime>
+    </File>
+    <File Include="bin/Movit.Application.Mapping.dll">
+      <publishTime>09/20/2018 15:07:46</publishTime>
+    </File>
+    <File Include="bin/Movit.Application.Service.dll">
+      <publishTime>09/20/2018 15:07:48</publishTime>
+    </File>
+    <File Include="bin/Movit.Cache.dll">
+      <publishTime>09/20/2018 15:07:28</publishTime>
+    </File>
+    <File Include="bin/Movit.Cache.Factory.dll">
+      <publishTime>09/20/2018 15:07:35</publishTime>
+    </File>
+    <File Include="bin/Movit.Cache.Redis.dll">
+      <publishTime>09/20/2018 15:07:31</publishTime>
+    </File>
+    <File Include="bin/Movit.Data.dll">
+      <publishTime>09/20/2018 15:07:36</publishTime>
+    </File>
+    <File Include="bin/Movit.Data.EF.dll">
+      <publishTime>09/20/2018 15:07:45</publishTime>
+    </File>
+    <File Include="bin/Movit.Data.Repository.dll">
+      <publishTime>09/20/2018 15:07:39</publishTime>
+    </File>
+    <File Include="bin/Movit.Data.SQLSugar.dll">
+      <publishTime>09/20/2018 15:07:39</publishTime>
+    </File>
+    <File Include="bin/Movit.Sys.Api.Code.dll">
+      <publishTime>09/20/2018 15:07:29</publishTime>
+    </File>
+    <File Include="bin/Movit.Sys.Api.dll">
+      <publishTime>09/20/2018 15:07:55</publishTime>
+    </File>
+    <File Include="bin/Movit.Util.dll">
+      <publishTime>09/20/2018 15:07:33</publishTime>
+    </File>
+    <File Include="bin/Movit.Util.Extension.dll">
+      <publishTime>09/20/2018 15:07:28</publishTime>
+    </File>
+    <File Include="bin/Movit.Util.Ioc.dll">
+      <publishTime>09/20/2018 15:07:33</publishTime>
+    </File>
+    <File Include="bin/Movit.Util.Log.dll">
+      <publishTime>09/20/2018 15:07:35</publishTime>
+    </File>
+    <File Include="bin/Movit.Util.Offices.dll">
+      <publishTime>09/20/2018 15:07:31</publishTime>
+    </File>
+    <File Include="bin/Movit.Util.WebControl.dll">
+      <publishTime>09/20/2018 15:07:35</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/NPOI.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/NPOI.OOXML.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXml4Net.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXmlFormats.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/Oracle.DataAccess.dll">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Common.dll">
+      <publishTime>09/06/2018 15:26:09</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Interfaces.dll">
+      <publishTime>09/06/2018 15:26:09</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Redis.dll">
+      <publishTime>09/06/2018 15:26:09</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Text.dll">
+      <publishTime>09/06/2018 15:26:09</publishTime>
+    </File>
+    <File Include="bin/SqlSugar.dll">
+      <publishTime>09/06/2018 15:26:09</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>09/06/2018 15:26:08</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>09/06/2018 15:26:09</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.Formatting.resources.dll">
+      <publishTime>01/28/2015 04:02:44</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>01/28/2015 04:04:32</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.resources.dll">
+      <publishTime>01/28/2015 04:02:56</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.WebHost.resources.dll">
+      <publishTime>01/28/2015 04:03:48</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>01/28/2015 04:02:22</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Optimization.resources.dll">
+      <publishTime>02/11/2014 15:28:40</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>01/28/2015 04:02:34</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>01/28/2015 04:04:32</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>01/28/2015 04:04:32</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>01/28/2015 04:04:32</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="Movit.Commerce.Bpm.asmx">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/06/2018 15:26:07</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/20/2018 15:07:55</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

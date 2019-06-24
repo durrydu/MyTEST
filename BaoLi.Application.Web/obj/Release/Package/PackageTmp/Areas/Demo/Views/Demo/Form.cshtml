@@ -1,0 +1,270 @@
+﻿@{
+    ViewBag.Title = "机构管理";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<style>
+
+</style>
+<script>
+    var keyValue = request('keyValue');
+    var parentId = request('parentId');
+    $(function () {
+        initControl();
+       
+    })
+    //初始化控件
+    function initControl() {
+        //部门机构
+        $("#DepartmentId").ComboBoxTree({
+            url: "../../Demo/Demo/GetDepartmentTreeJson",
+            description: "==请选择==",
+            height: "260px",
+            allowSearch: true
+        });
+        //角色
+        $("#RoleId").ComboBox({
+            url: "../../Demo/Demo/GetRoleJson",
+            id: "RoleId",
+            text: "RoleName",
+            description: "==请选择==",
+            height: "200px"
+        });
+        //部门机构
+        $("#DepartmentId2").ComboBoxTree({
+            url: "../../Demo/Demo/GetDepartmentTreeJson",
+            description: "==请选择==",
+            height: "260px",
+            allowSearch: true
+        });
+        //角色
+        $("#RoleId2").ComboBox({
+            url: "../../Demo/Demo/GetRoleJson",
+            id: "RoleId",
+            text: "RoleName",
+            description: "==请选择==",
+            height: "200px"
+        });
+        //部门机构
+        $("#DepartmentId3").ComboBoxTree({
+            url: "../../Demo/Demo/GetDepartmentTreeJson",
+            description: "==请选择==",
+            height: "260px",
+            allowSearch: true
+        });
+        //角色
+        $("#RoleId3").ComboBox({
+            url: "../../Demo/Demo/GetRoleJson",
+            id: "RoleId",
+            text: "RoleName",
+            description: "==请选择==",
+            height: "200px"
+        });
+    }
+    //保存表单
+    function AcceptClick(group) {
+        if (!$('[group="' + group + '"]').Validform()) {
+            return false;
+        }
+        window.location.href = "/Demo/Demo/Index";
+    }
+</script>
+<div class="step-pane" id="step-2">
+    <div class="panel panel-default" style="margin-bottom: 10px;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Title1</h3>
+        </div>
+        <div class="panel-body" style="width: 99%;">
+            <table class="form" group="All">
+                <tr>
+                    <th class="formTitle">姓名<font face="宋体">*</font></th>
+                    <td class="formValue" group="Group">
+                        <input id="CreateUser" type="text" class="form-control" value="" isvalid="yes" checkexpession="NotNull" />
+                    </td>
+                    <th class="formTitle">日期</th>
+                    <td class="formValue" group="Group">
+                        <input id="StateTime" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+                    </td>
+                    <td class="formTitle">部门:</td>
+                    <td class="formValue">
+                        <div id="DepartmentId" type="selectTree" class="ui-select">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formTitle">角色:</td>
+                    <td class="formValue">
+                        <div id="RoleId" type="select" class="ui-select">
+                        </div>
+                    </td>
+                    <td class="formTitle">类型:</td>
+                    <td class="formValue">
+                        <div class="checkbox">
+                            <label>
+                                <input id="IsPublic" type="checkbox" />
+                                公共
+                            </label>
+                            <label>
+                                <input id="EnabledMark" type="checkbox" checked="checked" />
+                                有效
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">描述<font face="宋体">*</font></th>
+                    <td class="formValue" colspan="5">
+                        @*<textarea  type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />*@
+                        <textarea id="Description"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formTitle"></td>
+                    <td class="formValue" colspan="5">
+                        <div class="FlowPanelall">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#frmtab" data-toggle="tab">表单信息</a>
+                                <li><a href="#FlowPanel" data-toggle="tab">流程信息</a>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="frmtab" class="tab-pane active" style="overflow-y:auto;">
+                                    <div id="frmpreview" class="app_layout app_preview">
+                                        <table class="form">
+                                            <tr>
+                                                <td class="formTitle">姓名</td>
+                                                <td class="formValue"><input id="Name" type="text" class="form-control" value="" isvalid="yes" checkexpession="NotNull" /></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="FlowPanel" class="tab-pane">
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Title2</h3>
+        </div>
+        <div class="FlowPanelall">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#frmtab" data-toggle="tab">表单信息</a>
+                <li><a href="#FlowPanel" data-toggle="tab">流程信息</a>
+            </ul>
+            <div class="tab-content">
+                <div id="frmtab" class="tab-pane active" style="overflow-y:auto;">
+                    <div id="frmpreview" class="app_layout app_preview">
+                        <div class="panel-body" style="width: 99%;">
+                            <table class="form">
+                                <tr>
+                                    <th class="formTitle">姓名<font face="宋体">*</font></th>
+                                    <td class="formValue">
+                                        <input id="CreateUser" type="text" class="form-control" value="" isvalid="yes" checkexpession="NotNull" />
+                                    </td>
+                                    <th class="formTitle">日期</th>
+                                    <td class="formValue">
+                                        <input id="StateTime" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+                                    </td>
+                                    <td class="formTitle">部门:</td>
+                                    <td class="formValue">
+                                        <div id="DepartmentId2" type="selectTree" class="ui-select">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="formTitle">角色:</td>
+                                    <td class="formValue">
+                                        <div id="RoleId2" type="select" class="ui-select">
+                                        </div>
+                                    </td>
+                                    <td class="formTitle">类型:</td>
+                                    <td class="formValue">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input id="IsPublic" type="checkbox" />
+                                                公共
+                                            </label>
+                                            <label>
+                                                <input id="EnabledMark" type="checkbox" checked="checked" />
+                                                有效
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="formTitle">描述<font face="宋体">*</font></th>
+                                    <td class="formValue" colspan="5">
+                                        @*<textarea  type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />*@
+                                        <textarea id="Description"></textarea>
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="FlowPanel" class="tab-pane">
+                    <div class="panel-body" style="width: 99%;">
+                        <table class="form">
+                            <tr>
+                                <th class="formTitle">姓名<font face="宋体">*</font></th>
+                                <td class="formValue">
+                                    <input id="CreateUser" type="text" class="form-control" value="" isvalid="yes" checkexpession="NotNull" />
+                                </td>
+                                <th class="formTitle">日期</th>
+                                <td class="formValue">
+                                    <input id="StateTime" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+                                </td>
+                                <td class="formTitle">部门:</td>
+                                <td class="formValue">
+                                    <div id="DepartmentId3" type="selectTree" class="ui-select">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">角色:</td>
+                                <td class="formValue">
+                                    <div id="RoleId3" type="select" class="ui-select">
+                                    </div>
+                                </td>
+                                <td class="formTitle">类型:</td>
+                                <td class="formValue">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input id="IsPublic" type="checkbox" />
+                                            公共
+                                        </label>
+                                        <label>
+                                            <input id="EnabledMark" type="checkbox" checked="checked" />
+                                            有效
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="formTitle">描述<font face="宋体">*</font></th>
+                                <td class="formValue" colspan="5">
+                                    @*<textarea  type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />*@
+                                    <textarea id="Description"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btnRow">
+        <a onclick="AcceptClick('Group');" class="btn btn-primary">部分验证</a>
+        <a onclick="AcceptClick('All');" class="btn btn-primary">确定</a>
+        <a class="btn btn-default">返回</a>
+    </div>
+</div>
+
+
+

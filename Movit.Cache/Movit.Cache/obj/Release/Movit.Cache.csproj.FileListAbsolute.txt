@@ -1,0 +1,5 @@
+F:\Ecommerce\Movit.Cache\Movit.Cache\bin\Release\Movit.Cache.dll
+F:\Ecommerce\Movit.Cache\Movit.Cache\bin\Release\Movit.Cache.pdb
+F:\Ecommerce\Movit.Cache\Movit.Cache\obj\Release\Movit.Cache.csprojResolveAssemblyReference.cache
+F:\Ecommerce\Movit.Cache\Movit.Cache\obj\Release\Movit.Cache.dll
+F:\Ecommerce\Movit.Cache\Movit.Cache\obj\Release\Movit.Cache.pdb

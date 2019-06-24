@@ -1,0 +1,104 @@
+﻿@{
+
+    var systemName = Movit.Util.Config.GetValue("SystemName");
+    var userId = Movit.Application.Code.OperatorProvider.Provider.Current().UserId;
+    var userName = Movit.Application.Code.OperatorProvider.Provider.Current().UserName;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@systemName</title>
+    @*<link rel="icon" href="/Content/images/favicon.ico">*@
+    <script src="~/Content/scripts/jquery/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/scripts/plugins/cookie/jquery.cookie.js"></script>
+    <link href="~/Content/styles/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/scripts/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/styles/movit-ui.css" rel="stylesheet" />
+    <link href="~/Content/adminPretty/font/demo.css" rel="stylesheet" />
+    <link href="~/Content/adminPretty/font/iconfont.css" rel="stylesheet" />
+    <link href="~/Content/adminPretty/css/menu-css.css" rel="stylesheet" />
+    @System.Web.Optimization.Scripts.Render("~/Content/scripts/utils/js")
+    <script src="~/Content/scripts/plugins/dialog/dialog.js"></script>
+    <script src="~/Content/scripts/utils/movit-clientdata.js"></script>
+    <link href="/Content/styles/font-awesome.min.css" rel="stylesheet" />
+    <script src="/Content/scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Content/adminPretty/menu_min.js"></script>
+    <script src="/Content/adminPretty/index.js"></script>
+    <link href="/Content/adminPretty/css/index.css" rel="stylesheet" />
+    <link href="/Content/adminPretty/css/adminPretty.css" rel="stylesheet" />
+
+    <script>
+        var contentPath = '@Url.Content("~")'.substr(0, '@Url.Content("~")'.length - 1);
+    </script>
+</head>
+<body style="overflow: hidden;">
+    <div id="ajax-loader" style="cursor: progress; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; background: #fff; z-index: 10000; overflow: hidden;">
+        <img src="/Content/images/ajax-loader.gif" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;" />
+    </div>
+    <div class="lea-Head">
+        <div class="logo">
+            <img src="/Content/adminPretty/images/new.logo.png" /><i>阳光城电商管理系统</i>
+        </div>
+        <div class="right-bar">
+            <ul>
+                <li class="dropdown user user-menu">
+                    @*<a href="#" class="user-menu-tishi icon iconfont icon-liaotian"><i class="">4</i></a>
+                    <a href="#" class="user-menu-icon"> <img src="~/Content/adminPretty/img/icon.jpg" class="" /></a>*@
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="hidden-xs">@userName</span>
+                    </a>
+                    <a onclick="$.movitindex.indexOut()" class="user-zhuxiao"><i class=" icon iconfont icon-zhuxiao"></i>注销</a>
+                    @*<ul class="dropdown-menu pull-right">
+                        <li><a class="menuItem" data-id="userInfo" href="/PersonCenter/Index"><i class="fa fa-user"></i>个人信息</a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-trash-o"></i>清空缓存</a></li>
+                        <li class="divider"></li>
+                        <li><a onclick="$.movitindex.indexOut()"><i class="ace-icon fa fa-power-off"></i>安全退出</a></li>
+                    </ul>*@
+                </li>
+            </ul>
+        </div>
+        <div class="left-bar" id="left-bar">
+            <ul class="menu" id="top-menu"></ul>
+        </div>
+
+    </div>
+    <div class="lea-tabs">
+        <div class="menuTabs">
+            <div class="page-tabs-content">
+                <a href="javascript:;" class="menuTab active" data-id="/Home/Index"><i class="fa fa-home"></i>欢迎首页</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="lea-cont">
+        <div class="lea-left notShow">
+            <div class="content">
+                
+            </div>
+        </div>
+        <div id="mainContent" class="lea-content lea-right">
+            <iframe class="movit_iframe" width="100%" height="100%" src="/Home/Index" frameborder="0" data-id="/Home/Index"></iframe>
+        </div>
+    </div>
+   
+    @*<div class="footer">
+        <div style="float: left; width: 30%;">
+            &nbsp;技术支持：<a href="#" target="_blank" style="color: white;">@systemName</a>
+        </div>
+        <div style="float: left; width: 40%; text-align: center;">
+            Copyright © 2013 - 2018
+        </div>
+
+    </div>*@
+
+
+    <div id="loading_background" class="loading_background" style="display: none;"></div>
+    <div id="loading_manage">
+        正在拼了命为您加载…
+    </div>
+
+</body>
+</html>

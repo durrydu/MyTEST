@@ -1,0 +1,5 @@
+F:\Ecommerce\Movit.Sys.Api.Code\bin\Release\Movit.Sys.Api.Code.dll
+F:\Ecommerce\Movit.Sys.Api.Code\bin\Release\Movit.Sys.Api.Code.pdb
+F:\Ecommerce\Movit.Sys.Api.Code\obj\Release\Movit.Sys.Api.Code.csprojResolveAssemblyReference.cache
+F:\Ecommerce\Movit.Sys.Api.Code\obj\Release\Movit.Sys.Api.Code.dll
+F:\Ecommerce\Movit.Sys.Api.Code\obj\Release\Movit.Sys.Api.Code.pdb

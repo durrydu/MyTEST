@@ -1,0 +1,215 @@
+﻿@{;
+ViewBag.Title = "岗位项目授权";
+Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script src="~/Content/scripts/plugins/lodash.min.js"></script>
+<script>
+    var keyValue = request('keyValue');
+    $(function () {
+        InitialPage();
+        GetGrid();
+    });
+    //初始化页面
+    function InitialPage() {
+        //resize重设布局;
+        $(window).resize(function (e) {
+            window.setTimeout(function () {
+                $('#gridTablet').setGridWidth(($('.gridPanel').width()));
+                $('#gridTablet').setGridHeight($(window).height() - 220.5);
+            }, 200);
+            e.stopPropagation();
+        });
+        //查询事件
+        $("#btn_Search").click(function () {
+            var queryJson = {
+                projectName: $("#queryCondition").val(),
+                keyword: keyValue
+            }
+            $('#gridTablet').jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+                page: 1
+            }).trigger('reloadGrid');
+        });
+        //查询回车
+        $('#txt_Keyword').bind('keypress', function (event) {
+            if (event.keyCode == "13") {
+                $('#btn_Search').trigger("click");
+            }
+        });
+    }
+    //创建jqGrid缓存数组
+    var authorizeIds = [];
+    //加载表格
+    function GetGrid() {
+        //var selectedRowIndex = 0;
+        var $gridTable = $('#gridTablet');
+        $gridTable.jqGrid({
+            autowidth: true,
+            height: $(window).height() - 220.5,
+            url: "../../BaseManage/Base_ProjectInfo/GetProjectListByPostId?keyValue=" + keyValue,
+            datatype: "json",
+            colModel: [
+                { label: '主键', name: 'AuthorizeId', hidden: true, key: true },
+                { label: '项目ID', name: 'ItemId', hidden: true },
+                { label: '所属区域公司', name: 'Remark1', index: 'Remark1', width: 150, align: 'left', sortable: true },
+                { label: '城市', name: 'Remark2', index: 'Remark2', width: 100, align: 'left', sortable: true },
+                { label: '项目名称', name: 'ItemName', index: 'ItemName', width: 300, align: 'left', sortable: true },
+                { label: '授权时间', name: 'CreateDate', index: 'CreateDate', width: 170, align: 'left', sortable: true },
+                { label: '授权用户', name: 'CreateUserName', index: 'CreateUserName', width: 50, align: 'left', sortable: true },
+            ],
+            viewrecords: true,
+            rowNum: 20,
+            rowList: [20, 50, 100, 9999],
+            pager: "#gridPager",
+            sortname: 'Remark1',
+            sortorder: 'asc',
+            rownumbers: true,
+            shrinkToFit: true,
+            gridview: true,
+            multiselect: true,
+            //onSelectRow: function () {
+            //    //selectedRowIndex = $("#" + this.id).getGridParam('selrow');
+
+
+            //},
+            //jqGrid中触发选中功能，将数据缓存在数组中
+            onSelectAll: function (aRowids, status) {
+                var _this = this;
+                if (status) {
+                    authorizeIds = _.union(authorizeIds, aRowids);
+                } else {
+                    authorizeIds = _.difference(authorizeIds, aRowids);
+                }
+            },
+            beforeSelectRow: function (rowid, e) {
+                var isPush = true;
+                if (e.type == 'click') {
+                    debugger
+                    i = $.jgrid.getCellIndex($(e.target).closest('td')[0]),
+                    cm = $gridTable.jqGrid('getGridParam', 'colModel');
+                    var inputCk = $(e.target).closest('td').eq(0).find("input");
+                    if (inputCk.length == 0) {
+
+                        return;
+                    }
+                    isPush = inputCk.is(":checked")
+                }
+                var _this = this;
+                var index = _.indexOf(authorizeIds, rowid);
+                if (isPush) {
+                    if (index == -1) {
+
+                        authorizeIds.push(rowid);
+                    }
+                }
+                else {
+                    authorizeIds = _.pull(authorizeIds, rowid);
+
+                }
+
+                //if (index == -1) {
+
+                //    authorizeIds.push(rowid);
+
+
+                //}
+                //else {
+                //    authorizeIds = _.pull(authorizeIds, rowid);
+                //}
+            },
+            gridComplete: function () {
+                var _this = this;
+                if (authorizeIds.length > 0) {
+                    for (var i = 0; i < authorizeIds.length; i++) {
+
+                        $(_this).jqGrid('setSelection', authorizeIds[i]);
+                    }
+                }
+            }
+        });
+    }
+    //新增
+    function btn_add() {
+        dialogOpen({
+            id: 'SelectProject',
+            title: '选择您要对此岗位授权的项目',
+            url: '/BaseManage/Base_ProjectInfo/SelectProject?keyValue=' + keyValue,
+            width: "780px",
+            height: "640px",
+            btn: ["授权选中项目", "关闭"],
+            callBack: function (iframeId) {
+                top.frames[iframeId].AcceptClick();
+
+            }
+        });
+    }
+    function btn_delete_all() {
+
+        $.ConfirmAjax({
+            msg: "请问您确认移除所有项目授权吗？",
+            url: "../../BaseManage/Base_ProjectInfo/BatchRemoveFormAll",//Post的路径
+            param: { keyValue: keyValue },
+            success: function (data) {
+                $('#gridTablet').trigger('reloadGrid');
+            }
+        })
+
+    }
+    //移除
+    function btn_delete() {
+        //var authorizeIds = [];
+        //获取多选到的id集合
+        //var ids = $("#gridTablet").jqGrid("getGridParam", "selarrrow");
+        //遍历访问这个集合
+        //$(item_selected).each(function (index, id) {
+        //    //由id获得对应数据行
+        //    var row = $("#gridTablet").jqGrid('getRowData', id);
+        //    authorizeIds.push(row.AuthorizeId);
+        //});
+        if (authorizeIds.length == 0) {
+            dialogAlert("请选择需要移除授权的项目！", 5);
+            return false;
+        }
+        if (keyValue) {
+            $.RemoveForm({
+                url: '../../BaseManage/Base_ProjectInfo/BatchRemoveForm',
+                param: { authorizeIds: authorizeIds.join(',') },
+                success: function (data) {
+                    $('#gridTablet').trigger('reloadGrid');
+                }
+            })
+        } else {
+            dialogMsg('请选择需要移除的项目！', 0);
+        }
+    }
+
+
+</script>
+<div class="titlePanel">
+    <div class="title-search">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <input id="queryCondition" type="text" class="form-control" placeholder="请输入要查询关键字" style="width: 200px;">
+                    </td>
+                    <td style="padding-left: 5px;">
+                        <a id="btn_Search" class="btn btn-primary"><i class="fa fa-search"></i>&nbsp;查询</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="toolbar">
+        <div class="btn-group">
+            <a id="lr-replace" class="btn btn-default" onclick="reload();"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+            <a id="lr-add" class="btn btn-default" onclick="btn_add()"><i class="fa fa-plus"></i>&nbsp;新增项目授权</a>
+            <a id="lr-delete" class="btn btn-default" onclick="btn_delete()"><i class="fa fa-trash-o"></i>&nbsp;批量移除</a>
+            <a id="lr-delete-all" class="btn btn-default" onclick="btn_delete_all()"><i class="fa fa-trash-o"></i>&nbsp;移除全部项目授权</a>
+        </div>
+    </div>
+</div>
+<div class="gridPanel">
+    <table id="gridTablet"></table>
+    <div id="gridPager"></div>
+</div>

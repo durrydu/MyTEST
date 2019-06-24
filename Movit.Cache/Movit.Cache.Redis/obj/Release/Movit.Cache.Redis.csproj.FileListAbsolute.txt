@@ -1,0 +1,14 @@
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\bin\Release\Movit.Cache.Redis.dll
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\bin\Release\Movit.Cache.Redis.pdb
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\bin\Release\Movit.Cache.dll
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\bin\Release\ServiceStack.Common.dll
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\bin\Release\ServiceStack.Interfaces.dll
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\bin\Release\ServiceStack.Redis.dll
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\bin\Release\ServiceStack.Text.dll
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\bin\Release\Movit.Cache.pdb
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\bin\Release\ServiceStack.Common.xml
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\bin\Release\ServiceStack.Redis.xml
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\bin\Release\ServiceStack.Text.xml
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\obj\Release\Movit.Cache.Redis.csprojResolveAssemblyReference.cache
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\obj\Release\Movit.Cache.Redis.dll
+F:\Ecommerce\Movit.Cache\Movit.Cache.Redis\obj\Release\Movit.Cache.Redis.pdb

@@ -1,0 +1,279 @@
+﻿@{;
+ViewBag.Title = "电商资金总览（项目）";
+Layout = "~/Views/Shared/_Index.cshtml";
+}
+<link href="~/Areas/EcommercePayQueryManage/Content/bootstrap-select.css" rel="stylesheet" />
+<script src="~/Content/scripts/plugins/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="~/Areas/EcommercePayQueryManage/Content/bootstrap-select.js"></script>
+<script>
+
+    $(function () {
+        InitialPage();
+        GetGrid();
+    });
+
+    var last_page = 0;
+    var currentPage = 1;
+    function InitPage() {
+        $('#pageLimit').bootstrapPaginator({
+            currentPage: currentPage,
+            totalPages: last_page,
+            size: "normal",
+            bootstrapMajorVersion: 3,
+            alignment: "right",
+            numberOfPages: 6,
+            itemTexts: function (type, page, current) {
+                switch (type) {
+                    case "first": return "首页";
+                    case "prev": return "上一页";
+                    case "next": return "下一页";
+                    case "last": return "末页";
+                    case "page": return page;
+                }//默认显示的是第一页。
+            },
+            onPageClicked: function (event, originalEvent, type, page) {//给每个页眉绑定一个事件，其实就是ajax请求，其中page变量为当前点击的页上的数字。
+
+                var queryJson = {
+                    CompanyId: $("#Project_Id").attr("data-value"),
+                    ProjectID: $("#Project_Name").attr("data-value"),
+                    starttime: $("#Totalstarttime").val(),
+                    endtime: $("#Totalendtime").val(),
+                }
+                $('#gridTable').jqGrid('setGridParam', {
+                    postData: { queryJson: JSON.stringify(queryJson) },
+                    page: page
+                }).trigger('reloadGrid');
+            }
+        });
+    }
+    function InitialPage() {
+        ////区域公司
+        //$("#Project_Id").ComboBox({
+        //    url: "../../BaseManage/Department/GetListByAuthorize",
+        //    id: "DepartmentId",
+        //    text: "FullName",
+        //    description: "==请选择==",
+        //    height: "200px",
+        //    allowSearch: true,
+        //}).bind("change", function () {
+        //    var value = $(this).attr("data-value");
+        //    //项目名称
+        //    $("#Project_Name").ComboBox({
+        //        url: "../../BaseManage/Base_ProjectInfo/GetProjectListByRole",
+        //        param: { keyValue: value },
+        //        id: "ProjectID",
+        //        text: "ProjecName",
+        //        description: "==请选择==",
+        //        height: "200px",
+        //    })
+        //});
+        $('.selectpicker').selectpicker({
+            'noneSelectedText': '请选择'
+        });
+
+        $.ajax({
+            type: 'get',
+            url: "../../BaseManage/Department/GetListByAuthorize",
+            dataType: 'json',
+            success: function (datas) {
+                var select = $("#Project_Id");
+                for (var i = 0; i < datas.length; i++) {
+                    select.append("<option value='" + datas[i].DepartmentId + "'>"
+							+ datas[i].FullName + "</option>");
+                }
+                $("#Project_Id").selectpicker('val', '');
+                $("#Project_Id").selectpicker('refresh');
+                $('#Project_Id').selectpicker('render');
+            }
+        });
+
+
+        $("#Project_Name").ComboBox({
+            url: "../../BaseManage/Base_ProjectInfo/GetProjectListByRole",
+            description: "==请选择==",
+            id: "ProjectID",
+            text: "ProjecName",
+            height: "180px",
+            allowSearch: true,
+        });
+        var queryJson = request("queryJson");
+        if (!!queryJson) {
+            $.GetAjax({
+                url: "../../BaseManage/Base_ProjectInfo/GetCompanyNameJson?queryJson=" + queryJson,
+                datatype: "json",
+                //async: false,
+                success: function (data) {
+                    console.log(data);
+                    if (data) {
+                        $("#Project_Id").ComboBoxSetValue(data[0].CompanyCode);
+                        $("#Project_Name").ComboBoxSetValue(data[0].ProjectID);
+                    }
+                },
+            })
+        }
+        //resize重设布局;
+        $(window).resize(function (e) {
+            window.setTimeout(function () {
+                $('#gridTable').setGridWidth(($('.gridPanel').width()));
+                $('#gridTable').setGridHeight($(window).height() - $('.titlePanel').height() - 110);
+            }, 200);
+            e.stopPropagation();
+        });
+    }
+    function GetGrid() {
+
+        //var queryJson = request("queryJson");
+        var selectedRowIndex = 0;
+        var $gridTable = $('#gridTable');
+
+        $gridTable.jqGrid({
+            url: "../../EcommercePayQueryManage/EcomPayProject/GetPageListJson",
+            datatype: "json",
+            postData: { queryJson: request("queryJson") },
+
+            height: $(window).height() - $('.titlePanel').height() - 110,
+            autowidth: true,
+            colModel: [
+              { label: '主键', name: 'id', hidden: true },
+                { label: "所属区域", name: "CompanyName", width: 150, align: "left", sortable: false },
+                { label: "项目名称", name: "ProjectName", width: 150, align: "left", sortable: false },
+                { label: "电商简称", name: "EcommerceGroupName", width: 100, align: "left", sortable: false },
+                {
+                    label: "收入合计(元)", name: "IncomeTotal", width: 150, align: "right", sortable: false,
+                    formatter: function (cellvalue) {
+                        return money_format(cellvalue, "F", 2)
+                    }
+                },
+                {
+                    label: "结算合计(元)", name: "ClearingTotal", width: 150, align: "right", sortable: false,
+                    formatter: function (cellvalue) {
+                        return money_format(cellvalue, "F", 2)
+                    }
+                },
+                 { label: "平台费比例(%)", name: "Platform", width: 150, align: "right", sortable: false },
+                  {
+                      label: "平台费支出(元)", name: "PlatformExpensesAmount", width: 150, align: "right", sortable: false,
+                      formatter: function (cellvalue) {
+                          return money_format(cellvalue, "F", 2)
+                      }
+                  },
+                {
+                    label: "我司可支配金额(元)", name: "ControllAmount", width: 200, align: "right", sortable: false,
+                    formatter: function (cellvalue) {
+                        return money_format(cellvalue, "F", 2)
+                    }
+                },
+                {
+                    label: "电商支出合计(元)", name: "EcommerceExpenseTotal", width: 200, align: "right", sortable: false,
+                    formatter: function (cellvalue) {
+                        return money_format(cellvalue, "F", 2)
+                    }
+                },
+                 {
+                     label: "划拨金额(元)", name: "TransfoTotal", width: 200, align: "right", sortable: false,
+                     formatter: function (cellvalue) {
+                         return money_format(cellvalue, "F", 2)
+                     }
+                 },
+            ],
+            treeGrid: true,
+            treeGridModel: "nested",
+            ExpandColumn: "ProjectName",
+            
+            onSelectRow: function (rowid) {
+                selectedRowIndex = $("#" + this.id).getGridParam('selrow');
+            },
+            gridComplete: function () {
+                $("#" + this.id).setSelection(selectedRowIndex, false);
+            },
+            loadComplete: function (xhr, status, error) {
+
+                last_page = xhr.total;
+                currentPage = xhr.page;
+                InitPage();
+            }
+        });
+        //查询事件
+        $("#btn_Search").click(function () {
+            var queryJson = {
+                CompanyId: $("#Project_Id").val(),
+                ProjectID: $("#Project_Name").attr("data-value"),
+                starttime: $("#Totalstarttime").val(),
+                endtime: $("#Totalendtime").val(),
+            }
+            $('#gridTable').jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+                page: 1
+            }).trigger('reloadGrid');
+        });
+        //查询回车
+        $('#Project_Id,#Project_Name').bind('keypress', function (event) {
+            if (event.keyCode == "13") {
+                $('#btn_Search').trigger("click");
+            }
+        });
+    }
+    function btn_export() {
+        if ($('#gridTable').jqGrid('getGridParam', 'records') == 0) {
+            dialogAlert('没有数据可以导出', 0);
+            return false;
+        }
+            var queryJson = {
+                CompanyId: $("#Project_Id").val(),
+                ProjectID: $("#Project_Name").attr("data-value"),
+                starttime: $("#Totalstarttime").val(),
+                endtime: $("#Totalendtime").val(),
+            }
+            var queryJson = JSON.stringify(queryJson);
+        location.href = "../../EcommercePayQueryManage/EcomPayProject/GetPayProjectForExport?queryJson=" +queryJson;
+    }
+    function Reload()
+    {
+        window.location = '../../EcommercePayQueryManage/EcomPayProject/Index';
+    }
+</script>
+<div class="titlePanel">
+    <div class="title-search">
+        <table class="searchTable">
+            <tr>
+                <th class="formTitle">区域公司:</th>
+                <td class="formValue">
+                    @*<div id="Project_Id" type="select" class="ui-select">
+                    </div>*@
+                    <select id="Project_Id" class="selectpicker" data-live-search="true" multiple></select>
+                </td>
+                <th class="formTitle">项目名称:</th>
+                <td class="formValue">
+                    <div id="Project_Name" type="select" class="ui-select">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">开始时间:</th>
+                <td class="formValue">
+                    <input id="Totalstarttime" autocomplete="off" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+                </td>
+                <th class="formTitle">结束时间:</th>
+                <td class="formValue">
+                    <input id="Totalendtime" autocomplete="off" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+                <th class="formTitle"></th>
+                <td class="formValue">
+                    <a id="btn_Search" class="btn btn-primary"><i class="fa fa-search"></i> 查询</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="toolbar">
+        <div class="btn-group">
+            <a id="lr-replace" class="btn btn-default" onclick="Reload()"><i class="fa fa-refresh"></i>刷新</a>
+            <a id="lr-export" class="btn btn-default" name="btnExport" onclick="btn_export()"><i class="fa fa-sign-out"></i>&nbsp;导出</a>
+        </div>
+    </div>
+</div>
+<div class="gridOuter">
+    <div class="gridPanel">
+        <table id="gridTable"></table>
+        <div id="example" style="text-align: center; "> <ul id="pageLimit"></ul> </div>
+    </div>
+</div>
+

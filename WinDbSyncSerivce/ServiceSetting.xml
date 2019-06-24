@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+   <!--允许时间间隔 单位小时 ivan.yao 20180604-->
+  <Interval>23</Interval>
+  <!--运行时间-->
+  <StartTime>20:00</StartTime>
+
+</Settings>

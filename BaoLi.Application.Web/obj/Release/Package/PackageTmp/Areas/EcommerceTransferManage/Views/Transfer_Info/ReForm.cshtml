@@ -1,0 +1,43 @@
+﻿@{;
+ViewBag.Title = "删除页面";
+Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div style="margin-top: 20px; margin-right: 30px;">
+    <table class="form">
+        <tr>
+            <td class="formTitle">删除备注</td>
+            <td class="formValue">
+                <input id="Remark" placeholder="请输入备注" type="text" class="form-control" />
+            </td>
+            </tr>
+    </table>
+</div>
+
+<script>
+    function AcceptClick() {
+        if (!$('#form1').Validform()) {
+            return false;
+        }
+        var keyValue = request('keyValue');
+        var ProjectID = request('ProjectID');
+        var Transfer_Money = request('Transfer_Money');
+        var EcommerceID = request('EcommerceID');
+        var Remark = $("#Remark").val();
+        $.SaveForm({
+            url: '/EcommerceTransferManage/Transfer_Info/DeleteRemark?keyValue=' + keyValue + '&queryJson=' + Remark + "&ProjectID=" + ProjectID + "&Transfer_Money=" + Transfer_Money + "&EcommerceID=" + EcommerceID,
+            success: function (data) {
+                $.currentIframe().$("#gridTable").trigger("reloadGrid");
+            }
+        })
+        //$.PostAjax({
+        //        loading: "正在加载查询条件...",
+        //        url:'/EcommerceTransferManage/Transfer_Info/DeleteRemark?keyValue=' + keyValue + '&queryJson=' + Remark,
+              
+        //        success: function (data) {
+        //            dialogMsg(data.message,1);
+        //            $.currentIframe().$("#gridTable").trigger("reloadGrid");
+        //        }
+        //    });
+    }
+
+</script>

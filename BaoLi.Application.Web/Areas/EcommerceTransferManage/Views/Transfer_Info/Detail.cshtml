@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script src="~/Areas/EcommerceTransferManage/Content/Script/Detail.js"></script>
+@using Movit.MvcCotrols
+<link rel="stylesheet" type="text/css" href="~/Content/scripts/plugins/webuploader/webuploader.css">
+<script type="text/javascript" src="~/Content/scripts/plugins/webuploader/webuploader.js"></script>
+<!--jqgrid表格组件start-->
+<link href="~/Content/scripts/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+<script src="~/Content/scripts/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="~/Content/scripts/plugins/jqgrid/jqgrid.min.js"></script>
+
+<div class="step-pane" id="step-2">
+    <div id="baseinfo">
+        <div class="panel panel-default" style="margin-bottom: 10px;">
+            <div class="panel-body" style="width: 99%;">
+                <div class="detail-title">基本信息</div>
+                <div class="formTableOuter">
+                    <table class="formTable">
+                        <tr>
+                            <th>区域公司</th>
+                            <td id="CompanyName"></td>
+                            <th>项目名称</th>
+                            <td id="ProjecName"></td>
+                        </tr>
+                        <tr>
+                            <th>创建编号</th>
+                            <td id="Transfer_Code"></td>
+                            <th>电商简称</th>
+                            <td id="EcommerceGroupName"></td>
+                        </tr>
+                        <tr>
+                            <th>划拨金额(元)</th>
+                            <td id="Transfer_Money"></td>
+                            <th>经办人</th>
+                            <td id="CreateUserName"></td>
+                        </tr>
+                        <tr>
+
+                            <th>付款主题</th>
+                            <td id="Transfer_Title"></td> 
+                            @*<th>划拨时间</th>
+                            <td id="Transfer_Date"></td>*@
+                            <th>创建时间</th>
+                            <td id="CreateDate"></td>
+                        </tr>
+                        @*<tr>
+                        </tr>*@
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="btnRow">
+        <a class="btn btn-default" onclick="javascript: history.go(-1);">返回</a>
+    </div>
+</div>
+

@@ -1,0 +1,456 @@
+﻿@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@using Movit.MvcCotrols
+
+<link rel="stylesheet" type="text/css" href="~/Content/scripts/plugins/webuploader/webuploader.css">
+<script type="text/javascript" src="~/Content/scripts/plugins/webuploader/webuploader.js"></script>
+<!--jqgrid表格组件start-->
+<link href="~/Content/scripts/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+<script src="~/Content/scripts/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="~/Content/scripts/plugins/jqgrid/jqgrid.min.js"></script>
+
+<div class="step-pane" id="step-2">
+    <div id="baseinfo">
+        <div class="panel panel-default" style="margin-bottom: 10px;">
+            <div class="panel-body" style="width: 99%;">
+                <div class="detail-title">电商资金入账申请详情</div>
+                <div class="formTableOuter">
+                    <table class="formTable">
+                        <tr>
+                            <th>申请人</th>
+                            <td id="CreateUserName"></td>
+                            <th>申请人工号</th>
+                            <td id="Job_Number"></td>
+                           
+                        </tr>
+                        <tr>
+                            <th>所属部门</th>
+                            <td id="Department"></td>
+                            <th>申请主题</th>
+                            <td id="CapitalFlow_Title"></td>
+                        </tr>
+                        <tr>
+                            <th>数据所属年份</th>
+                            <td id="Year"></td>
+                            <th>数据所属月份</th>
+                            <td id="Month"></td>
+                        </tr>
+                    </table>
+                </div>
+               <div class="panel panel-default">
+                    @*<div class="panel-heading" style="display:none;">
+                        <h3 class="panel-title">表单上传</h3>
+
+                    </div>*@
+                    @*<div class="panel-body" style="width: 99%;">
+                <table class="form">
+                    <tr>
+                        <td>
+                            @Html.MovitUploader(name: "uploadFiles", isSingel: true, stratUpFileButtonText: "导入Excel", uploadedEnvet: "ReadExcel", objectType: "default", fileCount: 1, allowedFileExtensions: "xls,xlsx", keyValue: (string)this.ViewBag.keyValue)
+                        </td>
+                    </tr>
+                </table>
+            </div>*@
+                </div>
+                <div class="panel panel-default panel-form">
+                    <div class="panel-heading">
+                        <div class="panel-heading-title"><h3 class="panel-title">申请明细</h3></div>
+                        
+                    </div>
+                    <div class="panel-body" style="width: 99%;">
+                        <table class="form" id="appInfo">
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">附件上传</h3>
+                    </div>
+                    <div class="panel-body" style="width: 99%;">
+                        <table class="form">
+                            <tr>
+                                <td>
+                                    @Html.MovitUploader(name: "fileDefault", objectType: "default", allowedFileExtensions: "xls,xlsx,doc", readOnly: true, keyValue: (string)this.ViewBag.keyValue)
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btnRow">
+        <a class="btn btn-default" onclick="javascript: history.go(-1);">返回</a>
+    </div>
+</div>
+
+
+<script>
+    var keyValue = request('keyValue');
+    var $gridLeader = $("#gridLeader");
+
+    $(function () {
+
+        showTime();
+
+
+    });
+
+    function showTime() {
+
+        //$("#dataYear").ComboBox({
+        //    url: "../../CapitalFlowManage/T_CapitalFlow/GetYear",
+        //    id: "id",
+        //    text: "id",
+            
+        //    height: "180px",
+        //    allowSearch: true,
+
+        //});
+        //$("#dataMonth").ComboBox({
+        //    url: "../../CapitalFlowManage/T_CapitalFlow/GetMonth",
+        //    id: "id",
+        //    text: "id",
+            
+        //    height: "180px",
+        //    allowSearch: true,
+
+        //});
+        //$("#IsStamp").ComboBox({
+        //    description: "==请选择==",
+        //});
+        //var year = new Date().getFullYear();
+        //$("#dataYear").ComboBoxSetValue(year);
+        //var month = new Date().getMonth()+1;
+        //$("#dataMonth").ComboBoxSetValue(month);
+
+        //获取表单
+        if (!!keyValue) {
+            $.SetForm({
+                url: "../../CapitalFlowManage/T_CapitalFlow/GetDetailData",
+                param: { keyValue: keyValue },
+                success: function (data) {
+                    if (data.IsStamp == 0) {
+                        data.IsStamp = "否";
+                    } else {
+                        data.IsStamp = "是";
+                    }
+
+                    $(".step-pane").SetWebControls(data);
+
+                    $.SetForm({
+                        url: "../../CapitalFlowManage/T_CapitalFlow/GetFormData",
+                        param: { keyValue: keyValue },
+                        success: function (data) {
+                            $(".step-pane").SetWebControls(data);
+                            $.PostAjax({
+                                url: "/CapitalFlowManage/T_CapitalFlow/ReadCFNodeData",
+                                param: { keyValue: keyValue },
+                                loading: "正在生成报表...",
+
+                                success: function (data) {
+                                    if (data.type == "3") {
+                                        dialogAlert("文件格式或数据错误,请重新上传", 5)
+                                        return;
+                                    }
+                                    $("#appInfo").children().remove();
+                                    postData.splice(0, postData.length);
+                                    $("#appInfo").append('<tr><th class="formTitle" style="text-align:center;width:10%">所属区域</th><th class="formTitle" style="text-align:center;width:10%">项目名称</th><th class="formTitle" style="text-align:center;width:10%">电商简称</th><th class="formTitle" style="text-align:center;width:10%">新增电商收入(元)</th><th class="formTitle" style="text-align:center;width:10%">新增电商结算(元)</th><th class="formTitle" style="text-align:center;width:10%">平台费比例</th><th class="formTitle" style="text-align:center;width:10%">平台费支出(元)</th><th class="formTitle" style="text-align:center;width:10%">新增可支配金额(元)</th></tr>');
+
+                                    $.each(data, function (index, val) {
+
+                                        if (val.CompanyName != null && val.Project_Name != null) {
+                                            var IncomeAmount = money_format(val.IncomeAmount, "F", 2);
+                                            var ClearingAmount = money_format(val.ClearingAmount, "F", 2);
+                                            var PlatformExpensesAmount = money_format(val.PlatformExpensesAmount, "F", 2);
+                                            var CapitalPoolAdd = money_format(val.CapitalPoolAdd, "F", 2);
+                                            var Proportion = money_format(val.Proportion, "F", 2);
+                                            postData.push({
+                                                ProjectName: val.Project_Name,
+                                                EcommerceGroupName: val.EcomGroupName,
+                                                Company_Id: val.Company_Id,
+                                                EcommerceID: val.EcommerceID,
+                                                EcommerceGroupID: val.EcommerceGroupID,
+                                                ProjectID: val.ProjectID,
+                                                EcommerceProjectRelationID: val.EcommerceProjectRelationID,
+                                                EcommerceName: val.EcomName,
+                                                IncomeAmount: IncomeAmount,
+                                                ClearingAmount: ClearingAmount,
+                                                PlatformExpensesAmount: PlatformExpensesAmount,
+                                                CapitalPoolAdd: CapitalPoolAdd,
+                                                Proportion: Proportion,
+                                            });
+
+
+                                            if (val.Proportion == null || val.Proportion == "") {
+                                                val.Proportion = "-";
+                                            }
+                                            if (val.CompanyName == null) {
+                                                val.CompanyName = "";
+                                            }
+                                            if (val.Project_Name == null) {
+                                                val.Project_Name = "";
+                                            }
+                                            if (val.EcomGroupName == null) {
+                                                val.EcomGroupName = "";
+                                            }
+                                            if (val.IncomeAmount == null) {
+                                                val.IncomeAmount = "";
+                                            }
+                                            if (val.ClearingAmount == null) {
+                                                val.ClearingAmount = "";
+                                            }
+                                            if (val.CapitalPoolAdd == null) {
+                                                val.CapitalPoolAdd = "";
+
+                                            }
+                                            if (val.PlatformExpensesAmount == null) {
+                                                val.PlatformExpensesAmount = "";
+                                            }
+                                            $("#appInfo").append('<tr><td class="formTitle" style="text-align:center;width:10%">' + val.CompanyName + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.Project_Name + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.EcomGroupName + '</td><td class="formTitle" style="text-align:center;width:10%">' + IncomeAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + ClearingAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + Proportion + '%</td><td class="formTitle" style="text-align:center;width:10%">' + PlatformExpensesAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + CapitalPoolAdd + '</td></tr>');
+
+
+
+                                        } else {
+                                            var IncomeAmount = money_format(val.IncomeAmount, "F", 2);
+                                            var ClearingAmount = money_format(val.ClearingAmount, "F", 2);
+                                            var PlatformExpensesAmount = money_format(val.PlatformExpensesAmount, "F", 2);
+                                            var CapitalPoolAdd = money_format(val.CapitalPoolAdd, "F", 2);
+                                            var Proportion = money_format(val.Proportion, "F", 2);
+                                            if (val.Proportion == null || val.Proportion == "") {
+                                                val.Proportion = "-";
+                                            }
+                                            if (val.CompanyName == null) {
+                                                val.CompanyName = "";
+                                            }
+                                            if (val.Project_Name == null) {
+                                                val.Project_Name = "";
+                                            }
+                                            if (val.EcomGroupName == null) {
+                                                val.EcomGroupName = "";
+                                            }
+                                            if (val.IncomeAmount == null) {
+                                                val.IncomeAmount = "";
+                                            }
+                                            if (val.ClearingAmount == null) {
+                                                val.ClearingAmount = "";
+                                            }
+                                            if (val.CapitalPoolAdd == null) {
+                                                val.CapitalPoolAdd = "";
+
+                                            }
+                                            if (val.PlatformExpensesAmount == null) {
+                                                val.PlatformExpensesAmount = "";
+                                            }
+
+                                            $("#appInfo").append('<tr><td class="formTitle" style="text-align:center;width:10%">' + val.CompanyName + '</td><td class="formTitle" style="text-align:center;width:10%" colspan="2">' + val.EcomGroupName + '</td><td class="formTitle" style="text-align:center;width:10%">' + IncomeAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + ClearingAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.Proportion + '</td><td class="formTitle" style="text-align:center;width:10%">' + PlatformExpensesAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + CapitalPoolAdd + '</td></tr>');
+
+                                        }
+
+
+                                    });
+
+
+                                }
+                            });
+
+                        }
+                    });
+
+                }
+            })
+        }
+    }
+    var postData = new Array();
+    function ReadExcel(result) {
+        var url = result.filepath;
+
+
+
+
+        $.PostAjax({
+            url: "/CapitalFlowManage/T_CapitalFlow/ReadExcel",
+            param: { url: url },
+            loading: "正在生成报表...",
+
+            success: function (data) {
+                //alert(data.type);
+                if (data.type == "3") {
+                    dialogAlert("文件格式或数据错误,请重新上传", 5)
+                    return;
+                }
+                $("#appInfo").children().remove();
+
+                $("#appInfo").append('<tr><th class="formTitle" style="text-align:center;width:10%">所属区域</th><th class="formTitle" style="text-align:center;width:10%">项目名称</th><th class="formTitle" style="text-align:center;width:10%">电商简称</th><th class="formTitle" style="text-align:center;width:10%">新增电商收入(元)</th><th class="formTitle" style="text-align:center;width:10%">新增电商结算(元)</th><th class="formTitle" style="text-align:center;width:10%">平台费比例</th><th class="formTitle" style="text-align:center;width:10%">平台费支出(元)</th><th class="formTitle" style="text-align:center;width:10%">新增可支配金额(元)</th></tr>');
+                postData.splice(0, postData.length);
+                $.each(data, function (index, val) {
+
+                    if (val.CompanyName != null && val.Project_Name != null) {
+                        postData.push({
+                            ProjectName: val.Project_Name,
+                            EcommerceGroupName: val.EcomGroupName,
+                            Company_Id: val.Company_Id,
+                            EcommerceID: val.EcommerceID,
+                            EcommerceGroupID: val.EcommerceGroupID,
+                            ProjectID: val.ProjectID,
+                            EcommerceProjectRelationID: val.EcommerceProjectRelationID,
+                            EcommerceName: val.EcomName,
+                            IncomeAmount: val.IncomeAmount,
+                            ClearingAmount: val.ClearingAmount,
+                            PlatformExpensesAmount: val.PlatformExpensesAmount,
+                            CapitalPoolAdd: val.CapitalPoolAdd,
+                            Proportion: val.Proportion,
+                        }); if (val.Proportion == null || val.Proportion == "") {
+                            val.Proportion = "-";
+                        }
+                        if (val.CompanyName == null) {
+                            val.CompanyName = "";
+                        }
+                        if (val.Project_Name == null) {
+                            val.Project_Name = "";
+                        }
+                        if (val.EcomGroupName == null) {
+                            val.EcomGroupName = "";
+                        }
+                        if (val.IncomeAmount == null) {
+                            val.IncomeAmount = "";
+                        }
+                        if (val.ClearingAmount == null) {
+                            val.ClearingAmount = "";
+                        }
+                        if (val.CapitalPoolAdd == null) {
+                            val.CapitalPoolAdd = "";
+
+                        }
+                        if (val.PlatformExpensesAmount == null) {
+                            val.PlatformExpensesAmount = "";
+                        }
+                        $("#appInfo").append('<tr><td class="formTitle" style="text-align:center;width:10%">' + val.CompanyName + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.Project_Name + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.EcomGroupName + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.IncomeAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.ClearingAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.Proportion + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.PlatformExpensesAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.CapitalPoolAdd + '</td></tr>');
+
+
+
+                    } else {
+                        if (val.Proportion == null || val.Proportion == "") {
+                            val.Proportion = "-";
+                        }
+                        if (val.CompanyName == null) {
+                            val.CompanyName = "";
+                        }
+                        if (val.Project_Name == null) {
+                            val.Project_Name = "";
+                        }
+                        if (val.EcomGroupName == null) {
+                            val.EcomGroupName = "";
+                        }
+                        if (val.IncomeAmount == null) {
+                            val.IncomeAmount = "";
+                        }
+                        if (val.ClearingAmount == null) {
+                            val.ClearingAmount = "";
+                        }
+                        if (val.CapitalPoolAdd == null) {
+                            val.CapitalPoolAdd = "";
+
+                        }
+                        if (val.PlatformExpensesAmount == null) {
+                            val.PlatformExpensesAmount = "";
+                        }
+
+                        $("#appInfo").append('<tr><td class="formTitle" style="text-align:center;width:10%">' + val.CompanyName + '</td><td class="formTitle" style="text-align:center;width:10%" colspan="2">' + val.EcomGroupName + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.IncomeAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.ClearingAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.Proportion + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.PlatformExpensesAmount + '</td><td class="formTitle" style="text-align:center;width:10%">' + val.CapitalPoolAdd + '</td></tr>');
+
+                    }
+
+
+                });
+
+
+            }
+        });
+
+    }
+    //提交为审批中
+    function Submit() {
+        //postData = $("#form1").GetWebControls("");
+        var year = $("#dataYear").attr("data-text");
+        var month = $("#dataMonth").attr("data-text");
+        var CapitalFlow_Title = $("#CapitalFlow_Title").val();
+        var Remark = $("#Remark").val();
+        var IsStamp = $("#IsStamp").attr("data-value");
+        //postData["fileDefault"] = files_fileDefault;
+        if (year == null || year == "" || month == null || month == "") {
+            dialogAlert("请选择年份或月份", 5);
+            return false;
+        }
+        if (IsEmptyfileDefault()) {
+            dialogMsg('请上传附件！', 0);
+            return;
+        }
+        var postZZ = {
+            entity: postData,
+            uploadFiles: files_fileDefault,
+            year: year,
+            month: month,
+            IsStamp: IsStamp,
+            CapitalFlow_Title: CapitalFlow_Title,
+            Remark: Remark
+        }
+
+        $.SaveForm({
+            url: "../../CapitalFlowManage/T_CapitalFlow/submitFormApp?keyValue=" + keyValue,
+            param: postZZ,
+            loading: "正在保存数据...",
+            success: function (data) {
+                var url = data.resultdata[0].url;
+                sysf_openFullScreen(url);
+                $.currentIframe().$("#gridTable").trigger("reloadGrid");
+                location.href = "../../CapitalFlowManage/T_CapitalFlow/Index";
+            }
+        })
+    }
+    //保存为草稿
+    function AcceptClick() {
+        dialogConfirm("注：您确定要保存表单吗？", function (r) {
+            var year = $("#dataYear").attr("data-text");
+            var month = $("#dataMonth").attr("data-text");
+            var CapitalFlow_Title = $("#CapitalFlow_Title").val();
+            var Remark = $("#Remark").val();
+            var IsStamp = $("#IsStamp").attr("data-value");
+            //postData["fileDefault"] = files_fileDefault;
+            if (year == null || year == "" || month == null || month == "") {
+                dialogAlert("请选择年份或月份", 5);
+                return false;
+            }
+            if (IsEmptyfileDefault()) {
+                dialogMsg('请上传附件！', 0);
+                return;
+            }
+            var postZZ = {
+                entity: postData,
+                uploadFiles: files_fileDefault,
+                year: year,
+                month: month,
+                IsStamp: IsStamp,
+                CapitalFlow_Title: CapitalFlow_Title,
+                Remark: Remark
+            }
+
+            $.SaveForm({
+                url: "../../CapitalFlowManage/T_CapitalFlow/SaveFormApp?keyValue=" + keyValue,
+                param: postZZ,
+                loading: "正在保存数据...",
+                success: function () {
+                    $.currentIframe().$("#gridTable").trigger("reloadGrid");
+                    location.href = "../../CapitalFlowManage/T_CapitalFlow/Index";
+                }
+            })
+        });
+      
+    }
+</script>
+

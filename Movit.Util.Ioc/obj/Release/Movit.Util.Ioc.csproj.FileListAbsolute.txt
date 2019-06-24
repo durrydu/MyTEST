@@ -1,0 +1,9 @@
+F:\Ecommerce\Movit.Util.Ioc\bin\Release\Movit.Util.Ioc.dll
+F:\Ecommerce\Movit.Util.Ioc\bin\Release\Movit.Util.Ioc.pdb
+F:\Ecommerce\Movit.Util.Ioc\bin\Release\Microsoft.Practices.ServiceLocation.dll
+F:\Ecommerce\Movit.Util.Ioc\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+F:\Ecommerce\Movit.Util.Ioc\bin\Release\Microsoft.Practices.Unity.dll
+F:\Ecommerce\Movit.Util.Ioc\bin\Release\Microsoft.Practices.Unity.RegistrationByConvention.dll
+F:\Ecommerce\Movit.Util.Ioc\obj\Release\Movit.Util.Ioc.csprojResolveAssemblyReference.cache
+F:\Ecommerce\Movit.Util.Ioc\obj\Release\Movit.Util.Ioc.dll
+F:\Ecommerce\Movit.Util.Ioc\obj\Release\Movit.Util.Ioc.pdb

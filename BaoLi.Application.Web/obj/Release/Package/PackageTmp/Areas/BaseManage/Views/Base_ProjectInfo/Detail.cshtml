@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/scripts/plugins/webuploader/webuploader.css">
+<script type="text/javascript" src="~/Content/scripts/plugins/webuploader/webuploader.js"></script>
+<!--jqgrid表格组件start-->
+<link href="~/Content/scripts/plugins/jqgrid/jqgrid.css" rel="stylesheet" />
+<script src="~/Content/scripts/plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="~/Content/scripts/plugins/jqgrid/jqgrid.min.js"></script>
+
+<script>
+    var keyValue = request("keyValue");
+    $(function () {
+        initControl();
+        GetGirdTable();
+        GetgridAppliTable();
+    })
+
+    //初始化控件
+    function initControl() {
+        //获取表单
+        if (!!keyValue) {
+            $.SetForm({
+                url: "../../BaseManage/Base_ProjectInfo/GetFormJson",
+                param: { keyValue: keyValue },
+                success: function (data) {
+                    $("#form1").SetWebControls(data,false);
+                  
+                    //$("#ProjecName").text(data.ProjecName);
+                    //$("#CompanyName").text(data.CompanyName);
+                }
+            })
+        }
+    }
+    function GetGirdTable() {
+        var selectedRowIndex = 0;
+        var $gridTable = $('#gridTable');
+        $gridTable.jqGrid({
+            autowidth: true,
+            height: "auto",
+            width: "100%",
+            url: '../../EcommerceContractManage/EcommerceProjectRelation/GetListJson?keyValue=' + keyValue,
+            datatype: "json",
+            colModel: [
+            { label: 'EcommerceProjectRelationID', name: 'EcommerceProjectRelationID', index: 'EcommerceProjectRelationID', width: 100, align: 'center', sortable: false, hidden: true },
+            { label: '电商简称', name: 'EcommerceGroupName', index: 'EcommerceGroupName', width: 100, align: 'center', sortable: false },
+             { label: '电商公司', name: 'EcommerceName', index: 'EcommerceName', width: 100, align: 'center', sortable: false },
+            {
+                label: '合作开始时间', name: 'CooperateStartTime', index: 'CooperateStartTime', width: 100, align: 'center', sortable: false,
+                formatter: function (cellvalue) {
+                    return formatDate(cellvalue, 'yyyy-MM-dd');
+                }
+            },
+            {
+                label: '合作结束时间', name: 'CooperateEndTime', index: 'CooperateStartTime', width: 100, align: 'center', sortable: false,
+                formatter: function (cellvalue) {
+                    return formatDate(cellvalue, 'yyyy-MM-dd');
+                }
+            },
+            { label: '平台费率(%)', name: 'PlatformRate', index: 'PlatformRate', width: 100, align: 'center', sortable: false },
+            {
+                label: '我司可支配总金额(元)', name: 'ControlTotalAmount', index: 'ControlTotalAmount', width: 150, align: 'right', sortable: false,
+                formatter: function (cellvalue) {
+                    return money_format(cellvalue, "F", 2);
+                }
+
+            },
+            {
+                label: '流程中未付款总金额(元)', name: 'FlowNopayTotalAmount', index: 'FlowNopayTotalAmount', width: 150, align: 'right', sortable: false,
+                formatter: function (cellvalue) {
+                    return money_format(cellvalue, "F", 2);
+                }
+
+            },
+            {
+                label: '实际可支配总金额(元）', name: 'ActualControlTotalAmount', index: 'ActualControlTotalAmount', width: 150, align: 'right', sortable: false,
+                formatter: function (cellvalue) {
+                    return money_format(cellvalue, "F", 2);
+                }
+
+            },
+
+            ],
+            viewrecords: true,
+            sortname: 'CooperateStartTime desc',
+            shrinkToFit: true,
+            gridview: true,
+            onSelectRow: function () {
+                //selectedRowIndex = $('#' + this.id).getGridParam('selrow');
+            },
+            gridComplete: function () {
+                //$('#' + this.id).setSelection(selectedRowIndex, false);
+            }
+        });
+    }
+    function GetgridAppliTable() {
+        var selectedRowIndex = 0;
+        var $gridTable = $('#gridAppliTable');
+        $gridTable.jqGrid({
+            autowidth: true,
+            height: "auto",
+            width: "100%",
+            url: '../../EcommerceContractManage/EcommerceProjectRelation/GetNoApplicateJson?keyValue=' + keyValue,
+            datatype: "json",
+            colModel: [
+            { label: 'EcommerceProjectRelationID', name: 'EcommerceProjectRelationID', index: 'EcommerceProjectRelationID', width: 100, align: 'center', sortable: false, hidden: true },
+            { label: '电商简称', name: 'EcommerceGroupName', index: 'EcommerceGroupName', width: 150, align: 'center', sortable: false },
+              { label: '电商公司', name: 'EcommerceName', index: 'EcommerceName', width: 150, align: 'center', sortable: false },
+            {
+                label: '合作开始时间', name: 'CooperateStartTime', index: 'CooperateStartTime', width: 100, align: 'center', sortable: false,
+                formatter: function (cellvalue) {
+                    return formatDate(cellvalue, 'yyyy-MM-dd');
+                }
+            },
+            {
+                label: '合作结束时间', name: 'CooperateEndTime', index: 'CooperateStartTime', width: 100, align: 'center', sortable: false,
+                formatter: function (cellvalue) {
+                    return formatDate(cellvalue, 'yyyy-MM-dd');
+                }
+            },
+            { label: '平台费率(%)', name: 'PlatformRate', index: 'PlatformRate', width: 100, align: 'center', sortable: false },
+            { label: '经办人', name: 'CreateUserName', index: 'CreateUserName', width: 100, align: 'left', sortable: false },
+            {
+                label: '审批状态', name: 'ApprovalState', index: 'ApprovalState', width: 100, align: 'center', sortable: false,
+                formatter: function (cellvale, options, rowobject) {
+                    return GetEnumDescription(cellvale, top.enumData.ApprovalStateEnumArray)
+                }
+            },
+            {
+                label: '操作', name: 'Caozuo', index: 'Caozuo', width: 100, align: 'center', sortable: false,
+                formatter: function (cellvalue, options, rowobject) {
+                    return "<a id='ir-detail' class='btn btn-default' onclick='btn_view(\"" + rowobject.EcommerceProjectRelationID + "\")'><i class='fa fa-pencil-square-o'></i>详情</a>";
+                }
+            },
+            ],
+            viewrecords: false,
+            sortname: 'CooperateStartTime desc',
+            rownumbers: true,
+            shrinkToFit: true,
+            gridview: true,
+            onSelectRow: function () {
+                selectedRowIndex = $('#' + this.id).getGridParam('selrow');
+            },
+            gridComplete: function () {
+                $('#' + this.id).setSelection(selectedRowIndex, false);
+            }
+        });
+    }
+    //view详情
+    function btn_view(keyValue) {
+        var keyValue = keyValue;
+        var formkey = request("keyValue");
+        location.href = '../../EcommerceContractManage/EcommerceProjectRelation/Detail?keyValue=' + keyValue + '&formkey=' + formkey;
+    }
+    //新合同审批
+    function ApplicateContract() {
+        location.href = '../../EcommerceContractManage/EcommerceProjectRelation/Form';
+    }
+    function Reload()
+    {
+        location.href = '../../BaseManage/Base_ProjectInfo/ProjectIndex';
+    }
+</script>
+<div class="step-pane" id="step-2">
+    <div id="baseinfo">
+        <div class="panel panel-default" style="margin-bottom: 10px;">
+            <div class="panel-body" style="width: 99%;">
+                <div class="detail-title">基本信息</div>
+                <div class="formTableOuter">
+                    <table class="formTable">
+                        <tr>
+                            <th>项目名称</th>
+                            <td id="ProjecName"></td>
+                            <th>所属区域</th>
+                            <td id="CompanyName"></td>
+                        </tr>
+                        <tr>
+                            <th>实际可支配总金额（元）</th>
+                            <td id="ControlAmount" ></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body" style="width: 99%;">
+            <div class="detail-title">现有合作的电商</div>
+            <div class="formTableOuter">
+
+                <div class="gridPanel">
+                    <table id="gridTable"></table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body" style="width: 99%;">
+            <div class="detail-title">正在审批的电商</div>
+            <div class="formTableOuter">
+                <div class="gridPanel">
+                    <table id="gridAppliTable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btnRow">
+        <a class="btn btn-primary" onclick="ApplicateContract();">新合同审批</a>
+        <a class="btn btn-default" onclick="Reload()">返回</a>
+    </div>
+</div>
+

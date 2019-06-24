@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC0796BB-44D8-459A-9185-E80C91D6C9E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MessageFactory</RootNamespace>
+    <AssemblyName>MessageFactory</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EC_Contract_Add_GetInfoMessageHandler.cs" />
+    <Compile Include="EC_Income_GetInfoMessageHandler.cs" />
+    <Compile Include="EC_Contract_Add_CloseMessageHandler.cs" />
+    <Compile Include="EC_Income_CloseMessageHandler.cs" />
+    <Compile Include="EC_Income_ReworkMessageHandler.cs" />
+    <Compile Include="EC_Contract_Add_ReworkMessageHandler.cs" />
+    <Compile Include="Base\DefaultMessageHandler.cs" />
+    <Compile Include="EC_Contract_Add_CreateResultMessageHandler.cs" />
+    <Compile Include="Base\MessageContext.cs" />
+    <Compile Include="Base\MessageHandlerBase.cs" />
+    <Compile Include="Base\MessageHandlerFactory.cs" />
+    <Compile Include="EC_Income_CreateResultMessageHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Movit.Application\Movit.Application.Busines\Movit.Application.Busines.csproj">
+      <Project>{21566527-8f54-4a8d-aa68-7662c2c31fb9}</Project>
+      <Name>Movit.Application.Busines</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movit.Application\Movit.Application.Cache\Movit.Application.Cache.csproj">
+      <Project>{73a55239-a22d-4ac9-b412-64ea83035a18}</Project>
+      <Name>Movit.Application.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movit.Application\Movit.Application.Code\Movit.Application.Code.csproj">
+      <Project>{9b10db87-130c-41d3-8687-1fac877db74a}</Project>
+      <Name>Movit.Application.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movit.Application\Movit.Application.Entity\Movit.Application.Entity.csproj">
+      <Project>{c10920fe-8c74-4993-a7f4-1da189da842c}</Project>
+      <Name>Movit.Application.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movit.Util\Movit.Util.csproj">
+      <Project>{cf1c8d13-7702-4a3e-969f-9518cde2d7a6}</Project>
+      <Name>Movit.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

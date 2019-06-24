@@ -1,0 +1,147 @@
+﻿@model Movit.MvcCotrols.UploaderModel
+
+
+<div id="@Model.name" class="wu-example">
+
+    <div class="btns">
+        <div id="picker_@{@Model.name}" style="float:left;">@Model.stratUpFileButtonText</div>
+
+    </div>
+</div>
+
+<script>
+    files_@{@Model.name} = [];
+    var applicationPath = window.applicationPath === "" ? "" : window.applicationPath || "../../";
+    var GUID_@{@Model.name} = WebUploader.Base.guid();//一个GUID
+    $(function () {
+        initUpload_@{@Model.name}();
+        files_@{@Model.name}.push({"objectType":'@Model.objectType'});
+    })
+    //验证是否有值，用于必填验证
+    function IsEmpty@{@Model.name}(){
+        debugger
+        var fileCount=files_@{@Model.name}.length;
+        if(fileCount>0){
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+    //初始化上传控件
+    function initUpload_@{@Model.name}() {
+        var $ = jQuery;
+        $list_@{@Model.name} = $('#thelist_@{@Model.name}');
+        var uploader = WebUploader.create({
+
+            // 选完文件后，是否自动上传。
+            auto: false,
+            // swf文件路径
+            swf: applicationPath + '../Content/scripts/plugins/webuploader/Uploader.swf',
+            // 文件接收服务端。
+            server: applicationPath + 'PublicInfoManage/Upload/Upload',
+            // 选择文件的按钮。可选。
+            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+            pick:{
+                id :'#picker_@{@Model.name}',
+                multiple:1,
+            },
+            duplicate:true,
+            fileNumLimit:@Model.fileCount,
+            chunked: true,//开始分片上传
+            chunkSize: 2048000,//每一片的大小
+            formData: {
+                guid: GUID_@{@Model.name}, //自定义参数，待会儿解释
+            },
+            fileSingleSizeLimit: @Model.fileSize,//1073741824=1GB，1610612736=1.5GB，2147483648=2GB
+            accept: {
+                title: '',
+                extensions: '@Model.allowedFileExtensions'
+            },
+            // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+            resize: false
+        });
+        // 当有文件被添加进队列的时候
+        uploader.on('fileQueued', function (file) {
+
+            uploader.upload();
+        });
+        uploader.on("error", function (type) {
+
+            if (type == "Q_TYPE_DENIED") {
+                dialogAlert("格式不支持!", 2);
+            } else if (type == "F_EXCEED_SIZE") {
+                dialogAlert("文件过大!", 2);
+            }
+            //else {
+            //    dialogAlert("上传出错！请检查后重新上传！错误代码" + type, 2);
+            //}
+        });
+        // 文件上传过程中创建进度条实时显示。
+        uploader.on('uploadProgress', function (file, percentage) {
+
+        });
+        //当文件被加入队列之前触发，此事件的handler返回值为false，则此文件不会被添加进入队列。
+        uploader.on('beforeFileQueued', function (file) {
+
+            @if (!string.IsNullOrEmpty(Model.selectEnvet)) {
+                 <text>
+            var func = "@{@Model.selectEnvet}";
+            if (func != "") {
+                var ex = { call: eval("(" + func + ")") };
+                var result=  ex.call(file);
+            }
+
+            </text>
+             }
+        });
+        //上传之前
+        uploader.on('uploadBeforeSend', function (object, data, headers) {
+
+            console.log(data);
+        });
+        // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+        uploader.on('uploadSuccess', function (file, response) {
+
+
+            $.post('../../PublicInfoManage/Upload/Merge', {
+                guid: GUID_@{@Model.name},
+                objectType: '@{@Model.objectType}',
+                ext: file.ext,
+                fileName: file.name,
+                fileType: file.type
+            }, function (data) {
+                //增加列表存储
+                files_@{@Model.name}.push(data);
+                @if (!string.IsNullOrEmpty(Model.uploadedEnvet))
+                 {
+                     <text>
+                var func = "@{@Model.uploadedEnvet}";
+                if (func != "") {
+                    var ex = { call: eval("(" + func + ")") };
+                    var result=  ex.call(data);
+                }
+
+                </text>
+                 }
+            });
+        });
+
+        // 文件上传失败，显示上传出错。
+        uploader.on('uploadError', function (file, reason) {
+            $('#' + file.id).find('p.state').text(reason);
+        });
+
+        // 完成上传完了，成功或者失败，先删除进度条。
+        uploader.on('uploadComplete', function (file) {
+
+        });
+
+        //所有文件上传完毕
+        uploader.on("uploadFinished", function (file) {
+            //提交表单
+
+        });
+    }
+
+</script>

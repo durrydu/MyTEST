@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "电商管理";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script src="~/Areas/EcommerceManage/Content/scripts/Ecommerce_Form.js"></script>
+<div class="step-pane" id="step-2">
+    <div class="panel panel-default" style="margin-bottom: 10px;">
+        <div class="panel-body" style="width: 99%;">
+            <table class="form">
+                <tr>
+                    <td class="formTitle">电商编号</td>
+                    <td class="formValue">
+                        <input id="EcommerceCode" placeholder="自动生成编号" type="text" readonly="readonly" class="form-control" />
+                    </td>
+                    <th class="formTitle">电商公司<font face="宋体">*</font></th>
+                    <td class="formValue">
+                        <input id="EcommerceName" autocomplete="off" type="text" onblur="$.ExistField(this.id, '../../EcommerceManage/Ecommerce/ExistEcommerceName')" class="form-control input-underline" isvalid="yes" length="30" checkexpession="LenStr" errormsg="请填写正确的电商公司名称!" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">电商简称<font face="宋体">*</font></th>
+                    <td class="formValue">
+                        <div id="EcommerceGroupID" autocomplete="off" type="select" class="ui-select" isvalid="yes" checkexpession="NotNull">
+                        </div>
+                    </td>
+                    <th class="formTitle">合作开始日期<font face="宋体">*</font></th>
+                    <td class="formValue">
+                        <input id="CooperateStartTime" autocomplete="off" type="text" class="form-control input-wdatepicker" readonly="true" onfocus="WdatePicker()"  />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formTitle">合作结束日期<font face="宋体">*</font></td>
+                    <td class="formValue">
+                        <input id="CooperateEndTime" autocomplete="off" type="text" class="form-control input-wdatepicker" readonly="true" onfocus="WdatePicker()" />
+
+                    <th class="formTitle">电商性质<font face="宋体">*</font></th>
+                    <td class="formValue">
+                        <div id="EcommerceType" autocomplete="off" type="select" class="ui-select" isvalid="yes" checkexpession="NotNull">
+                        </div>
+                    </td>
+                    </tr>
+                <tr>
+                    <th class="formTitle">平台费率(%)</th>
+                    <td class="formValue">
+                        <input id="PlatformRate" autocomplete="off" class="form-control input-underline" type="number" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "电商集团管理";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script src="~/Areas/EcommerceManage/Content/scripts/EcommerceGroup_Form.js"></script>
+<div class="step-pane" id="step-2">
+    <div class="panel panel-default" style="margin-bottom: 10px;">
+        <div class="panel-body" style="width: 99%;">
+            <table class="form">
+                <tr>
+                    <th class="formTitle">电商公司（简称）<font face="宋体">*</font></th>
+                    <td class="formValue">
+                        <input id="EcommerceGroupName" autocomplete="off" type="text" class="form-control input-underline" onblur="$.ExistField(this.id, '../../EcommerceManage/EcommerceGroup/ExistEcommerceGroupName')" isvalid="yes" length="15" checkexpession="LenStr" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

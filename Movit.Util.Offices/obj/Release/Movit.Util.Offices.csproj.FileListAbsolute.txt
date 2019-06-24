@@ -1,0 +1,10 @@
+F:\Ecommerce\Movit.Util.Offices\bin\Release\Movit.Util.Offices.dll
+F:\Ecommerce\Movit.Util.Offices\bin\Release\Movit.Util.Offices.pdb
+F:\Ecommerce\Movit.Util.Offices\bin\Release\ICSharpCode.SharpZipLib.dll
+F:\Ecommerce\Movit.Util.Offices\bin\Release\NPOI.dll
+F:\Ecommerce\Movit.Util.Offices\bin\Release\NPOI.OOXML.dll
+F:\Ecommerce\Movit.Util.Offices\bin\Release\NPOI.OpenXml4Net.dll
+F:\Ecommerce\Movit.Util.Offices\bin\Release\NPOI.OpenXmlFormats.dll
+F:\Ecommerce\Movit.Util.Offices\obj\Release\Movit.Util.Offices.csprojResolveAssemblyReference.cache
+F:\Ecommerce\Movit.Util.Offices\obj\Release\Movit.Util.Offices.dll
+F:\Ecommerce\Movit.Util.Offices\obj\Release\Movit.Util.Offices.pdb

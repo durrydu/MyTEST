@@ -1,0 +1,14 @@
+F:\Ecommerce\Movit.Util.Log\bin\Release\Movit.Util.Log.dll
+F:\Ecommerce\Movit.Util.Log\bin\Release\Movit.Util.Log.pdb
+F:\Ecommerce\Movit.Util.Log\bin\Release\log4net.dll
+F:\Ecommerce\Movit.Util.Log\bin\Release\Movit.Util.dll
+F:\Ecommerce\Movit.Util.Log\bin\Release\Newtonsoft.Json.dll
+F:\Ecommerce\Movit.Util.Log\bin\Release\Movit.Util.Extension.dll
+F:\Ecommerce\Movit.Util.Log\bin\Release\ICSharpCode.SharpZipLib.dll
+F:\Ecommerce\Movit.Util.Log\bin\Release\Ionic.Zip.dll
+F:\Ecommerce\Movit.Util.Log\bin\Release\Movit.Util.pdb
+F:\Ecommerce\Movit.Util.Log\bin\Release\Newtonsoft.Json.xml
+F:\Ecommerce\Movit.Util.Log\bin\Release\Movit.Util.Extension.pdb
+F:\Ecommerce\Movit.Util.Log\obj\Release\Movit.Util.Log.csprojResolveAssemblyReference.cache
+F:\Ecommerce\Movit.Util.Log\obj\Release\Movit.Util.Log.dll
+F:\Ecommerce\Movit.Util.Log\obj\Release\Movit.Util.Log.pdb

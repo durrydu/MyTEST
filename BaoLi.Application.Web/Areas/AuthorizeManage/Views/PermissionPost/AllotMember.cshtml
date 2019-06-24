@@ -1,0 +1,257 @@
+﻿@{
+    ViewBag.Title = "岗位成员";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<script src="~/Content/scripts/plugins/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script>
+    var postId = request('postId');
+    var userOrgId = "";
+    var KeyValue = "";
+    var SeachTime;
+    var last_page = 0;
+    $(function () {
+        InitialPage();
+        GetTree();
+        InitSearch();
+
+
+    });
+    function InitPage() {
+        $('#pageLimit').bootstrapPaginator({
+            currentPage: 1,
+            totalPages: last_page,
+            size: "normal",
+            bootstrapMajorVersion: 3,
+            alignment: "right",
+            numberOfPages: 6,
+            itemTexts: function (type, page, current) {
+                switch (type) {
+                    case "first": return "首页";
+                    case "prev": return "上一页";
+                    case "next": return "下一页";
+                    case "last": return "末页";
+                    case "page": return page;
+                }//默认显示的是第一页。
+            },
+            onPageClicked: function (event, originalEvent, type, page) {//给每个页眉绑定一个事件，其实就是ajax请求，其中page变量为当前点击的页上的数字。
+
+                $.ajax({
+                    url: "../../AuthorizeManage/PermissionPost/GetUserListJson?postId=" + postId + "&orgId=" + userOrgId + "&keyValue=" + KeyValue,
+                    type: 'Post',
+                    data: { 'page': page, 'count': 12 },
+                    dataType: 'JSON',
+                    success: function (callback) {
+                        last_page = callback.total;
+
+                        LoadUser(callback.rows);
+
+                    }
+                })
+            }
+        });
+    }
+    function LoadUser(data) {
+        var _html = "";
+        if (data != null) {
+            $.each(data, function (i) {
+                var row = data[i];
+                if (row.isdefault == 0) {
+                    var imgName = "UserCard01.png";
+                    if (row.gender == 1) {
+                        imgName = "UserCard02.png";
+                    }
+                    var active = "";
+                    if (row.ischeck == 1) {
+                        active = "active";
+                    }
+                    _html += '<div class="card-box ' + row.DepartmentId + ' ' + active + '">';
+                    //_html += '    <div class="card-box-img">';
+                    //_html += '        <img src="/Content/images/' + imgName + '" />';
+                    //_html += '    </div>';
+                    _html += '    <div id="' + row.UserId + '" class="card-box-content">';
+                    _html += '        <p>账户：' + row.Account + '</p>';
+                    _html += '        <p>姓名：' + row.RealName + '</p>';
+                    _html += '        <p>部门：' + row.DepartmentName + '</p>';
+                    _html += '    </div><i></i>';
+                    _html += '</div>';
+                }
+            });
+        }
+        $(".gridPanel").html(_html);
+        $(".card-box").click(function () {
+            if (!$(this).hasClass("active")) {
+                $(this).addClass("active");
+            } else {
+                $(this).removeClass("active");
+            }
+        });
+        Loading(false);
+
+
+    }
+    function InitSearch() {
+
+        //模糊查询用户（注：这个方法是理由jquery查询）
+        $("#txt_TreeKeyword").keyup(function () {
+            var value = $(this).val();
+            KeyValue = value;
+            clearTimeout(SeachTime)
+            SeachTime = window.setTimeout(function () {
+                $.ajax(
+        {
+            url: "../../AuthorizeManage/PermissionPost/GetUserListJson?postId=" + postId + "&orgId=" + userOrgId + "&keyValue=" + KeyValue,
+            type: 'Post',
+            data: { 'page': 1, 'count': 12 },
+            dataType: 'JSON',
+            async: false,
+            success: function (callback) {
+                debugger;
+                last_page = callback.total;
+                //total ": 1484,
+                //" 				page ": 1,
+                //" 				records ": 14832,
+                LoadUser(callback.rows);
+                InitPage();
+            }
+        }
+     )
+            }, 1000);
+
+        }).keyup();
+    }
+    //初始化页面
+    function InitialPage() {
+        //layout布局
+        $('#layout').layout({
+            applyDemoStyles: true,
+            west__size: 160,
+            spacing_open: 0,
+            onresize: function () {
+                $(window).resize();
+            }
+        });
+        $(".center-Panel").height($(window).height() - 120);
+    }
+    //加载树
+    var departmentid = "card-box";
+    function GetTree() {
+        var item = {
+            height: $(window).height() - 1,
+            url: "../../AuthorizeManage/PermissionPost/GetDepartmentTreeJson?postId=" + postId,
+            onnodeclick: function (item) {
+                Loading(true);
+                userOrgId = item.id;
+                InitSearch();
+                window.setTimeout(function () {
+                    if (item.parentnodes == "0") {
+                        $(".card-box").show();
+                        departmentid = "card-box";
+                    } else {
+                        $(".card-box").hide();
+                        $('.' + item.id).show();
+                        departmentid = item.id;
+                    }
+                    Loading(false);
+                }, 200);
+            }
+        };
+        //初始化
+        $("#itemTree").treeview(item);
+    }
+    //加载成员
+    function GetMember() {
+        $.ajax({
+            url: "../../AuthorizeManage/PermissionPost/GetUserListJson?postId=" + postId + "&orgId=" + userOrgId + "&keyValue=" + KeyValue,
+            type: "get",
+            dataType: "json",
+            async: true,
+            success: function (data) {
+                var _html = "";
+                if (data != null) {
+                    $.each(data, function (i) {
+                        var row = data[i];
+                        if (row.isdefault == 0) {
+                            var imgName = "UserCard01.png";
+                            if (row.gender == 1) {
+                                imgName = "UserCard02.png";
+                            }
+                            var active = "";
+                            if (row.ischeck == 1) {
+                                active = "active";
+                            }
+                            _html += '<div class="card-box ' + row.DepartmentId + ' ' + active + '">';
+                            //_html += '    <div class="card-box-img">';
+                            //_html += '        <img src="/Content/images/' + imgName + '" />';
+                            //_html += '    </div>';
+                            _html += '    <div id="' + row.UserId + '" class="card-box-content">';
+                            _html += '        <p>账户：' + row.Account + '</p>';
+                            _html += '        <p>姓名：' + row.RealName + '</p>';
+                            _html += '        <p>部门：' + row.DepartmentName + '</p>';
+                            _html += '    </div><i></i>';
+                            _html += '</div>';
+                        }
+                    });
+                }
+                $(".gridPanel").html(_html);
+                $(".card-box").click(function () {
+                    if (!$(this).hasClass("active")) {
+                        $(this).addClass("active");
+                    } else {
+                        $(this).removeClass("active");
+                    }
+                });
+                Loading(false);
+            }, beforeSend: function () {
+                Loading(true);
+            }
+        });
+
+    }
+    //保存表单
+    function AcceptClick() {
+        var userIds = [];
+        var deleteUserIds = [];
+        $('.gridPanel .active .card-box-content').each(function () {
+            userIds.push($(this).attr('id'));
+        });
+        $('.gridPanel  .card-box-content').each(function () {
+            var unSelectUserID = $(this).attr('id')
+            if (isInArray(userIds, unSelectUserID) == false) {
+                deleteUserIds.push(unSelectUserID);
+            }
+           
+        });
+        var postData = $("#form1").GetWebControls();
+        postData["postId"] = postId;
+        postData["userIds"] = String(userIds);
+        postData["deleteUserIds"] = String(deleteUserIds);
+        $.SaveForm({
+            url: "../../AuthorizeManage/PermissionPost/SaveMember",
+            param: postData,
+            loading: "正在保存岗位成员...",
+            success: function () {
+                $.currentIframe().$("#gridTable").trigger("reloadGrid");
+            }
+        });
+    }
+</script>
+<div class="ui-layout" id="layout" style="height: 100%; width: 100%;">
+    <div class="ui-layout-west">
+        <div class="west-Panel" style="margin: 0px; border-top: none; border-left: none; border-bottom: none;">
+            <div id="itemTree"></div>
+        </div>
+    </div>
+    <div class="ui-layout-center">
+        <div class="treesearch">
+            <input id="txt_TreeKeyword" type="text" class="form-control" style="border-top: none;" placeholder="请输入要查询关键字" />
+            <span id="btn_TreeSearch" class="input-query" title="Search"><i class="fa fa-search"></i></span>
+        </div>
+        <div class="center-Panel" style="margin: 0px; border-right: none; border-left: none; border-bottom: none; background-color: #fff; overflow: auto; padding-bottom: 10px;">
+            <div class="gridPanel">
+
+            </div>
+
+        </div>
+        <div id="example" style="text-align: center; "> <ul id="pageLimit"></ul> </div>
+    </div>
+</div>

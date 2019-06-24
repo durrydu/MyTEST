@@ -1,0 +1,6 @@
+F:\Ecommerce\Movit.Util.Extension\bin\Release\Movit.Util.Extension.dll.config
+F:\Ecommerce\Movit.Util.Extension\bin\Release\Movit.Util.Extension.dll
+F:\Ecommerce\Movit.Util.Extension\bin\Release\Movit.Util.Extension.pdb
+F:\Ecommerce\Movit.Util.Extension\obj\Release\Movit.Util.Extension.csprojResolveAssemblyReference.cache
+F:\Ecommerce\Movit.Util.Extension\obj\Release\Movit.Util.Extension.dll
+F:\Ecommerce\Movit.Util.Extension\obj\Release\Movit.Util.Extension.pdb

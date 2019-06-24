@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "电商管理";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script src="~/Areas/EcommerceManage/Content/scripts/Ecommerce_Detail.js"></script>
+<div class="step-pane" id="step-2">
+    <div class="panel panel-default" style="margin-bottom: 10px;">
+        <div class="panel-body" style="width: 99%;">
+            <table class="form">
+                <tr>
+                    <th class="formTitle">电商公司</th>
+                    <td class="formValue">
+                        <input id="EcommerceName" type="text" class="form-control input-underline" isvalid="yes" length="15" checkexpession="LenStr" />
+                    </td>
+                    <th class="formTitle">电商简称</th>
+                    <td class="formValue">
+                        <div id="EcommerceGroupID" type="select" class="ui-select" isvalid="yes" checkexpession="NotNull">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">合作开始日期</th>
+                    <td class="formValue">
+                        <input id="CooperateStartTime" type="text" class="form-control input-wdatepicker" isvalid="yes" checkexpession="NotNull" />
+                    </td>
+                    <td class="formTitle">合作结束日期</td>
+                    <td class="formValue">
+                        <input id="CooperateEndTime" type="text" class="form-control input-wdatepicker"  isvalid="yes" checkexpession="NotNull" />
+                </tr>
+                <tr>
+                    <th class="formTitle">电商性质</th>
+                    <td class="formValue">
+                        <div id="EcommerceType" type="select" class="ui-select" isvalid="yes" checkexpession="NotNull">
+                        </div>
+                    </td>
+                    <th class="formTitle">平台费率(%)</th>
+                    <td class="formValue">
+                        <input id="PlatformRate" class="form-control input-underline" type="number" isvalid="yes" checkexpession="NotNull" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">经办人</th>
+                    <td class="formValue">
+                        <input id="AgentUserID" class="form-control input-underline" type="text" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B10DB87-130C-41D3-8687-1FAC877DB74A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Movit.Application.Code</RootNamespace>
+    <AssemblyName>Movit.Application.Code</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enum\AccountingTypeEnum.cs" />
+    <Compile Include="Enum\ApproveStatus.cs" />
+    <Compile Include="Enum\AuthorizationMethodEnum.cs" />
+    <Compile Include="Enum\AuthorizeExtensions.cs" />
+    <Compile Include="Enum\AuthorizeItmeTypeEnum.cs" />
+    <Compile Include="Enum\AuthorizeTypeEnum.cs" />
+    <Compile Include="Enum\AuthorizeUserTypeEnum.cs" />
+    <Compile Include="Enum\BiddingMethodEnum.cs" />
+    <Compile Include="Enum\CodeRuleEnum.cs" />
+    <Compile Include="Enum\AuthorizeDataModel.cs" />
+    <Compile Include="Enum\ContractNatureEnum.cs" />
+    <Compile Include="Enum\EcommerceTypeEnum.cs" />
+    <Compile Include="Enum\LoginMode.cs" />
+    <Compile Include="Enum\MessageTypeEnum.cs" />
+    <Compile Include="Enum\OperationType.cs" />
+    <Compile Include="Enum\OperationTypeNoteEnum.cs" />
+    <Compile Include="Exception\CacheRegisterException.cs" />
+    <Compile Include="Exception\InstanceCreateException.cs" />
+    <Compile Include="Exception\MovitInfoException.cs" />
+    <Compile Include="Operator\Operator.cs" />
+    <Compile Include="Operator\OperatorIProvider.cs" />
+    <Compile Include="Operator\OperatorProvider.cs" />
+    <Compile Include="Enum\PayDetailsTypeEnum.cs" />
+    <Compile Include="Enum\PermissionMode.cs" />
+    <Compile Include="Enum\ProcessInstanceStatus.cs" />
+    <Compile Include="Enum\ProjectTypeEnum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enum\SystemInfo.cs" />
+    <Compile Include="Enum\SystemTypeEnum.cs" />
+    <Compile Include="Enum\VerifyCode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Movit.Cache\Movit.Cache.Factory\Movit.Cache.Factory.csproj">
+      <Project>{a68cdd21-2e12-4b11-95db-d0a0fced48b1}</Project>
+      <Name>Movit.Cache.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Cache\Movit.Cache\Movit.Cache.csproj">
+      <Project>{5af4997c-4395-48af-990c-932259111dff}</Project>
+      <Name>Movit.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Util.Extension\Movit.Util.Extension.csproj">
+      <Project>{1be62e4c-35c1-4115-b003-be9c98f8436e}</Project>
+      <Name>Movit.Util.Extension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Util.Log\Movit.Util.Log.csproj">
+      <Project>{2ef55895-d7dd-42d6-8741-f8100e5c210f}</Project>
+      <Name>Movit.Util.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Movit.Util\Movit.Util.csproj">
+      <Project>{cf1c8d13-7702-4a3e-969f-9518cde2d7a6}</Project>
+      <Name>Movit.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

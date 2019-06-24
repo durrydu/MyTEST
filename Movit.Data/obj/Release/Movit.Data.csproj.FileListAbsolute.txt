@@ -1,0 +1,16 @@
+F:\Ecommerce\Movit.Data\bin\Release\Movit.Data.dll
+F:\Ecommerce\Movit.Data\bin\Release\Movit.Data.pdb
+F:\Ecommerce\Movit.Data\bin\Release\Movit.Util.dll
+F:\Ecommerce\Movit.Data\bin\Release\MySql.Data.dll
+F:\Ecommerce\Movit.Data\bin\Release\Oracle.DataAccess.dll
+F:\Ecommerce\Movit.Data\bin\Release\System.Data.SQLite.dll
+F:\Ecommerce\Movit.Data\bin\Release\Newtonsoft.Json.dll
+F:\Ecommerce\Movit.Data\bin\Release\Movit.Util.Extension.dll
+F:\Ecommerce\Movit.Data\bin\Release\ICSharpCode.SharpZipLib.dll
+F:\Ecommerce\Movit.Data\bin\Release\Ionic.Zip.dll
+F:\Ecommerce\Movit.Data\bin\Release\Movit.Util.pdb
+F:\Ecommerce\Movit.Data\bin\Release\Newtonsoft.Json.xml
+F:\Ecommerce\Movit.Data\bin\Release\Movit.Util.Extension.pdb
+F:\Ecommerce\Movit.Data\obj\Release\Movit.Data.csprojResolveAssemblyReference.cache
+F:\Ecommerce\Movit.Data\obj\Release\Movit.Data.dll
+F:\Ecommerce\Movit.Data\obj\Release\Movit.Data.pdb

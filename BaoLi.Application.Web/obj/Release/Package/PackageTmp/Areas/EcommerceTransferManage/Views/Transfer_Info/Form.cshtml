@@ -1,0 +1,68 @@
+﻿@{;
+ViewBag.Title = "新增划拨页面";
+Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script src="~/Areas/EcommerceTransferManage/Content/Script/Form.js"></script>
+<div style="margin-top: 20px; margin-right: 30px;">
+    <table class="form">
+        <tr>
+            <td class="formTitle">划拨编号</td>
+            <td class="formValue">
+                <input id="Transfer_Code" placeholder="自动生成编号" type="text" readonly="readonly" class="form-control" />
+            </td>
+
+            <th class="formTitle">项目名称<font face="宋体">*</font></th>
+            <td class="formValue">
+                <div id="ProjectID" type="select" class="ui-select" isvalid="yes" checkexpession="NotNull">
+                </div>
+            </td>
+            </tr>
+        <tr>
+            <th class="formTitle">电商公司<font face="宋体">*</font></th>
+            <td class="formValue">
+                <div id="EcommerceID" type="select" class="ui-select" isvalid="yes" checkexpession="NotNull">
+                </div>
+            </td>
+            <th class="formTitle">电商简称<font face="宋体">*</font></th>
+            <td class="formValue">
+                @*<div id="EcommerceGroupID" type="select" class="ui-select" isvalid="yes" checkexpession="NotNull">
+                </div>*@
+                <input id="EcommerceGroupIDzz" type="text" readonly="readonly" class="form-control" />
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">可用余额(元)</td>
+            <td class="formValue">
+                <input id="Transfer_Balance"  type="text" readonly="readonly" class="form-control" />
+            </td>
+            
+            <td class="formTitle">付款主题<font face="宋体">*</font></td>
+            <td class="formValue">
+                <input id="Transfer_Title" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            </td>
+
+        </tr>
+        <tr>
+            <td class="formTitle">划拨金额(元)<font face="宋体">*</font></td>
+            <td class="formValue">
+                <input id="Transfer_Money"  type="number" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            </td>
+            <td class="formTitle" hidden="hidden">划拨时间<font face="宋体">*</font></td>
+            <td class="formValue" hidden="hidden">
+                <input id="Transfer_Date" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()"  />
+            </td>
+            <td class="formTitle" hidden="hidden">jituan id<font face="宋体">*</font></td>
+            <td class="formValue" hidden="hidden">
+                <input id="EcommerceGroupID" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+            </td>
+            <td class="formValue" hidden="hidden">
+                <input id="CompanyId" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+            </td>
+            <td class="formValue" hidden="hidden">
+                <input id="EcommerceProjectRelationID" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+            </td>
+        </tr>
+       
+
+    </table>
+</div>
